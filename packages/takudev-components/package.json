@@ -1,0 +1,14 @@
+{
+  "name": "takudev-components",
+  "version": "1.0.0",
+  "description": "This is a package of t-i-0414's blog related components.",
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "https://github.com/t-i-0414/takudev/takudev-components#readme",
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
