@@ -8,5 +8,6 @@
   "homepage": "https://github.com/t-i-0414/takudev/takudev-web#readme",
   "volta": {
     "extends": "../../package.json"
-  }
+  },
+  "devDependencies": {}
 }

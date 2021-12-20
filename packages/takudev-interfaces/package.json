@@ -9,5 +9,6 @@
   "homepage": "https://github.com/t-i-0414/takudev/takudev-interfaces#readme",
   "volta": {
     "extends": "../../package.json"
-  }
+  },
+  "devDependencies": {}
 }
