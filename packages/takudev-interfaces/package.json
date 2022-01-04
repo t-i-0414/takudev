@@ -1,14 +1,14 @@
 {
   "name": "takudev-interfaces",
   "version": "1.0.0",
-  "description": "This is a package of t-i-0414's blog related interfaces.",
-  "types": "src/index.d.ts",
-  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "license": "UNLICENSED",
   "private": true,
+  "description": "This is a package of t-i-0414's blog related interfaces.",
   "homepage": "https://github.com/t-i-0414/takudev/takudev-interfaces#readme",
+  "license": "UNLICENSED",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
+  "types": "src/index.d.ts",
+  "devDependencies": {},
   "volta": {
     "extends": "../../package.json"
-  },
-  "devDependencies": {}
+  }
 }
