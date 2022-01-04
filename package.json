@@ -1,43 +1,63 @@
 {
   "name": "takudev",
   "version": "1.0.0",
-  "description": "This is a package of t-i-0414's blog.",
-  "repository": "git@github.com:t-i-0414/takudev.git",
-  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "license": "UNLICENSED",
   "private": true,
+  "description": "This is a package of t-i-0414's blog.",
+  "homepage": "https://github.com/t-i-0414/takudev#readme",
   "bugs": {
     "url": "https://github.com/t-i-0414/takudev/issues",
     "email": "gutlo.ol0414@gmail.com"
   },
-  "homepage": "https://github.com/t-i-0414/takudev#readme",
+  "repository": "git@github.com:t-i-0414/takudev.git",
+  "license": "UNLICENSED",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "typesync"
+    "build": "lerna run build",
+    "commitlint": "commitlint -f HEAD",
+    "format": "lerna run format",
+    "postinstall": "typesync",
+    "lint": "lerna run lint",
+    "prepare": "husky install",
+    "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
+    "test": "lerna run test",
+    "type-check": "lerna run type-check"
   },
-  "volta": {
-    "node": "16.13.1",
-    "yarn": "1.22.17"
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@types/react": "^17.0.37",
     "dotenv": "^10.0.0",
     "npm-run-all": "^4.1.5",
+    "sort-package-json": "^1.53.1",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "typesync": "^0.8.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/eslint": "^8.2.1",
     "@types/jest": "^27.0.3",
     "@types/prettier": "^2.4.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.5.0",
+    "husky": "^7.0.0",
     "jest": "^27.4.5",
+    "lerna": "^4.0.0",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8"
+  },
+  "volta": {
+    "node": "16.13.1",
+    "yarn": "1.22.17"
   }
 }
