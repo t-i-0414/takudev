@@ -15,7 +15,9 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "typesync"
+    "postinstall": "typesync",
+    "prepare": "husky install",
+    "lint": "lerna run lint"
   },
   "volta": {
     "node": "16.13.1",
@@ -30,11 +32,15 @@
     "typesync": "^0.8.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/eslint": "^8.2.1",
     "@types/jest": "^27.0.3",
     "@types/prettier": "^2.4.2",
     "eslint": "^8.5.0",
+    "husky": "^7.0.0",
     "jest": "^27.4.5",
+    "lerna": "^4.0.0",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
