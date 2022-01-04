@@ -12,13 +12,15 @@
 name: 'CodeQL'
 
 on:
-  push:
-    branches: [main]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [main]
-  schedule:
-    - cron: '42 6 * * 1'
+    branches:
+      - 'main'
+      - 'develop'
+      - 'release/**'
+      - 'feature/**'
+      - 'hotfix/**'
+      - '**patch**'
 
 jobs:
   analyze:
@@ -40,12 +42,9 @@ jobs:
             'go',
             'java',
             'javascript',
-            'kotlin',
-            'php',
             'python',
             'ruby',
-            'rust',
-            'scala',
+            'typescript',
           ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
