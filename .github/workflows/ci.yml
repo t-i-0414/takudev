@@ -22,8 +22,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install
+      - uses: ./.github/actions/setup
       - name: Build
         run: yarn build
   lint:
@@ -38,8 +37,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install
+      - uses: ./.github/actions/setup
       - name: Build
         run: yarn build
       - name: Lint
@@ -58,8 +56,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install
+      - uses: ./.github/actions/setup
       - name: Build
         run: yarn build
       - name: Type Check
@@ -76,8 +73,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install
+      - uses: ./.github/actions/setup
       - name: Build
         run: yarn build
       - name: Test
