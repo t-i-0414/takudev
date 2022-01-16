@@ -3,4 +3,5 @@
 
 yarn sort-package-json
 yarn format
+git add .
 yarn lint
