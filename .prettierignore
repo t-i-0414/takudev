@@ -1,4 +1,9 @@
-node_modules
-pacakage.json
-yarn.lock
-*.md
+.cms
+.turbo
+**/node_modules
+**/yarn.lock
+.DS_Store
+.eslintcache
+.eslintignore
+.gitignore
+.prettierignore

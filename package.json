@@ -16,14 +16,38 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "commitlint": "commitlint -f HEAD",
-    "format": "yarn run sort-package-json && turbo run format",
-    "postinstall": "typesync",
-    "lint": "turbo run lint",
-    "prepare": "husky install",
-    "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
+    "format": "run-p format:*",
+    "format:turbo": "turbo run format",
+    "format:eslint": "eslint --fix './*.{js,ts}' --cache --ignore-path ./.eslintignore",
+    "format:prettier": "prettier --write './*'",
+    "format:sort-package-json": "sort-package-json \"package.json\"",
+    "lint": "run-p lint:*",
+    "lint:turbo": "turbo run lint",
+    "lint:eslint": "eslint './*.{js,ts}' --cache --ignore-path ./.eslintignore",
+    "lint:prettier": "prettier --check './*'",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\"",
+    "lint:commit": "commitlint -f HEAD",
+    "precommit": "run-p precommit:*",
+    "precommit:turbo": "turbo run precommit",
+    "precommit:lint-staged": "lint-staged",
     "test": "turbo run test",
-    "type-check": "turbo run type-check"
+    "type-check": "turbo run type-check",
+    "prepare": "husky install",
+    "postinstall": "typesync"
+  },
+  "lint-staged": {
+    "./*.{js,ts}": [
+      "eslint --fix --ignore-path ./.eslintignore",
+      "eslint --ignore-path ./.eslintignore"
+    ],
+    "./*": [
+      "prettier --write --ignore-path ./.prettierignore",
+      "prettier --check --ignore-path ./.prettierignore"
+    ],
+    "./package.json": [
+      "sort-package-json",
+      "sort-package-json --check"
+    ]
   },
   "config": {
     "commitizen": {
@@ -31,7 +55,6 @@
     }
   },
   "dependencies": {
-    "@types/react": "^17.0.37",
     "dotenv": "^10.0.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
@@ -41,23 +64,20 @@
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
     "@types/eslint": "^8.2.1",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.0",
     "@types/prettier": "^2.4.2",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jest": "^25.7.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-testing-library": "^5.0.3",
     "husky": "^7.0.0",
-    "jest": "^27.4.5",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.1.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "sort-package-json": "^1.53.1",
@@ -79,14 +99,31 @@
           "build"
         ]
       },
-      "format": {},
+      "format": {
+        "dependsOn": [
+          "^format"
+        ]
+      },
       "lint": {
         "dependsOn": [
           "format"
         ]
       },
-      "type-check": {}
-    }
+      "type-check": {},
+      "precommit": {
+        "dependsOn": [
+          "^precommit"
+        ]
+      }
+    },
+    "globalDependencies": [
+      ".eslintcache",
+      ".eslintignore",
+      ".eslintrc.js",
+      ".prettierignore",
+      ".prettierc",
+      "tsconfig.json"
+    ]
   },
   "volta": {
     "node": "16.13.1",

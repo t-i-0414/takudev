@@ -5,24 +5,14 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:promise/recommended',
-    'prettier',
-  ],
+  extends: ['airbnb', 'plugin:promise/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   rules: {
-    'no-extra-parens': ['error', 'all'],
     'no-extra-semi': 'error',
     'no-duplicate-imports': 'error',
     'no-unused-vars': [
@@ -50,11 +40,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: [
-        'plugin:testing-library/react',
-        'plugin:jest/all',
-        'plugin:cypress/recommended',
-      ],
+      extends: ['plugin:jest/all'],
     },
   ],
 };
