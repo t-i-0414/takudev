@@ -8,7 +8,40 @@
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "main": "./src/index.ts",
   "types": "./dist/index.d.ts",
-  "devDependencies": {},
+  "scripts": {
+    "format": "run-p format:*",
+    "format:eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ../../.eslintignore",
+    "format:prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "format:sort-package-json": "sort-package-json \"package.json\"",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ../../.eslintignore",
+    "lint:prettier": "prettier . --check --ignore-path ../../.prettierignore",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --ignore-path ../../.eslintignore",
+      "eslint --ignore-path ../../.eslintignore"
+    ],
+    "*": [
+      "prettier --write --ignore-path ../../.prettierignore",
+      "prettier --check --ignore-path ../../.prettierignore"
+    ],
+    "./package.json": [
+      "sort-package-json",
+      "sort-package-json --check"
+    ]
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.3"
+  },
   "volta": {
     "extends": "../../package.json"
   }
