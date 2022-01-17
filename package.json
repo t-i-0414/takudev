@@ -17,7 +17,7 @@
   "scripts": {
     "build": "turbo run build",
     "commitlint": "commitlint -f HEAD",
-    "format": "turbo run format",
+    "format": "yarn run sort-package-json && turbo run format",
     "postinstall": "typesync",
     "lint": "turbo run lint",
     "prepare": "husky install",
@@ -80,7 +80,11 @@
         ]
       },
       "format": {},
-      "lint": {},
+      "lint": {
+        "dependsOn": [
+          "format"
+        ]
+      },
       "type-check": {}
     }
   },
