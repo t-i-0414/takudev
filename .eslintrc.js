@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    'import/no-extraneous-dependencies': ['off'],
     'no-extra-semi': 'error',
     'no-duplicate-imports': 'error',
     'no-unused-vars': [
