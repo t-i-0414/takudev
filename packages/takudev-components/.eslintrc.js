@@ -25,7 +25,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react'],
+      extends: ['plugin:jest/all', 'plugin:testing-library/react'],
     },
   ],
 };
