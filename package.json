@@ -90,44 +90,6 @@
     "ts-node-dev": "^1.1.8",
     "turbo": "^1.1.2"
   },
-  "turbo": {
-    "baseBranch": "origin/develop",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "test": {
-        "dependsOn": [
-          "build"
-        ]
-      },
-      "format": {
-        "dependsOn": [
-          "^format"
-        ]
-      },
-      "lint": {
-        "dependsOn": [
-          "format"
-        ]
-      },
-      "type-check": {},
-      "precommit": {
-        "dependsOn": [
-          "^precommit"
-        ]
-      }
-    },
-    "globalDependencies": [
-      ".eslintignore",
-      ".eslintrc.js",
-      ".prettierignore",
-      ".prettierc",
-      "tsconfig.json"
-    ]
-  },
   "volta": {
     "node": "16.13.1",
     "yarn": "1.22.17"

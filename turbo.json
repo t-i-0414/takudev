@@ -1,0 +1,28 @@
+{
+  "baseBranch": "origin/develop",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "format": {
+      "dependsOn": ["^format"]
+    },
+    "lint": {
+      "dependsOn": ["format"]
+    },
+    "type-check": {},
+    "precommit": {
+      "dependsOn": ["^precommit"]
+    }
+  },
+  "globalDependencies": [
+    ".eslintignore",
+    ".eslintrc.js",
+    ".prettierignore",
+    ".prettierc",
+    "tsconfig.json"
+  ]
+}
