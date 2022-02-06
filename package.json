@@ -55,76 +55,42 @@
     }
   },
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.4",
+    "typescript": "^4.5.5",
     "typesync": "^0.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
+    "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
-    "@types/eslint": "^8.2.1",
+    "@types/eslint": "^8.4.1",
     "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.15",
     "@types/prettier": "^2.4.2",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
-    "eslint": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "find-yarn-workspace-root": "^2.0.0",
     "husky": "^7.0.0",
-    "jest": "^27.4.7",
-    "lint-staged": "^12.1.7",
+    "jest": "^27.5.0",
+    "lint-staged": "^12.3.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
-    "sort-package-json": "^1.53.1",
+    "sort-package-json": "^1.54.0",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
-    "turbo": "^1.0.28"
+    "turbo": "^1.1.2"
   },
-  "turbo": {
-    "baseBranch": "origin/develop",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "test": {
-        "dependsOn": [
-          "build"
-        ]
-      },
-      "format": {
-        "dependsOn": [
-          "^format"
-        ]
-      },
-      "lint": {
-        "dependsOn": [
-          "format"
-        ]
-      },
-      "type-check": {},
-      "precommit": {
-        "dependsOn": [
-          "^precommit"
-        ]
-      }
-    },
-    "globalDependencies": [
-      ".eslintignore",
-      ".eslintrc.js",
-      ".prettierignore",
-      ".prettierc",
-      "tsconfig.json"
-    ]
-  },
+  "packageManager": "yarn@1.22.17",
   "volta": {
     "node": "16.13.1",
     "yarn": "1.22.17"
