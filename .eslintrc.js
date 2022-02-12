@@ -11,9 +11,46 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'import/no-extraneous-dependencies': ['off'],
+    'import/no-relative-parent-imports': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'parent',
+            position: 'before',
+          },
+        ],
+        alphabetize: {
+          order: 'asc',
+        },
+        'newlines-between': 'always',
+      },
+    ],
+    'import/prefer-default-export': ['off'],
     'no-extra-semi': 'error',
     'no-duplicate-imports': 'error',
     'no-unused-vars': [
@@ -37,6 +74,16 @@ module.exports = {
       },
     ],
     'sort-imports': 'error',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
   overrides: [
     {
