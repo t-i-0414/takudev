@@ -39,6 +39,11 @@ module.exports = {
         ],
         pathGroups: [
           {
+            pattern: '@takudev/**',
+            group: 'parent',
+            position: 'before',
+          },
+          {
             pattern: '~/**',
             group: 'parent',
             position: 'before',

@@ -17,12 +17,5 @@
     "precommit": {
       "dependsOn": ["^precommit"]
     }
-  },
-  "globalDependencies": [
-    ".eslintignore",
-    ".eslintrc.js",
-    ".prettierignore",
-    ".prettierc",
-    "tsconfig.json"
-  ]
+  }
 }
