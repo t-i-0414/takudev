@@ -1,9 +1,9 @@
 {
-  "name": "takudev-cms",
+  "name": "@takudev/cms",
   "version": "1.0.0",
   "private": true,
   "description": "This is a package of t-i-0414's blog related cms.",
-  "homepage": "https://github.com/t-i-0414/takudev/takudev-cms#readme",
+  "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
   "license": "UNLICENSED",
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "devDependencies": {},
