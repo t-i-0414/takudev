@@ -14,6 +14,11 @@ export const HomePage: React.FC = () => {
       <button type='button' onClick={handleColorMode}>
         Change color mode
       </button>
+      <style jsx>{`
+        h1 {
+          color: ${colorMode === 'light' ? 'black' : 'white'};
+        }
+      `}</style>
     </PageTemplate>
   );
 };
