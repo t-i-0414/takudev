@@ -24,7 +24,6 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': ['off'],
-    'import/no-relative-parent-imports': 'error',
     'import/order': [
       'error',
       {
@@ -40,7 +39,7 @@ module.exports = {
         pathGroups: [
           {
             pattern: '@takudev/**',
-            group: 'parent',
+            group: 'external',
             position: 'before',
           },
           {
@@ -78,7 +77,6 @@ module.exports = {
         next: 'return',
       },
     ],
-    'sort-imports': 'error',
   },
   settings: {
     'import/resolver': {

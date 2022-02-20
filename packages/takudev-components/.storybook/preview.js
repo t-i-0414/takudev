@@ -1,4 +1,6 @@
+import * as React from 'react';
 import { Parameters } from '@storybook/addons';
+import { ColorTheme } from '../src/themes';
 
 export const parameters: Parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -9,3 +11,11 @@ export const parameters: Parameters = {
     },
   },
 };
+
+export const decorators = [
+  Story => (
+    <ColorTheme>
+      <Story />
+    </ColorTheme>
+  ),
+];
