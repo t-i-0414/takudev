@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Parameters } from '@storybook/addons';
 import { ColorTheme } from '../src/themes';
 
-export const parameters: Parameters = {
+export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

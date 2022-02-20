@@ -93,5 +93,11 @@ module.exports = {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
       extends: ['plugin:jest/all'],
     },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'no-unused-vars': 'off',
+      },
+    },
   ],
 };
