@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useContext } from 'react';
 
+import { useColor } from '~/hooks';
 import { PageTemplate } from '~/templates';
 import { ColorThemeContext } from '~/themes';
 
 export const HomePage: React.FC = () => {
   const { colorMode, handleColorMode } = useContext(ColorThemeContext);
+  const { color } = useColor(colorMode);
 
   return (
     <PageTemplate>
@@ -16,7 +18,7 @@ export const HomePage: React.FC = () => {
       </button>
       <style jsx>{`
         h1 {
-          color: ${colorMode === 'light' ? 'black' : 'white'};
+          color: ${color};
         }
       `}</style>
     </PageTemplate>
