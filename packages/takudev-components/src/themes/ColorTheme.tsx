@@ -19,7 +19,10 @@ const defaultContextValue: ThemeContext = {
 export const ColorThemeContext =
   createContext<ThemeContext>(defaultContextValue);
 
-export const ColorTheme: React.FC = ({ children }) => {
+type Props = {
+  mode?: ColorMode;
+};
+export const ColorTheme: React.FC<Props> = ({ children, mode }) => {
   const initializeColorMode = useCallback((): ColorMode => {
     const preservedColorMode = localStorage.getItem(localStorageKey);
     const preservedColorModeExists =
@@ -44,7 +47,12 @@ export const ColorTheme: React.FC = ({ children }) => {
     return (localStorage.getItem(localStorageKey) as ColorMode) || lightMode;
   }, []);
 
-  const [colorMode, setColorMode] = useState<ColorMode>(initializeColorMode());
+  const initialColorMode = useMemo(
+    () => mode || initializeColorMode(),
+    [mode, initializeColorMode],
+  );
+
+  const [colorMode, setColorMode] = useState<ColorMode>(initialColorMode);
 
   const handleColorMode = useCallback(() => {
     const newColorMode: ColorMode =
