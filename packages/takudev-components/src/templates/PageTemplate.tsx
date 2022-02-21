@@ -1,7 +1,26 @@
 import * as React from 'react';
+import { useContext } from 'react';
 
-import { ColorTheme } from '~/themes/ColorTheme';
+import { useColor } from '~/hooks';
+import { ColorTheme, ColorThemeContext } from '~/themes';
 
-export const PageTemplate: React.FC = ({ children }) => (
-  <ColorTheme>{children}</ColorTheme>
-);
+export const PageTemplate: React.FC = ({ children }) => {
+  const { colorMode } = useContext(ColorThemeContext);
+  const { backgroundColor } = useColor(colorMode);
+
+  return (
+    <>
+      <ColorTheme>
+        <div>{children}</div>
+      </ColorTheme>
+      <style jsx>
+        {`
+          div {
+            transition: all 0.2s ease;
+            background-color: ${backgroundColor};
+          }
+        `}
+      </style>
+    </>
+  );
+};
