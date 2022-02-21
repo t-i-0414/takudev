@@ -20,6 +20,9 @@ export const HomePage: React.FC = () => {
         h1 {
           color: ${textColor};
         }
+        p {
+          color: ${textColor};
+        }
       `}</style>
     </PageTemplate>
   );
