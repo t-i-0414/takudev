@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { ColorTheme } from '../src/themes';
+import { customViewports } from './customViewports';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -9,4 +11,8 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  viewport: {
+    viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
+  },
+  layout: 'fullscreen',
 };
