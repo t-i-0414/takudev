@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { LightColorThemeTemplate, DarkColorThemeTemplate } from '~/templates';
+
 import { HomePage } from './HomePage';
 
 export default {
@@ -7,4 +9,14 @@ export default {
   component: HomePage,
 };
 
-export const Primary = () => <HomePage />;
+export const Light = () => (
+  <LightColorThemeTemplate>
+    <HomePage />
+  </LightColorThemeTemplate>
+);
+
+export const Dark = () => (
+  <DarkColorThemeTemplate>
+    <HomePage />
+  </DarkColorThemeTemplate>
+);

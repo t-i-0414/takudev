@@ -10,11 +10,3 @@ export const parameters = {
     },
   },
 };
-
-export const decorators = [
-  Story => (
-    <ColorTheme>
-      <Story />
-    </ColorTheme>
-  ),
-];
