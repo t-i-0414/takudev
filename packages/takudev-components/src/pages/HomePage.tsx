@@ -7,7 +7,7 @@ import { ColorThemeContext } from '~/themes';
 
 export const HomePage: React.FC = () => {
   const { colorMode, handleColorMode } = useContext(ColorThemeContext);
-  const { color } = useColor(colorMode);
+  const { textColor } = useColor(colorMode);
 
   return (
     <PageTemplate>
@@ -18,7 +18,7 @@ export const HomePage: React.FC = () => {
       </button>
       <style jsx>{`
         h1 {
-          color: ${color};
+          color: ${textColor};
         }
       `}</style>
     </PageTemplate>

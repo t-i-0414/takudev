@@ -1,5 +1,5 @@
 import type { ColorMode } from '~/@types';
-import { lightColorMap, darkColorMap } from '~/consts';
+import { lightColorPaletteMap, darkColorPaletteMap } from '~/consts';
 
 export const useColor = (colorMode: ColorMode) =>
-  colorMode === 'light' ? lightColorMap : darkColorMap;
+  colorMode === 'light' ? lightColorPaletteMap : darkColorPaletteMap;

@@ -6,7 +6,7 @@ import { ColorTheme, ColorThemeContext } from '~/themes';
 
 export const PageTemplate: React.FC = ({ children }) => {
   const { colorMode } = useContext(ColorThemeContext);
-  const { backgroundColor } = useColor(colorMode);
+  const { baseColor } = useColor(colorMode);
 
   return (
     <>
@@ -17,7 +17,7 @@ export const PageTemplate: React.FC = ({ children }) => {
         {`
           div {
             transition: all 0.2s ease;
-            background-color: ${backgroundColor};
+            background-color: ${baseColor};
           }
         `}
       </style>
