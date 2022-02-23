@@ -6,6 +6,7 @@ export type LightColorPaletteMap = Readonly<{
   textColor: string;
   borderColor: string;
   sublabelColor: string;
+  shadowColor: string;
   primaryColor: string;
   secondaryColor: string;
   warningColor: string;

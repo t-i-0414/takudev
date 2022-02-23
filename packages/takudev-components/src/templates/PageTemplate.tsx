@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useContext } from 'react';
 
+import { globalStyle } from '~/consts';
 import { useColor } from '~/hooks';
 import { ColorTheme, ColorThemeContext } from '~/themes';
 
@@ -13,10 +14,10 @@ export const PageTemplate: React.FC = ({ children }) => {
       <ColorTheme>
         <div>{children}</div>
       </ColorTheme>
+      <style jsx>{globalStyle}</style>
       <style jsx>
         {`
           div {
-            transition: all 0.2s ease;
             background-color: ${baseColor};
           }
         `}
