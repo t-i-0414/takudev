@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { LightColorThemeTemplate, DarkColorThemeTemplate } from '~/templates';
-
 import { HomePage } from './HomePage';
+
+import { ColorThemeTemplate } from '~/../.storybook/ColorThemeTemplate';
 
 export default {
   title: 'Pages/HomePage',
@@ -10,13 +10,13 @@ export default {
 };
 
 export const Light = () => (
-  <LightColorThemeTemplate>
+  <ColorThemeTemplate colorMode='light'>
     <HomePage />
-  </LightColorThemeTemplate>
+  </ColorThemeTemplate>
 );
 
 export const Dark = () => (
-  <DarkColorThemeTemplate>
+  <ColorThemeTemplate colorMode='dark'>
     <HomePage />
-  </DarkColorThemeTemplate>
+  </ColorThemeTemplate>
 );
