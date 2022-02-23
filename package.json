@@ -33,7 +33,8 @@
     "test": "turbo run test",
     "type-check": "turbo run type-check",
     "prepare": "husky install",
-    "postinstall": "typesync"
+    "postinstall": "typesync",
+    "storybook": "cd packages/takudev-components && yarn storybook"
   },
   "lint-staged": {
     "./*.{js,ts}": [
