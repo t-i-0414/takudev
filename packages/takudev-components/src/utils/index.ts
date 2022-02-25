@@ -1,1 +1,1 @@
-export * from './handleWindowVerticalHeight';
+export * from './handleCustomVhVariable';

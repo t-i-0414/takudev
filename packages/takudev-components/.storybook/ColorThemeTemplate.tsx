@@ -4,7 +4,7 @@ import { ColorMode } from '~/@types';
 import { globalStyle } from '~/consts';
 import { useColor } from '~/hooks';
 import { ColorTheme, ColorThemeContext } from '~/themes';
-import { handleWindowVerticalHeight } from '~/utils';
+import { handleCustomVhVariable } from '~/utils';
 
 type WrapperProps = {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ export const ColorThemeTemplate: React.FC<TemplateProps> = ({
   const { colorMode } = useContext(ColorThemeContext);
   const { baseColor } = useColor(colorMode);
 
-  handleWindowVerticalHeight();
+  handleCustomVhVariable();
 
   return (
     <ColorThemeTemplateWrapper colorMode={specifiedColorMode}>

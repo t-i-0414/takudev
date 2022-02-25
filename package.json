@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:graph": "turbo run build --graph",
     "format": "run-p format:*",
     "format:turbo": "turbo run format",
     "format:eslint": "eslint --fix './*.{js,ts}' --cache --ignore-path ./.eslintignore",
