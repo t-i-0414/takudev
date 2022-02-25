@@ -1,6 +1,6 @@
 import { throttle } from 'throttle-debounce';
 
-export const handleWindowVerticalHeight = () => {
+export const handleCustomVhVariable = () => {
   if (typeof window !== 'undefined') {
     const setFillHeight = () => {
       const vh = window.innerHeight * 0.01;

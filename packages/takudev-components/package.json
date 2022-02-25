@@ -13,6 +13,7 @@
     "format:eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ../../.eslintignore",
     "format:prettier": "prettier . --write --ignore-path ../../.prettierignore",
     "format:sort-package-json": "sort-package-json \"package.json\"",
+    "postinstall": "typesync",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ../../.eslintignore",
     "lint:prettier": "prettier . --check --ignore-path ../../.prettierignore",

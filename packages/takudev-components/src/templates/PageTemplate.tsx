@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { globalStyle } from '~/consts';
 import { useColor } from '~/hooks';
 import { ColorTheme, ColorThemeContext } from '~/themes';
-import { handleWindowVerticalHeight } from '~/utils';
+import { handleCustomVhVariable } from '~/utils';
 
 const PageTemplateWrapper: React.FC = ({ children }) => (
   <ColorTheme>{children}</ColorTheme>
@@ -13,7 +13,7 @@ export const PageTemplate: React.FC = ({ children }) => {
   const { colorMode } = useContext(ColorThemeContext);
   const { baseColor, textColor } = useColor(colorMode);
 
-  handleWindowVerticalHeight();
+  handleCustomVhVariable();
 
   return (
     <>
