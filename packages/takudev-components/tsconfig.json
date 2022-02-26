@@ -7,8 +7,9 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "storybook/*": ["./../.storybook/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", ".storybook/ColorThemeTemplates.tsx"]
 }
