@@ -7,7 +7,7 @@ import { ColorThemeContext } from '~/themes';
 
 export const HomePageContent: React.FC = React.memo(() => {
   const { colorMode, handleColorMode } = useContext(ColorThemeContext);
-  const { textColor, shadowColor } = useColor(colorMode);
+  const { textColor, shadowColor, borderColor } = useColor(colorMode);
 
   return (
     <>
@@ -21,7 +21,7 @@ export const HomePageContent: React.FC = React.memo(() => {
         h1 {
           color: ${textColor};
           margin: 0;
-          border: 10px solid ${textColor};
+          border: 4px solid ${borderColor};
         }
         p {
           color: ${textColor};
