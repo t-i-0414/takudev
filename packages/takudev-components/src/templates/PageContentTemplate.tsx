@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import isEqual from 'react-fast-compare';
-import { Helmet } from 'react-helmet';
+import { throttle } from 'throttle-debounce';
 
 import { useColor } from '~/hooks';
 import { ColorThemeContext } from '~/themes';
-import { handleCustomVhVariable } from '~/utils';
+import { handleCustomVh, handleViewPort } from '~/utils';
 
 type Props = {
   children: React.ReactNode;
@@ -16,14 +16,24 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
     const { colorMode } = useContext(ColorThemeContext);
     const { baseColor, textColor } = useColor(colorMode);
 
-    handleCustomVhVariable();
+    useEffect(() => {
+      handleCustomVh();
+      handleViewPort();
+
+      const throttledHandleCustomVhVariable = throttle(16, handleCustomVh);
+      const throttledHandleViewPort = throttle(16, handleViewPort);
+
+      window.addEventListener('resize', throttledHandleCustomVhVariable);
+      window.addEventListener('resize', throttledHandleViewPort);
+
+      return () => {
+        window.removeEventListener('resize', throttledHandleCustomVhVariable);
+        window.removeEventListener('resize', throttledHandleViewPort);
+      };
+    }, []);
 
     return (
       <>
-        <Helmet>
-          <link href='https://unpkg.com/sanitize.css' rel='stylesheet' />
-          <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
-        </Helmet>
         <div className='page-wrapper'>
           {hasHeader && <header>header</header>}
           <main className='main-container'>{children}</main>
@@ -33,18 +43,18 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
           *,
           ::before,
           ::after {
-            transition: background-color 0.2s ease, color 0.2s ease,
-              border-color 0.2s ease, box-shadow 0.2s ease;
+            background-color: ${baseColor};
             font-family: forma-djr-micro, system-ui, -apple-system, 'Segoe UI',
               Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
               'Segoe UI Emoji';
+            transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, box-shadow 0.2s ease;
           }
           .page-wrapper {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             min-height: calc(var(--vh, 1vh) * 100);
-            background-color: ${baseColor};
           }
           .main-container {
             flex: 1;

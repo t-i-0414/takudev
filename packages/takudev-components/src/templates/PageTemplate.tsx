@@ -5,6 +5,7 @@ import { ColorMode } from '~/@types';
 import { ColorTheme } from '~/themes';
 
 import { PageContentTemplate } from './PageContentTemplate';
+import { PageHeadTemplate } from './PageHeadTemplate';
 
 type Props = {
   children: React.ReactNode;
@@ -19,11 +20,14 @@ export const PageTemplate: React.FC<Props> = React.memo(
     hasHeader = true,
     hasFooter = true,
   }: Props) => (
-    <ColorTheme mode={initialColorMode}>
-      <PageContentTemplate hasHeader={hasHeader} hasFooter={hasFooter}>
-        {children}
-      </PageContentTemplate>
-    </ColorTheme>
+    <>
+      <PageHeadTemplate />
+      <ColorTheme mode={initialColorMode}>
+        <PageContentTemplate hasHeader={hasHeader} hasFooter={hasFooter}>
+          {children}
+        </PageContentTemplate>
+      </ColorTheme>
+    </>
   ),
   isEqual,
 );
