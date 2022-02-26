@@ -17,6 +17,3 @@ export const HomePage: React.FC<Props> = React.memo(
   isEqual,
 );
 HomePage.displayName = 'HomePage';
-HomePage.defaultProps = {
-  initialColorMode: undefined,
-};

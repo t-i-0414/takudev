@@ -21,10 +21,8 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': ['error', { explicitSpread: 'ignore' }],
-    'react/require-default-props': [
-      'error',
-      { ignoreFunctionalComponents: true },
-    ],
+    'react/require-default-props': 'off',
+    'react/prop-types': 'off',
   },
   overrides: [
     {
