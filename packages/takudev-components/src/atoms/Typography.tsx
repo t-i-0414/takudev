@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import isEqual from 'react-fast-compare';
 
 import { useColor } from '~/hooks';
 import { ColorThemeContext } from '~/themes';
@@ -20,5 +21,5 @@ export const Typography: React.FC<Props> = React.memo(({ children }: Props) => {
       `}</style>
     </>
   );
-});
+}, isEqual);
 Typography.displayName = 'Typography';
