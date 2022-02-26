@@ -1,49 +1,33 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { globalStyle } from '~/consts';
-import { useColor } from '~/hooks';
-import { ColorTheme, ColorThemeContext } from '~/themes';
-import { handleCustomVhVariable } from '~/utils';
+import { ColorMode } from '~/@types';
+import { ColorTheme } from '~/themes';
 
-const PageTemplateWrapper: React.FC = ({ children }) => (
-  <ColorTheme>{children}</ColorTheme>
+import { PageContentTemplate } from './PageContentTemplate';
+
+type Props = {
+  children: React.ReactNode;
+  initialColorMode?: ColorMode;
+  hasHeader?: boolean;
+  hasFooter?: boolean;
+};
+export const PageTemplate: React.FC<Props> = React.memo(
+  ({
+    children,
+    initialColorMode,
+    hasHeader = true,
+    hasFooter = true,
+  }: Props) => (
+    <ColorTheme mode={initialColorMode}>
+      <PageContentTemplate hasHeader={hasHeader} hasFooter={hasFooter}>
+        {children}
+      </PageContentTemplate>
+    </ColorTheme>
+  ),
 );
-
-export const PageTemplate: React.FC = ({ children }) => {
-  const { colorMode } = useContext(ColorThemeContext);
-  const { baseColor, textColor } = useColor(colorMode);
-
-  handleCustomVhVariable();
-
-  return (
-    <>
-      <PageTemplateWrapper>
-        <div className='page-wrapper'>
-          <header>header</header>
-          <main>{children}</main>
-          <footer>footer</footer>
-        </div>
-      </PageTemplateWrapper>
-      <style jsx>{globalStyle}</style>
-      <style jsx>
-        {`
-          .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            min-height: calc(var(--vh, 1vh) * 100);
-            background-color: ${baseColor};
-          }
-          header,
-          footer {
-            color: ${textColor};
-          }
-          main {
-            flex: 1;
-            overflow-x: hidden;
-          }
-        `}
-      </style>
-    </>
-  );
+PageTemplate.displayName = 'PageTemplate';
+PageTemplate.defaultProps = {
+  initialColorMode: undefined,
+  hasHeader: true,
+  hasFooter: true,
 };

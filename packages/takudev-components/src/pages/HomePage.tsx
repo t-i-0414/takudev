@@ -1,33 +1,20 @@
 import * as React from 'react';
-import { useContext } from 'react';
 
-import { useColor } from '~/hooks';
+import { ColorMode } from '~/@types';
+import { HomePageContent } from '~/organisms';
 import { PageTemplate } from '~/templates';
-import { ColorThemeContext } from '~/themes';
 
-export const HomePage: React.FC = () => {
-  const { colorMode, handleColorMode } = useContext(ColorThemeContext);
-  const { textColor, shadowColor } = useColor(colorMode);
-
-  return (
-    <PageTemplate>
-      <h1>Home Page</h1>
-      <p>{colorMode}</p>
-      <button type='button' onClick={handleColorMode}>
-        Change color mode
-      </button>
-      <style jsx>{`
-        h1 {
-          color: ${textColor};
-          margin: 0;
-          border: 10px solid ${textColor};
-        }
-        p {
-          color: ${textColor};
-          box-shadow: 10px 5px 5px ${shadowColor};
-        }
-      `}</style>
-    </PageTemplate>
-  );
+type Props = {
+  initialColorMode?: ColorMode;
 };
+export const HomePage: React.FC<Props> = React.memo(
+  ({ initialColorMode }: Props) => (
+    <PageTemplate initialColorMode={initialColorMode}>
+      <HomePageContent />
+    </PageTemplate>
+  ),
+);
 HomePage.displayName = 'HomePage';
+HomePage.defaultProps = {
+  initialColorMode: undefined,
+};

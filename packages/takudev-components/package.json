@@ -37,9 +37,9 @@
     ]
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "styled-jsx": "^5.0.0"
   },
   "devDependencies": {
@@ -53,6 +53,7 @@
     "@types/babel__core": "^7.1.18",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@types/react-helmet": "^6.1.5",
     "@types/throttle-debounce": "^2.1.0",
     "@types/webpack": "5.28.0",
     "babel-loader": "^8.2.3",
