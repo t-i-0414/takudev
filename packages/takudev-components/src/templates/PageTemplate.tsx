@@ -1,4 +1,5 @@
 import React from 'react';
+import isEqual from 'react-fast-compare';
 
 import { ColorMode } from '~/@types';
 import { ColorTheme } from '~/themes';
@@ -24,6 +25,7 @@ export const PageTemplate: React.FC<Props> = React.memo(
       </PageContentTemplate>
     </ColorTheme>
   ),
+  isEqual,
 );
 PageTemplate.displayName = 'PageTemplate';
 PageTemplate.defaultProps = {

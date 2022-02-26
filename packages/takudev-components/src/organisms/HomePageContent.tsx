@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+import isEqual from 'react-fast-compare';
 
 import { Typography } from '~/atoms';
 import { useColor } from '~/hooks';
@@ -30,5 +30,5 @@ export const HomePageContent: React.FC = React.memo(() => {
       `}</style>
     </>
   );
-});
+}, isEqual);
 HomePageContent.displayName = 'HomePageContent';

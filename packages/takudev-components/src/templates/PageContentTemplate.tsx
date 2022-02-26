@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import isEqual from 'react-fast-compare';
 import { Helmet } from 'react-helmet';
 
 import { useColor } from '~/hooks';
@@ -57,5 +58,6 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
       </>
     );
   },
+  isEqual,
 );
 PageContentTemplate.displayName = 'PageContentTemplate';

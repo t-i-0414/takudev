@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isEqual from 'react-fast-compare';
 
 import { ColorMode } from '~/@types';
 import { HomePageContent } from '~/organisms';
@@ -13,6 +14,7 @@ export const HomePage: React.FC<Props> = React.memo(
       <HomePageContent />
     </PageTemplate>
   ),
+  isEqual,
 );
 HomePage.displayName = 'HomePage';
 HomePage.defaultProps = {
