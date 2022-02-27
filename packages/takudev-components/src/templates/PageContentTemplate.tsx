@@ -3,6 +3,7 @@ import isEqual from 'react-fast-compare';
 import { throttle } from 'throttle-debounce';
 
 import { useColor } from '~/hooks';
+import { PageHeader } from '~/organisms';
 import { ColorThemeContext } from '~/themes';
 import { handleCustomVh, handleViewPort } from '~/utils';
 
@@ -35,7 +36,7 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
     return (
       <>
         <div className='page-wrapper'>
-          {hasHeader && <header>header</header>}
+          {hasHeader && <PageHeader />}
           <main className='main-container'>{children}</main>
           {hasFooter && <footer>footer</footer>}
         </div>
