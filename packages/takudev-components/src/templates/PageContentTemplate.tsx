@@ -61,7 +61,6 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
             flex: 1;
             overflow-x: hidden;
           }
-          header,
           footer {
             color: ${textColor};
           }

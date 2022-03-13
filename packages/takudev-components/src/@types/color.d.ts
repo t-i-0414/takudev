@@ -1,7 +1,7 @@
 export type ColorMode = 'light' | 'dark';
 export type ColorModeMap = { [keyAndValue in ColorMode]: keyAndValue };
 
-export type LightColorPaletteMap = Readonly<{
+export type ColorPaletteMap = Readonly<{
   baseColor: string;
   textColor: string;
   borderColor: string;
@@ -10,11 +10,8 @@ export type LightColorPaletteMap = Readonly<{
   primaryColor: string;
   secondaryColor: string;
   warningColor: string;
+  headerColor: string;
+  headerTextColor: string;
+  footerColor: string;
+  footerTextColor: string;
 }>;
-
-export type DarkColorPaletteMap = Readonly<
-  LightColorPaletteMap & {
-    headerColor: string;
-    footerColor: string;
-  }
->;

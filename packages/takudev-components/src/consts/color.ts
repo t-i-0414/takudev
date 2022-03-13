@@ -1,15 +1,11 @@
-import type {
-  ColorModeMap,
-  LightColorPaletteMap,
-  DarkColorPaletteMap,
-} from '~/@types';
+import type { ColorModeMap, ColorPaletteMap } from '~/@types';
 
 export const colorModeMap: ColorModeMap = {
   light: 'light',
   dark: 'dark',
 } as const;
 
-export const lightColorPaletteMap: LightColorPaletteMap = {
+export const lightColorPaletteMap: ColorPaletteMap = {
   baseColor: '#fafafa',
   textColor: '#0d0d0d',
   borderColor: '#4f4f4f',
@@ -18,9 +14,13 @@ export const lightColorPaletteMap: LightColorPaletteMap = {
   primaryColor: '#7cefff',
   secondaryColor: '#b9f5b1',
   warningColor: '#f23535',
+  headerColor: '#0D0D0D',
+  headerTextColor: '#fcfcfc',
+  footerColor: '#0D0D0D',
+  footerTextColor: '#fcfcfc',
 } as const;
 
-export const darkColorPaletteMap: DarkColorPaletteMap = {
+export const darkColorPaletteMap: ColorPaletteMap = {
   ...lightColorPaletteMap,
   baseColor: '#0d0d0d',
   textColor: '#fcfcfc',
