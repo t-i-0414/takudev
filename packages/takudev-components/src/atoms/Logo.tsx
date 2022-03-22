@@ -7,16 +7,19 @@ import { ColorThemeContext } from '~/themes';
 type Props = {
   color?: string;
   href: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
-};
+} & React.DetailedHTMLProps<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>;
 
-export const Logo: React.FC<Props> = React.memo(({ color, href }) => {
+export const Logo: React.FC<Props> = React.memo(({ color, href, ...rest }) => {
   const { colorMode } = useContext(ColorThemeContext);
   const { textColor } = useColor(colorMode);
   const logoColor = color || textColor;
 
   return (
     <>
-      <a href={href} className='logo'>
+      <a href={href} className='logo' {...rest}>
         Taku.dev
       </a>
       <style jsx>
