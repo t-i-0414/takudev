@@ -22,18 +22,21 @@ export const Logo: React.FC<Props> = React.memo(({ color, href }) => {
       <style jsx>
         {`
           .logo {
+            color: ${logoColor};
             display: block;
-            width: fit-content;
             font-family: futura-pt, system-ui, -apple-system, 'Segoe UI', Roboto,
               Helvetica, Arial, sans-serif, 'Apple Color Emoji',
               'Segoe UI Emoji';
             font-size: 28px;
-            font-weight: 700;
             font-style: italic;
+            font-weight: 700;
             text-decoration: none;
-            color: ${logoColor};
+            width: fit-content;
           }
           .logo:hover {
+            opacity: 0.8;
+          }
+          .logo:focus-visible {
             opacity: 0.8;
           }
           .logo:active {
