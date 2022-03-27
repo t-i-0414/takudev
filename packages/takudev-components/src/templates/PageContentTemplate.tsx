@@ -9,11 +9,12 @@ import { handleCustomVh, handleViewPort } from '~/utils';
 
 type Props = {
   children: React.ReactNode;
+  hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
   hasHeader: boolean;
   hasFooter: boolean;
 };
 export const PageContentTemplate: React.FC<Props> = React.memo(
-  ({ children, hasHeader, hasFooter }: Props) => {
+  ({ children, hrefToHome, hasHeader, hasFooter }: Props) => {
     const { colorMode } = useContext(ColorThemeContext);
     const { baseColor, textColor } = useColor(colorMode);
 
@@ -36,7 +37,7 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
     return (
       <>
         <div className='page-wrapper'>
-          {hasHeader && <PageHeader />}
+          {hasHeader && <PageHeader hrefToHome={hrefToHome} />}
           <main className='main-container'>{children}</main>
           {hasFooter && <footer>footer</footer>}
         </div>

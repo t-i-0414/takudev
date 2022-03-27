@@ -7,10 +7,7 @@ import { ColorThemeContext } from '~/themes';
 type Props = {
   color?: string;
   href: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
-} & React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
+} & React.ComponentPropsWithoutRef<'a'>;
 
 export const Logo: React.FC<Props> = React.memo(({ color, href, ...rest }) => {
   const { colorMode } = useContext(ColorThemeContext);

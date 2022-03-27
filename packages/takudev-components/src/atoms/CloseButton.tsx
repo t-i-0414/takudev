@@ -8,10 +8,7 @@ type Props = {
   size?: number;
   ariaLabel: React.ButtonHTMLAttributes<HTMLButtonElement>['aria-label'];
   onClick: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
-} & React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
+} & React.ComponentPropsWithoutRef<'button'>;
 
 export const CloseButton: React.FC<Props> = React.memo(
   ({ size = 18, ariaLabel, onClick, ...rest }) => {

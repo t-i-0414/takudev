@@ -6,17 +6,17 @@ import { useColor } from '~/hooks';
 import { ColorThemeContext } from '~/themes';
 
 type Props = {
-  toHomeHref: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
+  hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
 };
 
-export const PageHeader: React.FC<Props> = React.memo(({ toHomeHref }) => {
+export const PageHeader: React.FC<Props> = React.memo(({ hrefToHome }) => {
   const { colorMode } = useContext(ColorThemeContext);
   const { headerTextColor, headerColor } = useColor(colorMode);
 
   return (
     <>
       <header>
-        <Logo color={headerTextColor} href={toHomeHref} />
+        <Logo color={headerTextColor} href={hrefToHome} />
       </header>
       <style jsx>
         {`

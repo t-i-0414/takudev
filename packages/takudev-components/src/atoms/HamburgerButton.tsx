@@ -4,10 +4,7 @@ import isEqual from 'react-fast-compare';
 type Props = {
   ariaLabel: React.ButtonHTMLAttributes<HTMLButtonElement>['aria-label'];
   onClick: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
-} & React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
+} & React.ComponentPropsWithoutRef<'button'>;
 
 export const HamburgerButton: React.FC<Props> = React.memo(
   ({ ariaLabel, onClick, ...rest }) => {

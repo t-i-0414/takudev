@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { PageHeader } from './PageHeader';
 
@@ -14,12 +14,12 @@ export default {
 
 export const Light = () => (
   <LightThemeTemplate>
-    <PageHeader toHomeHref='#' />
+    <PageHeader hrefToHome='#' />
   </LightThemeTemplate>
 );
 
 export const Dark = () => (
   <DarkThemeTemplate>
-    <PageHeader toHomeHref='#' />
+    <PageHeader hrefToHome='#' />
   </DarkThemeTemplate>
 );
