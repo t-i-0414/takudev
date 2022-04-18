@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import { Typography } from './Typography';
+import { Logo } from './Logo';
 
 import {
   LightThemeTemplate,
@@ -8,18 +8,18 @@ import {
 } from 'storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Atoms/Typography',
-  component: Typography,
+  title: 'Atoms/Logo',
+  component: Logo,
 };
 
 export const Light = () => (
   <LightThemeTemplate>
-    <Typography>Typography</Typography>
+    <Logo href='#' />
   </LightThemeTemplate>
 );
 
 export const Dark = () => (
   <DarkThemeTemplate>
-    <Typography>Typography</Typography>
+    <Logo href='#' />
   </DarkThemeTemplate>
 );

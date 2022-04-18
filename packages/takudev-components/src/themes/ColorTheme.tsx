@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { createContext, useCallback, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 
 import type { ColorMode } from '~/@types';
 import { colorModeMap } from '~/consts';

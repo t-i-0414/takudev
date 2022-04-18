@@ -20,11 +20,15 @@ module.exports = {
         extensions: ['.ts', '.tsx'],
       },
     ],
-    'react/jsx-props-no-spreading': ['error', { explicitSpread: 'ignore' }],
-    'react/require-default-props': [
+    'react/jsx-props-no-spreading': [
       'error',
-      { ignoreFunctionalComponents: true },
+      {
+        html: 'ignore',
+        explicitSpread: 'ignore',
+      },
     ],
+    'react/require-default-props': 'off',
+    'react/prop-types': 'off',
   },
   overrides: [
     {

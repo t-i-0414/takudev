@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { ColorTheme } from '../src/themes';
 import { customViewports } from './customViewports';

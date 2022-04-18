@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import isEqual from 'react-fast-compare';
 
-import { Typography } from '~/atoms';
 import { useColor } from '~/hooks';
 import { ColorThemeContext } from '~/themes';
 
@@ -12,8 +11,6 @@ export const HomePageContent: React.FC = React.memo(() => {
   return (
     <>
       <h1>Taku.Dev</h1>
-      <Typography>Takuya Iwashiro</Typography>
-      <Typography>{colorMode}</Typography>
       <button type='button' onClick={handleColorMode}>
         Change color mode
       </button>
