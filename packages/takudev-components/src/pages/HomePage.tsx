@@ -1,7 +1,7 @@
 import * as React from 'react';
 import isEqual from 'react-fast-compare';
 
-import { ColorMode } from '~/@types';
+import type { ColorMode } from '~/@types';
 import { HomePageContent } from '~/organisms';
 import { PageTemplate } from '~/templates';
 
