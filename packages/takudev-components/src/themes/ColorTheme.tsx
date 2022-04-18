@@ -19,9 +19,10 @@ export const ColorThemeContext =
   createContext<ThemeContext>(defaultContextValue);
 
 type Props = {
+  children: React.ReactNode;
   mode?: ColorMode;
 };
-export const ColorTheme: React.FC<Props> = ({ children, mode }) => {
+export const ColorTheme: React.FC<Props> = ({ children, mode }: Props) => {
   const initializeColorMode = useCallback((): ColorMode => {
     const preservedColorMode = localStorage.getItem(localStorageKey);
     const preservedColorModeExists =
