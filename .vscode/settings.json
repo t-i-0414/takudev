@@ -1,3 +1,0 @@
-{
-  "jest.autoRun": { "watch": false } //TODO: remove this when tests are implemented
-}
