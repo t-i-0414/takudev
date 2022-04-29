@@ -17,7 +17,13 @@ export const CloseButton: React.FC<Props> = React.memo(
 
     return (
       <>
-        <button type='button' className='close-button' {...rest}>
+        <button
+          type='button'
+          aria-label={ariaLabel}
+          onClick={onClick}
+          className='close-button'
+          {...rest}
+        >
           <svg width={size} height={size} viewBox='0 0 17.556 17.556'>
             <path
               id='light'

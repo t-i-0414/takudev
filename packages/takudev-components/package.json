@@ -20,6 +20,7 @@
     "lint:sort-package-json": "sort-package-json --check \"package.json\"",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 6006",
+    "test:storybook": "test-storybook",
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
@@ -45,12 +46,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-interactions": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.9",
+    "@storybook/addon-actions": "^6.5.0-beta.1",
+    "@storybook/addon-essentials": "^6.5.0-beta.1",
+    "@storybook/addon-interactions": "^6.5.0-beta.1",
+    "@storybook/addon-links": "^6.5.0-beta.1",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/react": "^6.5.0-beta.1",
+    "@storybook/test-runner": "^0.0.8",
+    "@storybook/testing-library": "^0.0.11",
     "@types/babel__core": "^7.1.18",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
@@ -62,6 +66,7 @@
     "esbuild": "^0.14.21",
     "esbuild-register": "^3.3.2",
     "eslint-plugin-testing-library": "^5.0.3",
+    "jest": "^28.0.3",
     "throttle-debounce": "^3.0.1",
     "webpack": "4.46.0"
   },
