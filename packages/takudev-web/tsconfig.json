@@ -5,12 +5,18 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
     },
     "allowJs": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".**/**/*.ts",
+    ".**/**/*.tsx"
+  ],
   "exclude": ["node_modules"]
 }

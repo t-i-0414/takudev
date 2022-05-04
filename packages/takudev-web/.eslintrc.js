@@ -35,7 +35,11 @@ module.exports = {
       extends: ['plugin:jest/all', 'plugin:testing-library/react'],
     },
     {
-      files: ['./pages/_app.tsx', '**/*.stories.[jt]s?(x)'],
+      files: [
+        './pages/_app.tsx',
+        '**/*.stories.[jt]s?(x)',
+        './components/atoms/**/*.[jt]s?(x)',
+      ],
       rules: {
         'react/jsx-props-no-spreading': ['off'],
       },
