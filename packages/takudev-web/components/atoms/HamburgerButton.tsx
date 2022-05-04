@@ -1,14 +1,18 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
+import { useColor } from '~/hooks';
+
 type Props = {
+  color?: string;
   ariaLabel: React.ButtonHTMLAttributes<HTMLButtonElement>['aria-label'];
   onClick: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
 } & React.ComponentPropsWithoutRef<'button'>;
 
 export const HamburgerButton: React.FC<Props> = React.memo(
-  ({ ariaLabel, onClick, ...rest }) => {
-    const COLOR = '#ddd';
+  ({ color, ariaLabel, onClick, ...rest }) => {
+    const { textColor } = useColor();
+    const buttonColor = color || textColor;
 
     return (
       <>
@@ -43,7 +47,7 @@ export const HamburgerButton: React.FC<Props> = React.memo(
               opacity: 0.6;
             }
             .hamburger-button__icon {
-              background-color: ${COLOR};
+              background-color: ${buttonColor};
               border-radius: 1px;
               bottom: 0;
               height: 2px;
@@ -57,7 +61,7 @@ export const HamburgerButton: React.FC<Props> = React.memo(
 
             .hamburger-button__icon::before,
             .hamburger-button__icon::after {
-              background-color: ${COLOR};
+              background-color: ${buttonColor};
               border-radius: 1px;
               content: '';
               height: 100%;

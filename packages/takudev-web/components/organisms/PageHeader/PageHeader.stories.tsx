@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PageHeader } from './PageHeader';
+import { PageHeader } from '.';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 

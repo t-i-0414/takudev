@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import isEqual from 'react-fast-compare';
 
 import { Logo } from '~/components/atoms';
 import { useColor } from '~/hooks';
-import { ColorThemeContext } from '~/themes';
 
 type Props = {
   hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
 };
 
 export const PageHeader: React.FC<Props> = React.memo(({ hrefToHome }) => {
-  const { colorMode } = useContext(ColorThemeContext);
-  const { headerTextColor, headerColor } = useColor(colorMode);
+  const { headerTextColor, headerColor } = useColor();
 
   return (
     <>

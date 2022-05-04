@@ -1,3 +1,3 @@
-export * from './CloseButton';
-export * from './HamburgerButton';
-export * from './Logo';
+export { CloseButton } from './CloseButton';
+export { HamburgerButton } from './HamburgerButton';
+export { Logo } from './Logo';

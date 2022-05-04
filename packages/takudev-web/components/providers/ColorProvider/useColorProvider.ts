@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import type { ColorMode } from '~/@types';
 import { colorModeMap } from '~/consts';
@@ -7,22 +7,7 @@ const { light: lightMode, dark: darkMode } = colorModeMap;
 const COLOR_SCHEME_PROPERTY_NAME = 'prefers-color-scheme';
 const localStorageKey = COLOR_SCHEME_PROPERTY_NAME;
 
-type ThemeContext = {
-  colorMode: ColorMode;
-  handleColorMode: () => void;
-};
-const defaultContextValue: ThemeContext = {
-  colorMode: lightMode,
-  handleColorMode: () => {},
-};
-export const ColorThemeContext =
-  createContext<ThemeContext>(defaultContextValue);
-
-type Props = {
-  children: React.ReactNode;
-  mode?: ColorMode;
-};
-export const ColorTheme: React.FC<Props> = ({ children, mode }: Props) => {
+export const useColorProvider = (_colorMode?: ColorMode) => {
   const initializeColorMode = useCallback((): ColorMode => {
     const preservedColorMode = localStorage.getItem(localStorageKey);
     const preservedColorModeExists =
@@ -48,8 +33,8 @@ export const ColorTheme: React.FC<Props> = ({ children, mode }: Props) => {
   }, []);
 
   const initialColorMode = useMemo(
-    () => mode || initializeColorMode(),
-    [mode, initializeColorMode],
+    () => _colorMode || initializeColorMode(),
+    [_colorMode, initializeColorMode],
   );
 
   const [colorMode, setColorMode] = useState<ColorMode>(initialColorMode);
@@ -62,14 +47,8 @@ export const ColorTheme: React.FC<Props> = ({ children, mode }: Props) => {
     localStorage.setItem(localStorageKey, newColorMode);
   }, [colorMode, setColorMode]);
 
-  const providerValue = useMemo(
-    () => ({ colorMode, handleColorMode }),
-    [colorMode, handleColorMode],
-  );
-
-  return (
-    <ColorThemeContext.Provider value={providerValue}>
-      {children}
-    </ColorThemeContext.Provider>
-  );
+  return {
+    colorMode,
+    handleColorMode,
+  };
 };

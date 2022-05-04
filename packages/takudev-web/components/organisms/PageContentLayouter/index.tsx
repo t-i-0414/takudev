@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import isEqual from 'react-fast-compare';
 import { throttle } from 'throttle-debounce';
 
 import { PageHeader } from '~/components/organisms';
 import { useColor } from '~/hooks';
-import { ColorThemeContext } from '~/themes';
 import { handleCustomVh, handleViewPort } from '~/utils';
 
 type Props = {
@@ -13,10 +12,9 @@ type Props = {
   hasHeader: boolean;
   hasFooter: boolean;
 };
-export const PageContentTemplate: React.FC<Props> = React.memo(
+export const PageContentLayouter: React.FC<Props> = React.memo(
   ({ children, hrefToHome, hasHeader, hasFooter }: Props) => {
-    const { colorMode } = useContext(ColorThemeContext);
-    const { baseColor, textColor } = useColor(colorMode);
+    const { baseColor, textColor } = useColor();
 
     useEffect(() => {
       handleCustomVh();
@@ -71,4 +69,4 @@ export const PageContentTemplate: React.FC<Props> = React.memo(
   },
   isEqual,
 );
-PageContentTemplate.displayName = 'PageContentTemplate';
+PageContentLayouter.displayName = 'PageContentLayouter';

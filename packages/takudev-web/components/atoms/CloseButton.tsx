@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import isEqual from 'react-fast-compare';
 
 import { useColor } from '~/hooks';
-import { ColorThemeContext } from '~/themes';
 
 type Props = {
   size?: number;
@@ -12,8 +11,7 @@ type Props = {
 
 export const CloseButton: React.FC<Props> = React.memo(
   ({ size = 18, ariaLabel, onClick, ...rest }) => {
-    const { colorMode } = useContext(ColorThemeContext);
-    const { borderColor } = useColor(colorMode);
+    const { borderColor } = useColor();
 
     return (
       <>

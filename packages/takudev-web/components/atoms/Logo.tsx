@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import isEqual from 'react-fast-compare';
 
 import { useColor } from '~/hooks';
-import { ColorThemeContext } from '~/themes';
 
 type Props = {
   color?: string;
@@ -10,8 +9,7 @@ type Props = {
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export const Logo: React.FC<Props> = React.memo(({ color, href, ...rest }) => {
-  const { colorMode } = useContext(ColorThemeContext);
-  const { textColor } = useColor(colorMode);
+  const { textColor } = useColor();
   const logoColor = color || textColor;
 
   return (

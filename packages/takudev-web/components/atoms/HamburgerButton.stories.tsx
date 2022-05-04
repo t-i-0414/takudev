@@ -13,6 +13,9 @@ export default {
   title: 'Atoms/HamburgerButton',
   component: HamburgerButton,
   argTypes: {
+    color: {
+      control: { type: 'color' },
+    },
     ariaLabel: {
       table: {
         disable: true,

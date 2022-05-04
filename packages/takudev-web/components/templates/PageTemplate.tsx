@@ -2,9 +2,9 @@ import React from 'react';
 import isEqual from 'react-fast-compare';
 
 import type { ColorMode } from '~/@types';
-import { ColorTheme } from '~/themes';
+import { ColorProvider } from '~/components/providers';
 
-import { PageContentTemplate } from './PageContentTemplate';
+import { PageContentLayouter } from '../organisms';
 
 type Props = {
   children: React.ReactNode;
@@ -21,15 +21,15 @@ export const PageTemplate: React.FC<Props> = React.memo(
     hasHeader = true,
     hasFooter = true,
   }: Props) => (
-    <ColorTheme mode={initialColorMode}>
-      <PageContentTemplate
+    <ColorProvider colorMode={initialColorMode}>
+      <PageContentLayouter
         hrefToHome={hrefToHome}
         hasHeader={hasHeader}
         hasFooter={hasFooter}
       >
         {children}
-      </PageContentTemplate>
-    </ColorTheme>
+      </PageContentLayouter>
+    </ColorProvider>
   ),
   isEqual,
 );
