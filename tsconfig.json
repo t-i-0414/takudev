@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "lib": ["ES2021", "ESNext"],
-    "jsx": "react",
-    "module": "commonjs",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "baseUrl": ".",
     "paths": {
       "~": ["/"]
@@ -19,6 +18,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "incremental": true,
+    "isolatedModules": true
+  },
+  "exclude": ["node_modules"]
 }

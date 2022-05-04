@@ -14,8 +14,6 @@
       "dependsOn": ["format"]
     },
     "type-check": {},
-    "precommit": {
-      "dependsOn": ["^precommit"]
-    }
+    "postinstall": {}
   }
 }

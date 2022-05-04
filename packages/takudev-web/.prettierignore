@@ -1,6 +1,5 @@
 **/node_modules
-yarn.lock
-takudev.code-workspace
+public
 .turbo
 .prettierignore
 .eslintcache
