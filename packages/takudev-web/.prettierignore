@@ -1,0 +1,8 @@
+**/node_modules
+public
+.turbo
+.prettierignore
+.eslintcache
+.eslintignore
+.gitignore
+.DS_Store

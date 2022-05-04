@@ -5,46 +5,17 @@
       "path": "."
     },
     {
-      "name": "assets",
-      "path": "./packages/takudev-assets"
-    },
-    {
       "name": "cms",
       "path": "./packages/takudev-cms"
     },
     {
-      "name": "cms-iaas",
-      "path": "./packages/takudev-cms-iaas"
-    },
-    {
-      "name": "components",
-      "path": "./packages/takudev-components"
-    },
-    {
-      "name": "domain",
-      "path": "./packages/takudev-domain"
-    },
-    {
-      "name": "interfaces",
-      "path": "./packages/takudev-interfaces"
-    },
-    {
       "name": "web",
       "path": "./packages/takudev-web"
-    }
+    },
   ],
   "settings": {
-    "jest.autoRun": { "watch": true },
-    "jest.jestCommandLine": "npm test -",
-    "jest.disabledWorkspaceFolders": [
-      "root",
-      "assets",
-      "cms",
-      "cms-iaas",
-      "components",
-      "domain",
-      "interfaces",
-      "web"
-    ]
+    "jest.autoRun": "off",
+    "jest.jestCommandLine": "npm run test --",
+    "jest.disabledWorkspaceFolders": ["root", "cms", "web"],
   }
 }

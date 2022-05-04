@@ -1,10 +1,9 @@
-.cms
-.turbo
 **/node_modules
 **/yarn.lock
-.DS_Store
-.eslintcache
-.eslintignore
-.gitignore
-.prettierignore
+**/.turbo
+**/.eslintcache
+**/.eslintignore
+**/.gitignore
+**/.prettierignore
 takudev.code-workspace
+.DS_Store
