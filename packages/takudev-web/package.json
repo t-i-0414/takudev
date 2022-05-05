@@ -21,6 +21,7 @@
     "lint:sort-package-json": "sort-package-json --check \"package.json\"",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
+    "test": "jest",
     "test:storybook": "test-storybook",
     "type-check": "tsc --noEmit"
   },
@@ -53,10 +54,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-testing-library": "^5.0.3",
-    "jest": "^28.0.3",
     "throttle-debounce": "^3.0.1"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

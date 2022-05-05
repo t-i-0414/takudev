@@ -6,4 +6,5 @@ takudev.code-workspace
 .eslintcache
 .eslintignore
 .gitignore
+.node-version
 .DS_Store
