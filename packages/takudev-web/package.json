@@ -55,5 +55,6 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-testing-library": "^5.0.3",
     "throttle-debounce": "^3.0.1"
-  }
+  },
+  "packageManager": "yarn@1.22.18"
 }
