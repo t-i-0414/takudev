@@ -6,8 +6,5 @@
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
   "license": "UNLICENSED",
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "devDependencies": {},
-  "volta": {
-    "extends": "../../package.json"
-  }
+  "devDependencies": {}
 }

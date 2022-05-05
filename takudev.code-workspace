@@ -14,8 +14,7 @@
     },
   ],
   "settings": {
-    "jest.autoRun": "off",
-    "jest.jestCommandLine": "npm run test --",
-    "jest.disabledWorkspaceFolders": ["root", "cms", "web"],
+    "jest.autoRun": {"watch": true},
+    "jest.disabledWorkspaceFolders": ["root", "cms"],
   }
 }
