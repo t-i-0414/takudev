@@ -28,6 +28,12 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     'react/require-default-props': 'off',
     'react/prop-types': 'off',
+    'jest/no-hooks': [
+      'error',
+      {
+        allow: ['beforeAll', 'beforeEach', 'afterAll', 'afterEach'],
+      },
+    ],
   },
   overrides: [
     {
