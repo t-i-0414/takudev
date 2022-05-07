@@ -4,7 +4,8 @@ import { throttle } from 'throttle-debounce';
 
 import { PageHeader } from '~/components/organisms';
 import { useColor } from '~/hooks';
-import { handleCustomVh, handleViewPort } from '~/utils';
+
+import { usePageContentLayouter } from './usePageContentLayouter';
 
 type Props = {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ type Props = {
 export const PageContentLayouter: React.FC<Props> = React.memo(
   ({ children, hrefToHome, hasHeader, hasFooter }: Props) => {
     const { baseColor, textColor } = useColor();
+
+    const { handleCustomVh, handleViewPort } = usePageContentLayouter();
 
     useEffect(() => {
       handleCustomVh();
@@ -30,7 +33,7 @@ export const PageContentLayouter: React.FC<Props> = React.memo(
         window.removeEventListener('resize', throttledHandleCustomVhVariable);
         window.removeEventListener('resize', throttledHandleViewPort);
       };
-    }, []);
+    }, [handleCustomVh, handleViewPort]);
 
     return (
       <>

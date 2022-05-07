@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import isEqual from 'react-fast-compare';
 
 import type { ColorMode } from '~/@types';
 import { ColorContext } from '~/contexts';
@@ -22,5 +23,6 @@ export const ColorProvider: React.FC<Props> = React.memo(
       <ColorContext.Provider value={value}>{children}</ColorContext.Provider>
     );
   },
+  isEqual,
 );
 ColorProvider.displayName = 'ColorProvider';

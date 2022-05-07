@@ -51,9 +51,7 @@
     "esbuild": "^0.14.21",
     "esbuild-register": "^3.3.2",
     "eslint-config-next": "12.1.6",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "eslint-plugin-testing-library": "^5.0.3",
     "throttle-debounce": "^3.0.1"
-  }
+  },
+  "packageManager": "yarn@1.22.18"
 }
