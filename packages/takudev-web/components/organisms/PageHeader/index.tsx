@@ -1,33 +1,17 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import { Logo } from '~/components/atoms';
-import { useColor } from '~/hooks';
+import { PageHeaderPresentation } from './PageHeaderPresentation';
 
-type Props = {
-  hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
-};
-
-export const PageHeader: React.FC<Props> = React.memo(({ hrefToHome }) => {
-  const { headerTextColor, headerColor } = useColor();
+export const PageHeader = React.memo(() => {
+  const hrefToHome = '#';
+  const handleClickHamburgerButton = () => {};
 
   return (
-    <>
-      <header>
-        <Logo color={headerTextColor} href={hrefToHome} />
-      </header>
-      <style jsx>
-        {`
-          header {
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: ${headerColor};
-          }
-        `}
-      </style>
-    </>
+    <PageHeaderPresentation
+      hrefToHome={hrefToHome}
+      onClickHamburgerButton={handleClickHamburgerButton}
+    />
   );
 }, isEqual);
 PageHeader.displayName = 'PageHeader';
