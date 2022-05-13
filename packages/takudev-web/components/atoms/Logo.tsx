@@ -14,13 +14,14 @@ export const Logo: React.FC<Props> = React.memo(({ color, href, ...rest }) => {
 
   return (
     <>
-      <a href={href} className='logo' {...rest}>
+      <a href={href} className='logo' {...rest} tabIndex={0}>
         Taku.dev
       </a>
       <style jsx>
         {`
           .logo {
             color: ${logoColor};
+            cursor: pointer;
             display: block;
             font-family: futura-pt, system-ui, -apple-system, 'Segoe UI', Roboto,
               Helvetica, Arial, sans-serif, 'Apple Color Emoji',

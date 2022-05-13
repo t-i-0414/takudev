@@ -9,12 +9,11 @@ import { usePageContentLayouter } from './usePageContentLayouter';
 
 type Props = {
   children: React.ReactNode;
-  hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
   hasHeader: boolean;
   hasFooter: boolean;
 };
 export const PageContentLayouter: React.FC<Props> = React.memo(
-  ({ children, hrefToHome, hasHeader, hasFooter }: Props) => {
+  ({ children, hasHeader, hasFooter }: Props) => {
     const { baseColor, textColor } = useColor();
 
     const { handleCustomVh, handleViewPort } = usePageContentLayouter();
@@ -38,7 +37,7 @@ export const PageContentLayouter: React.FC<Props> = React.memo(
     return (
       <>
         <div className='page-wrapper'>
-          {hasHeader && <PageHeader hrefToHome={hrefToHome} />}
+          {hasHeader && <PageHeader />}
           <main className='main-container'>{children}</main>
           {hasFooter && <footer>footer</footer>}
         </div>

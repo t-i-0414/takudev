@@ -3,4 +3,4 @@ export {
   darkColorPaletteMap,
   lightColorPaletteMap,
 } from './color';
-export { breakPointsMap } from './breakPoints';
+export { breakPointMap } from './breakPointMap';
