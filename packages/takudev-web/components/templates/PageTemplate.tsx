@@ -8,7 +8,6 @@ import { PageContentLayouter } from '../organisms';
 
 type Props = {
   children: React.ReactNode;
-  hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
   initialColorMode?: ColorMode;
   hasHeader?: boolean;
   hasFooter?: boolean;
@@ -16,17 +15,12 @@ type Props = {
 export const PageTemplate: React.FC<Props> = React.memo(
   ({
     children,
-    hrefToHome,
     initialColorMode,
     hasHeader = true,
     hasFooter = true,
   }: Props) => (
     <ColorProvider colorMode={initialColorMode}>
-      <PageContentLayouter
-        hrefToHome={hrefToHome}
-        hasHeader={hasHeader}
-        hasFooter={hasFooter}
-      >
+      <PageContentLayouter hasHeader={hasHeader} hasFooter={hasFooter}>
         {children}
       </PageContentLayouter>
     </ColorProvider>

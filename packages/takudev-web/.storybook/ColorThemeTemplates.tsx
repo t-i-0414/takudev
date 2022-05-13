@@ -6,23 +6,13 @@ type Props = {
 };
 
 export const LightThemeTemplate: React.FC<Props> = ({ children }) => (
-  <PageTemplate
-    hrefToHome={'#'}
-    initialColorMode='light'
-    hasHeader={false}
-    hasFooter={false}
-  >
+  <PageTemplate initialColorMode='light' hasHeader={false} hasFooter={false}>
     {children}
   </PageTemplate>
 );
 
 export const DarkThemeTemplate: React.FC<Props> = ({ children }) => (
-  <PageTemplate
-    hrefToHome={'#'}
-    initialColorMode='dark'
-    hasHeader={false}
-    hasFooter={false}
-  >
+  <PageTemplate initialColorMode='dark' hasHeader={false} hasFooter={false}>
     {children}
   </PageTemplate>
 );
