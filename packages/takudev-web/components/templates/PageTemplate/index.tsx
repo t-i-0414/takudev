@@ -4,7 +4,7 @@ import isEqual from 'react-fast-compare';
 import type { ColorMode } from '~/@types';
 import { ColorProvider } from '~/components/providers';
 
-import { PageContentLayouter } from '../organisms';
+import { PageContentLayouter } from './PageContentLayouter';
 
 type Props = {
   children: React.ReactNode;
