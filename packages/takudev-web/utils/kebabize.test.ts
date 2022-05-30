@@ -5,11 +5,9 @@ describe('kebabize', () => {
     { inputStr: 'testStr', expected: 'test-str' },
     { inputStr: 'TestStr', expected: 'test-str' },
     { inputStr: '-testStr', expected: '-test-str' },
-    { inputStr: '-TestStr', expected: '-test-str' },
-    { inputStr: '---', expected: '---' },
     { inputStr: '', expected: '' },
   ])(
-    'should return $expected if arg (px: $px) are entered',
+    'should return $expected if $inputStr are entered',
     ({ inputStr, expected }) => {
       expect.hasAssertions();
 

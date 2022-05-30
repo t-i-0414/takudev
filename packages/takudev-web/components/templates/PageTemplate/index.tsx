@@ -1,30 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import isEqual from 'react-fast-compare';
+import { throttle } from 'throttle-debounce';
 
-import type { ColorMode } from '~/@types';
-import { ColorProvider } from '~/components/providers';
+import { PageHeader } from '~/components/organisms';
 
-import { PageContentLayouter } from './PageContentLayouter';
+import styles from './PageTemplate.module.scss';
+import { usePageTemplate } from './usePageTemplate';
 
 type Props = {
   children: React.ReactNode;
-  initialColorMode?: ColorMode;
   hasHeader?: boolean;
   hasFooter?: boolean;
 };
 export const PageTemplate: React.FC<Props> = React.memo(
-  ({
-    children,
-    initialColorMode,
-    hasHeader = true,
-    hasFooter = true,
-  }: Props) => (
-    <ColorProvider colorMode={initialColorMode}>
-      <PageContentLayouter hasHeader={hasHeader} hasFooter={hasFooter}>
-        {children}
-      </PageContentLayouter>
-    </ColorProvider>
-  ),
+  ({ children, hasHeader = true, hasFooter = true }: Props) => {
+    const { handleCustomVh, handleViewPort } = usePageTemplate();
+
+    useEffect(() => {
+      handleCustomVh();
+      handleViewPort();
+
+      const throttledHandleCustomVhVariable = throttle(16, handleCustomVh);
+      const throttledHandleViewPort = throttle(16, handleViewPort);
+
+      window.addEventListener('resize', throttledHandleCustomVhVariable);
+      window.addEventListener('resize', throttledHandleViewPort);
+
+      return () => {
+        window.removeEventListener('resize', throttledHandleCustomVhVariable);
+        window.removeEventListener('resize', throttledHandleViewPort);
+      };
+    }, [handleCustomVh, handleViewPort]);
+
+    return (
+      <div className={styles.wrapper}>
+        {hasHeader && <PageHeader />}
+        <main className={styles.main}>{children}</main>
+        {hasFooter && <footer className={styles.footer}>footer</footer>}
+      </div>
+    );
+  },
   isEqual,
 );
 PageTemplate.displayName = 'PageTemplate';

@@ -37,11 +37,18 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
     Object.keys(lightColorPaletteMap).forEach(key => {
       document.documentElement.style.setProperty(
         `--${kebabize(key)}`,
-        colorMode === colorModeMap.darkMode
+        newColorMode === colorModeMap.darkMode
           ? darkColorPaletteMap[key as keyof typeof darkColorPaletteMap]
           : lightColorPaletteMap[key as keyof typeof lightColorPaletteMap],
       );
     });
+
+    document.documentElement.style.setProperty(
+      `--switch-margin`,
+      newColorMode === colorModeMap.darkMode
+        ? 'translate(-88%, -50%)'
+        : 'translate(-12%, -50%)',
+    );
   }, [colorMode, setColorMode]);
 
   return {

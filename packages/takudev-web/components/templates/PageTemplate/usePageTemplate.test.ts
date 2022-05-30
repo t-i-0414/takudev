@@ -3,9 +3,9 @@
  */
 import { renderHook } from '@testing-library/react-hooks';
 
-import { usePageContentLayouter } from './usePageContentLayouter';
+import { usePageTemplate } from './usePageTemplate';
 
-describe('usePageContentLayouter', () => {
+describe('usePageTemplate', () => {
   describe('handleCustomVh', () => {
     it.each([
       {
@@ -25,7 +25,7 @@ describe('usePageContentLayouter', () => {
       ({ innerHeight, expected }) => {
         expect.hasAssertions();
 
-        const { result } = renderHook(() => usePageContentLayouter());
+        const { result } = renderHook(() => usePageTemplate());
 
         window.innerHeight = innerHeight;
 
@@ -61,7 +61,7 @@ describe('usePageContentLayouter', () => {
         meta.setAttribute('name', 'viewport');
         document.head.appendChild(meta);
 
-        const { result } = renderHook(() => usePageContentLayouter());
+        const { result } = renderHook(() => usePageTemplate());
 
         window.outerWidth = outerWidth;
 

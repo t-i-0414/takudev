@@ -22,6 +22,12 @@ export const ColorThemeScript: React.FC = React.memo(
                 : '${colorModeMap.lightMode}'
             );
             ${getCustomColorPropertiesSetttingText()}
+            document.documentElement.style.setProperty(
+              '--switch-margin',
+              colorMode === '${colorModeMap.darkMode}'
+                ? 'translate(-88%, -50%)'
+                : 'translate(-12%, -50%)',
+            );
           }
 
           var preferDarkQuery = '(prefers-color-scheme: dark)';

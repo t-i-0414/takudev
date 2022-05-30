@@ -1,18 +1,29 @@
 import React from 'react';
 import { PageTemplate } from '~/components/templates';
+import { colorModeMap } from '~/consts';
+
+const { lightMode, darkMode } = colorModeMap;
 
 type Props = {
   children: React.ReactNode;
 };
 
 export const LightThemeTemplate: React.FC<Props> = ({ children }) => (
-  <PageTemplate initialColorMode='light' hasHeader={false} hasFooter={false}>
+  <PageTemplate
+    // initialColorMode={lightMode}
+    hasHeader={false}
+    hasFooter={false}
+  >
     {children}
   </PageTemplate>
 );
 
 export const DarkThemeTemplate: React.FC<Props> = ({ children }) => (
-  <PageTemplate initialColorMode='dark' hasHeader={false} hasFooter={false}>
+  <PageTemplate
+    // initialColorMode={darkMode}
+    hasHeader={false}
+    hasFooter={false}
+  >
     {children}
   </PageTemplate>
 );

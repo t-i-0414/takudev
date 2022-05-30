@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-export const usePageContentLayouter = () => {
+export const usePageTemplate = () => {
   const handleCustomVh = useCallback(() => {
     if (window !== undefined) {
       const vh = window.innerHeight * 0.01;

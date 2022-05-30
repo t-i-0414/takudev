@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Logo } from './Logo';
+import { Logo } from '.';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 

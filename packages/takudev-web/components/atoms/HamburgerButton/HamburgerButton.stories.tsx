@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HamburgerButton } from './HamburgerButton';
+import { HamburgerButton } from '.';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 

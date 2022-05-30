@@ -1,21 +1,10 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import { useColor } from '~/hooks';
+import styles from './PageContentTop.module.scss';
 
-export const PageContentTop: React.FC = React.memo(() => {
-  const { textColor } = useColor();
-
-  return (
-    <>
-      <h1>PageContentTop</h1>
-
-      <style jsx>{`
-        h1 {
-          color: ${textColor};
-        }
-      `}</style>
-    </>
-  );
-}, isEqual);
+export const PageContentTop: React.FC = React.memo(
+  () => <h1 className={styles.h1}>PageContentTop</h1>,
+  isEqual,
+);
 PageContentTop.displayName = 'PageContentTop';
