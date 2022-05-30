@@ -4,12 +4,12 @@ import type { ColorMode } from '~/@types';
 import { colorModeMap } from '~/consts';
 
 type Context = {
-  colorMode: ColorMode;
+  colorMode: ColorMode | null;
   handleColorMode: () => void;
 };
 
 const defaultContext: Context = {
-  colorMode: colorModeMap.light,
+  colorMode: colorModeMap.lightMode,
   handleColorMode: () => {},
 };
 

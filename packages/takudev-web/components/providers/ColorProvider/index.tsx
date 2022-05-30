@@ -12,7 +12,7 @@ type Props = {
 };
 export const ColorProvider: React.FC<Props> = React.memo(
   ({ children, colorMode: _colorMode }) => {
-    const { colorMode, handleColorMode } = useColorProvider(_colorMode);
+    const { colorMode, handleColorMode } = useColorProvider();
 
     const value = useMemo(
       () => ({ colorMode, handleColorMode }),
