@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CloseButton } from './CloseButton';
+import { CloseButton } from '.';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 

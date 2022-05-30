@@ -5,29 +5,31 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import type { ColorMode } from '~/@types';
 
+import { colorModeLocalstorageKey } from '~/consts';
+
 import { useColorProvider } from './useColorProvider';
 
 describe('useColorProvider', () => {
   describe('_colorMode arg exists', () => {
     afterEach(() => {
-      localStorage.removeItem('prefers-color-scheme');
+      localStorage.removeItem(colorModeLocalstorageKey);
     });
 
     it.each([
       {
-        expected: 'light',
-        unexpected: 'dark',
+        expected: 'lightMode',
+        unexpected: 'true',
       },
       {
-        expected: 'dark',
-        unexpected: 'light',
+        expected: 'darkMode',
+        unexpected: 'false',
       },
-    ] as { expected: ColorMode; unexpected: ColorMode }[])(
+    ] as { expected: Exclude<ColorMode, null>; unexpected: string }[])(
       'should return $expected if _colorMode is $expected.',
       ({ expected, unexpected }) => {
         expect.hasAssertions();
 
-        localStorage.setItem('prefers-color-scheme', unexpected);
+        localStorage.setItem(colorModeLocalstorageKey, unexpected);
 
         Object.defineProperty(window, 'matchMedia', {
           writable: true,
@@ -71,15 +73,18 @@ describe('useColorProvider', () => {
     });
 
     afterEach(() => {
-      localStorage.removeItem('prefers-color-scheme');
+      localStorage.removeItem(colorModeLocalstorageKey);
     });
 
-    it.each([{ expected: 'light' }, { expected: 'dark' }])(
+    it.each([
+      { isDarkMode: 'false', expected: 'lightMode' },
+      { isDarkMode: 'true', expected: 'darkMode' },
+    ])(
       'should return $expected if preservedColorMode is $expected',
-      ({ expected }) => {
+      ({ isDarkMode, expected }) => {
         expect.hasAssertions();
 
-        localStorage.setItem('prefers-color-scheme', expected);
+        localStorage.setItem(colorModeLocalstorageKey, isDarkMode);
 
         const { result } = renderHook(() => useColorProvider());
 
@@ -93,18 +98,21 @@ describe('useColorProvider', () => {
 
   describe('preservedColorMode does not exist in localStorage', () => {
     afterEach(() => {
-      localStorage.removeItem('prefers-color-scheme');
+      localStorage.removeItem(colorModeLocalstorageKey);
     });
 
-    it.each([{ expected: 'light' }, { expected: 'dark' }])(
+    it.each([
+      { prefersColorScheme: 'light', expected: 'lightMode' },
+      { prefersColorScheme: 'dark', expected: 'darkMode' },
+    ])(
       'should return $expected if window.matchMedia.media === (prefers-color-scheme: $expected)',
-      ({ expected }) => {
+      ({ prefersColorScheme, expected }) => {
         expect.hasAssertions();
 
         Object.defineProperty(window, 'matchMedia', {
           writable: true,
           value: jest.fn().mockImplementation(query => ({
-            matches: query === `(prefers-color-scheme: ${expected})`,
+            matches: query === `(prefers-color-scheme: ${prefersColorScheme})`,
             media: query,
             onchange: null,
             addListener: jest.fn(),

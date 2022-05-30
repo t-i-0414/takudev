@@ -1,101 +1,62 @@
-import Image from 'next/image';
 import React, { useContext } from 'react';
 import isEqual from 'react-fast-compare';
 
+import { colorModeMap } from '~/consts';
 import { ColorContext } from '~/contexts';
-import { useColor } from '~/hooks';
-import MoonSVG from '~/public/moon.svg';
-import SunSVG from '~/public/sun.svg';
+
+import styles from './ColorModeSwitchButton.module.scss';
+
+const { lightMode } = colorModeMap;
 
 export const ColorModeSwitchButton: React.FC = React.memo(() => {
   const { colorMode, handleColorMode } = useContext(ColorContext);
-  const { white, black } = useColor();
-
-  const marginLeftStyle = colorMode === 'light' ? '-12%' : '-88%';
 
   return (
-    <>
-      <div
-        tabIndex={0}
-        role='button'
-        aria-label={`toggle color mode to ${
-          colorMode === 'light' ? 'dark' : 'light'
-        }`}
-        className='container'
-        onClick={handleColorMode}
-        onKeyPress={handleColorMode}
-      >
-        <div className='button-container'>
-          <div className='button-body' />
-        </div>
-
-        <div className='icon-moon-container'>
-          <Image
-            src={MoonSVG.src ?? `/${MoonSVG}`}
-            alt=''
-            width={13}
-            height={13}
-          />
-        </div>
-
-        <div className='icon-sun-container'>
-          <Image
-            src={SunSVG.src ?? `/${SunSVG}`}
-            alt=''
-            width={13}
-            height={13}
-          />
-        </div>
+    <div
+      tabIndex={0}
+      role='button'
+      aria-label={`toggle color mode to ${
+        colorMode === lightMode ? 'dark' : 'light'
+      }`}
+      className={styles.container}
+      onClick={handleColorMode}
+      onKeyPress={handleColorMode}
+    >
+      <div className={styles.button}>
+        <div className='body' />
       </div>
 
-      <style jsx>{`
-        .container {
-          background-color: ${white};
-          border-radius: 16px;
-          cursor: pointer;
-          height: 32px;
-          margin: 0;
-          position: relative;
-          width: 52px;
-        }
-        .button-container {
-          border-radius: 16px;
-          height: 32px;
-          position: absolute;
-          width: 52px;
-          z-index: 1;
-        }
-        .button-body {
-          background-color: ${black};
-          border-radius: 50%;
-          height: 28px;
-          left: 50%;
-          position: relative;
-          top: 50%;
-          transform: translate(${marginLeftStyle}, -50%);
-          transition: transform 0.2s ease-out;
-          width: 28px;
-        }
-        .icon-sun-container,
-        .icon-moon-container {
-          align-items: center;
-          display: flex;
-          height: 13px;
-          justify-content: center;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 13px;
-          z-index: 0;
-        }
-        .icon-sun-container {
-          right: 6px;
-        }
-        .icon-moon-container {
-          left: 6px;
-        }
-      `}</style>
-    </>
+      <div className={styles.moon}>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='11.618'
+          height='13'
+          viewBox='0 0 11.618 13'
+        >
+          <path
+            id='moon-solid'
+            d='M9.476,13a6.488,6.488,0,0,0,5.049-2.407.3.3,0,0,0-.294-.491A5.092,5.092,0,0,1,10.759.673a.3.3,0,0,0-.1-.564A6.5,6.5,0,1,0,9.476,13Z'
+            transform='translate(-2.976)'
+            fill='#0d0d0d'
+          />
+        </svg>
+      </div>
+
+      <div className={styles.sun}>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='12.999'
+          height='13'
+          viewBox='0 0 12.999 13'
+        >
+          <path
+            id='sun-solid'
+            d='M6.5,4.062A2.438,2.438,0,1,0,8.938,6.5,2.441,2.441,0,0,0,6.5,4.062Zm6.256,2.044-2.4-1.2L11.2,2.356a.439.439,0,0,0-.556-.556L8.1,2.651,6.894.244a.44.44,0,0,0-.787,0l-1.2,2.4L2.354,1.8a.439.439,0,0,0-.556.556L2.648,4.9l-2.4,1.2a.44.44,0,0,0,0,.787l2.4,1.2L1.8,10.646a.439.439,0,0,0,.556.556L4.9,10.352l1.2,2.4a.44.44,0,0,0,.787,0l1.2-2.4,2.549.851a.439.439,0,0,0,.556-.556L10.347,8.1l2.4-1.2a.44.44,0,0,0,.005-.79ZM8.8,8.8a3.25,3.25,0,1,1,0-4.6A3.253,3.253,0,0,1,8.8,8.8Z'
+            transform='translate(0 0)'
+          />
+        </svg>
+      </div>
+    </div>
   );
 }, isEqual);
 ColorModeSwitchButton.displayName = 'ColorModeSwitchButton';

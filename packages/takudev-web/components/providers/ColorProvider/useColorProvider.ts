@@ -1,50 +1,54 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import type { ColorMode } from '~/@types';
-import { colorModeMap } from '~/consts';
+import {
+  colorModeMap,
+  colorModeLocalstorageKey,
+  lightColorPaletteMap,
+  darkColorPaletteMap,
+} from '~/consts';
 
-const { light: lightMode, dark: darkMode } = colorModeMap;
-const COLOR_SCHEME_PROPERTY_NAME = 'prefers-color-scheme';
-const localStorageKey = COLOR_SCHEME_PROPERTY_NAME;
+import { kebabize } from '~/utils';
+
+const { lightMode, darkMode } = colorModeMap;
 
 export const useColorProvider = (_colorMode?: ColorMode) => {
-  const initializeColorMode = useCallback((): ColorMode => {
-    const preservedColorMode = localStorage.getItem(localStorageKey);
-    const preservedColorModeExists =
-      preservedColorMode === lightMode || preservedColorMode === darkMode;
+  const [colorMode, setColorMode] = useState<ColorMode | null>(null);
 
-    if (!preservedColorModeExists) {
-      if (typeof window !== 'undefined') {
-        const isDarkModeWindow = window.matchMedia(
-          `(${COLOR_SCHEME_PROPERTY_NAME}: dark)`,
-        ).matches;
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode',
+    ) as ColorMode;
 
-        if (isDarkModeWindow) {
-          localStorage.setItem(localStorageKey, darkMode);
-        } else {
-          localStorage.setItem(localStorageKey, lightMode);
-        }
-      } else {
-        localStorage.setItem(localStorageKey, lightMode);
-      }
-    }
-
-    return (localStorage.getItem(localStorageKey) as ColorMode) || lightMode;
+    setColorMode(initialColorValue);
   }, []);
-
-  const initialColorMode = useMemo(
-    () => _colorMode || initializeColorMode(),
-    [_colorMode, initializeColorMode],
-  );
-
-  const [colorMode, setColorMode] = useState<ColorMode>(initialColorMode);
 
   const handleColorMode = useCallback(() => {
     const newColorMode: ColorMode =
       colorMode === lightMode ? darkMode : lightMode;
 
     setColorMode(newColorMode);
-    localStorage.setItem(localStorageKey, newColorMode);
+    localStorage.setItem(
+      colorModeLocalstorageKey,
+      JSON.stringify(newColorMode),
+    );
+
+    Object.keys(lightColorPaletteMap).forEach(key => {
+      document.documentElement.style.setProperty(
+        `--${kebabize(key)}`,
+        newColorMode === colorModeMap.darkMode
+          ? darkColorPaletteMap[key as keyof typeof darkColorPaletteMap]
+          : lightColorPaletteMap[key as keyof typeof lightColorPaletteMap],
+      );
+    });
+
+    document.documentElement.style.setProperty(
+      `--switch-margin`,
+      newColorMode === colorModeMap.darkMode
+        ? 'translate(-88%, -50%)'
+        : 'translate(-12%, -50%)',
+    );
   }, [colorMode, setColorMode]);
 
   return {

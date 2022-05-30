@@ -1,5 +1,8 @@
-export type ColorMode = 'light' | 'dark';
-export type ColorModeMap = { [keyAndValue in ColorMode]: keyAndValue };
+export type ColorMode = 'lightMode' | 'darkMode';
+
+export type ColorModeMap = {
+  [key in ColorMode]: key;
+};
 
 export type ColorPaletteMap = Readonly<{
   primaryColor: string;

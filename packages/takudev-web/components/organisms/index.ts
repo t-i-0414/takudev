@@ -1,2 +1,2 @@
-export { PageContentLayouter } from './PageContentLayouter';
 export { PageHeader } from './PageHeader';
+export { PageContentTop } from './PageContentTop';

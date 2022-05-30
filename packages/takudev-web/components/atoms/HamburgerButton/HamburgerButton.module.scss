@@ -1,0 +1,55 @@
+.button {
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 48px;
+  width: 48px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.icon {
+  background-color: var(--gray);
+  border-radius: 1px;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+
+  &::before,
+  &::after {
+    background-color: var(--gray);
+    border-radius: 1px;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    top: 8px;
+  }
+}

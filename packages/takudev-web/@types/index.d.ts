@@ -1,2 +1,2 @@
-export * from './color';
-export * from './styled-jsx';
+export * from './Color';
+export * from './Stage';

@@ -1,0 +1,33 @@
+.header {
+  background-color: var(--header-color);
+  height: 56px;
+  justify-content: space-between;
+  position: relative;
+}
+.left-content {
+  left: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.center-content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.right-content {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 576px) {
+  .left-content {
+    left: 80px;
+  }
+  .right-content {
+    right: 80px;
+  }
+}

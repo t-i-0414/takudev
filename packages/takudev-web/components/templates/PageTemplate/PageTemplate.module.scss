@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background: var(--base-color);
+}
+.main {
+  flex: 1;
+  overflow-x: hidden;
+}
+.footer {
+  // color: ${textColor};s
+}
