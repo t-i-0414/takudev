@@ -1,8 +1,10 @@
 import type { ColorModeMap, ColorPaletteMap } from '~/@types';
 
+export const colorModeLocalstorageKey = 'colorMode';
+
 export const colorModeMap: ColorModeMap = {
-  light: 'light',
-  dark: 'dark',
+  lightMode: 'lightMode',
+  darkMode: 'darkMode',
 } as const;
 
 export const lightColorPaletteMap: ColorPaletteMap = {

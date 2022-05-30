@@ -1,5 +1,6 @@
 export {
   colorModeMap,
+  colorModeLocalstorageKey,
   darkColorPaletteMap,
   lightColorPaletteMap,
 } from './color';
