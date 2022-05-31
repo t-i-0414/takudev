@@ -3,6 +3,10 @@
     "eslint --fix --ignore-path .eslintignore",
     "eslint --ignore-path .eslintignore"
   ],
+  "./**/*.{css, scss}": [
+    "stylelint --fix --ignore-path .stylelintignore",
+    "stylelint --ignore-path .stylelintignore"
+  ],
   "*": [
     "prettier --write --ignore-path .prettierignore",
     "prettier --check --ignore-path .prettierignore"
