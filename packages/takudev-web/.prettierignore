@@ -1,4 +1,6 @@
 **/node_modules
+**/*.scss
+**/*.css
 public
 .turbo
 .prettierignore
@@ -9,5 +11,4 @@ public
 .gitignore
 .node-version
 .DS_Store
-**/*.scss
-**/*.css
+.next

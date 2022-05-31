@@ -1,8 +1,24 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
   "plugins": ["stylelint-scss"],
+  "customSyntax": "postcss-scss",
   "rules": {
     "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true
-  }
+    "scss/at-rule-no-unknown": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{jsx,tsx}"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ]
 }
