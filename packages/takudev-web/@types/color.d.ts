@@ -4,19 +4,20 @@ export type ColorModeMap = {
   [key in ColorMode]: key;
 };
 
-export type ColorPaletteMap = Readonly<{
-  primaryColor: string;
-  secondaryColor: string;
-  warningColor: string;
-  white: string;
-  paleWhite: string;
-  gray: string;
-  black: string;
-  baseColor: string;
-  textColor: string;
-  borderColor: string;
-  sublabelColor: string;
-  shadowColor: string;
-  headerColor: string;
-  footerColor: string;
-}>;
+export type ColorPaletteMapKey =
+  | 'primaryColor'
+  | 'secondaryColor'
+  | 'warningColor'
+  | 'white'
+  | 'paleWhite'
+  | 'gray'
+  | 'black'
+  | 'baseColor'
+  | 'textColor'
+  | 'borderColor'
+  | 'sublabelColor'
+  | 'shadowColor'
+  | 'headerColor'
+  | 'footerColor';
+
+export type ColorPaletteMap = Readonly<Record<ColorPaletteMapKey, string>>;

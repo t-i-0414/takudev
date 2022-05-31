@@ -1,4 +1,8 @@
-import type { ColorModeMap, ColorPaletteMap } from '~/@types';
+import type {
+  ColorModeMap,
+  ColorPaletteMap,
+  ColorPaletteMapKey,
+} from '~/@types';
 
 export const colorModeLocalstorageKey = 'colorMode';
 
@@ -34,3 +38,10 @@ export const darkColorPaletteMap: ColorPaletteMap = {
   headerColor: '#666666',
   footerColor: '#666666',
 } as const;
+
+export const colorPaletteMapKeyList = [
+  ...new Set([
+    ...(Object.keys(lightColorPaletteMap) as ColorPaletteMapKey[]),
+    ...(Object.keys(darkColorPaletteMap) as ColorPaletteMapKey[]),
+  ]),
+];
