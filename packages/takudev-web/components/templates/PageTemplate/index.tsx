@@ -34,7 +34,14 @@ export const PageTemplate: React.FC<Props> = React.memo(
 
     return (
       <div className={styles.wrapper}>
-        {hasHeader && <PageHeader />}
+        {hasHeader && (
+          <>
+            <div className={styles['header-container']}>
+              <PageHeader />
+            </div>
+            <div className={styles['header-gap']} />
+          </>
+        )}
         <main className={styles.main}>{children}</main>
         {hasFooter && <footer className={styles.footer}>footer</footer>}
       </div>
