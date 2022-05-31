@@ -3,9 +3,8 @@
  */
 import { renderHook } from '@testing-library/react-hooks';
 
-import type { ColorMode } from '~/@types';
-
 import { colorModeLocalstorageKey } from '~/consts';
+import type { ColorMode } from '~/types';
 
 import { useColorProvider } from './useColorProvider';
 

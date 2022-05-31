@@ -2,7 +2,7 @@ import type {
   ColorModeMap,
   ColorPaletteMap,
   ColorPaletteMapKey,
-} from '~/@types';
+} from '~/types';
 
 export const colorModeLocalstorageKey = 'colorMode';
 

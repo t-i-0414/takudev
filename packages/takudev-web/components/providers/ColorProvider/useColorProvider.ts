@@ -1,12 +1,12 @@
 import { useCallback, useState, useEffect } from 'react';
 
-import type { ColorMode } from '~/@types';
 import {
   colorModeMap,
   colorModeLocalstorageKey,
   lightColorPaletteMap,
   darkColorPaletteMap,
 } from '~/consts';
+import type { ColorMode } from '~/types';
 
 import { kebabize } from '~/utils';
 

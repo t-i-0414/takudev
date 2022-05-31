@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-import type { Stage } from '~/@types';
 import { ColorThemeScript } from '~/components/scripts';
+import type { Stage } from '~/types';
 
 const Document = () => {
   const stage: Stage = (process.env.STAGE as Stage) ?? 'preview';
