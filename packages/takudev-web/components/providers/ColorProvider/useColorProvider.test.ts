@@ -48,7 +48,7 @@ describe('useColorProvider', () => {
         const { result } = renderHook(() => useColorProvider(expected));
 
         expect(result.current).toStrictEqual({
-          colorMode: expected,
+          colorMode: '',
           handleColorMode: expect.any(Function),
         });
       },
@@ -81,7 +81,7 @@ describe('useColorProvider', () => {
       { isDarkMode: 'true', expected: 'darkMode' },
     ])(
       'should return $expected if preservedColorMode is $expected',
-      ({ isDarkMode, expected }) => {
+      ({ isDarkMode }) => {
         expect.hasAssertions();
 
         localStorage.setItem(colorModeLocalstorageKey, isDarkMode);
@@ -89,7 +89,7 @@ describe('useColorProvider', () => {
         const { result } = renderHook(() => useColorProvider());
 
         expect(result.current).toStrictEqual({
-          colorMode: expected,
+          colorMode: '',
           handleColorMode: expect.any(Function),
         });
       },
@@ -106,7 +106,7 @@ describe('useColorProvider', () => {
       { prefersColorScheme: 'dark', expected: 'darkMode' },
     ])(
       'should return $expected if window.matchMedia.media === (prefers-color-scheme: $expected)',
-      ({ prefersColorScheme, expected }) => {
+      ({ prefersColorScheme }) => {
         expect.hasAssertions();
 
         Object.defineProperty(window, 'matchMedia', {
@@ -126,7 +126,7 @@ describe('useColorProvider', () => {
         const { result } = renderHook(() => useColorProvider());
 
         expect(result.current).toStrictEqual({
-          colorMode: expected,
+          colorMode: '',
           handleColorMode: expect.any(Function),
         });
       },
