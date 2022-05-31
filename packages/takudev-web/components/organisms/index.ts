@@ -1,2 +1,2 @@
 export { PageHeader } from './PageHeader';
-export { PageContentTop } from './PageContentTop';
+export { PageContentHome } from './PageContentHome';

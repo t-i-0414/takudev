@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { PageContentTop } from '~/components/organisms';
+import { PageContentHome } from '~/components/organisms';
 import { PageTemplate } from '~/components/templates';
 
 import type { NextPage } from 'next';
@@ -13,7 +13,7 @@ const Home: NextPage = () => (
     </Head>
 
     <PageTemplate>
-      <PageContentTop />
+      <PageContentHome />
     </PageTemplate>
   </>
 );
