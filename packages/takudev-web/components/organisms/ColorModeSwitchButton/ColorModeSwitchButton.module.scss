@@ -1,10 +1,12 @@
+@import "../../../styles/color";
+
 .container {
   position: relative;
   width: 52px;
   height: 32px;
   margin: 0;
   cursor: pointer;
-  background-color: var(--white);
+  background-color: $white;
   border-radius: 16px;
 }
 
@@ -21,7 +23,7 @@
     left: 50%;
     width: 28px;
     height: 28px;
-    background-color: var(--black);
+    background-color: $black;
     border-radius: 50%;
     transition: transform 0.2s ease-out;
     transform: var(--switch-margin);

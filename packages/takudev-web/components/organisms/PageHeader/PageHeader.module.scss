@@ -1,8 +1,10 @@
+@import "../../../styles/color";
+
 .header {
   position: relative;
   justify-content: space-between;
   height: 56px;
-  background-color: var(--header-color);
+  background-color: $header-color;
 }
 
 .left-content {
