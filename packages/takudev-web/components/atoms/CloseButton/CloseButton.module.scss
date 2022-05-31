@@ -1,4 +1,7 @@
+@import "../../../styles/color";
+
 .button {
+  appearance: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,21 +11,20 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  appearance: none;
 
   .icon {
-    fill: var(--border-color);
+    fill: $border-color;
   }
 
-  *:hover {
+  &:hover {
     opacity: 0.8;
   }
 
-  *:focus-visible {
+  &:focus-visible {
     opacity: 0.8;
   }
 
-  *:active {
+  &:active {
     opacity: 0.6;
   }
 }
