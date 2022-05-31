@@ -44,7 +44,7 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
     });
 
     document.documentElement.style.setProperty(
-      `--switch-margin`,
+      `--color-mode-switch-button-translate`,
       newColorMode === colorModeMap.darkMode
         ? 'translate(-88%, -50%)'
         : 'translate(-12%, -50%)',
