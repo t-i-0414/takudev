@@ -3,7 +3,7 @@ export const kebabize = (str: string) =>
     .split('')
     .map((letter, index) =>
       letter.toUpperCase() === letter
-        ? letter === `${index !== 0 ? '-' : ''}${letter.toLowerCase()}`
+        ? `${index !== 0 ? '-' : ''}${letter.toLowerCase()}`
         : letter,
     )
     .join('');

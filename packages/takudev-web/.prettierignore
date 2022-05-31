@@ -4,6 +4,8 @@ public
 .prettierignore
 .eslintcache
 .eslintignore
+.stylelintignore
+.stylelintcache
 .gitignore
 .node-version
 .DS_Store
