@@ -1,0 +1,14 @@
+@import "./strip-unit";
+
+@function vw($px, $base: 375px) {
+  $value: $px;
+
+  @if unit($px) != "px" {
+    @warn "cannot be calculated if a value other than px is specified for the vw() argument";
+    @return $value;
+  }
+
+  $value: (strip-unit($px) / strip-unit($base)) * 100vw;
+
+  @return $value;
+}
