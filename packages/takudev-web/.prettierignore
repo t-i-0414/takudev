@@ -1,9 +1,14 @@
 **/node_modules
+**/*.scss
+**/*.css
 public
 .turbo
 .prettierignore
 .eslintcache
 .eslintignore
+.stylelintignore
+.stylelintcache
 .gitignore
 .node-version
 .DS_Store
+.next

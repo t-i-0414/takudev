@@ -1,5 +1,6 @@
 import {
   colorModeMap,
+  colorPaletteMapKeyList,
   lightColorPaletteMap,
   darkColorPaletteMap,
 } from '~/consts';
@@ -7,7 +8,7 @@ import {
 import { kebabize } from './kebabize';
 
 export const getCustomColorPropertiesSetttingText = () =>
-  Object.keys(lightColorPaletteMap)
+  colorPaletteMapKeyList
     .map(
       key => `document.documentElement.style.setProperty(
       '--${kebabize(key)}',
