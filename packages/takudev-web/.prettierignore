@@ -9,3 +9,5 @@ public
 .gitignore
 .node-version
 .DS_Store
+**/*.scss
+**/*.css
