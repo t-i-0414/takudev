@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import isEqual from 'react-fast-compare';
 
 import { colorModeMap } from '~/consts';
@@ -11,6 +11,17 @@ const { lightMode } = colorModeMap;
 export const ColorModeSwitchButton: React.FC = React.memo(() => {
   const { colorMode, handleColorMode } = useContext(ColorContext);
 
+  const handleClick = useCallback(() => {
+    handleColorMode();
+
+    document.documentElement.style.setProperty(
+      `--color-mode-switch-button-translate`,
+      colorMode === colorModeMap.darkMode
+        ? 'translate(-88%, -50%)'
+        : 'translate(-12%, -50%)',
+    );
+  }, [colorMode, handleColorMode]);
+
   return (
     <div
       tabIndex={0}
@@ -19,8 +30,8 @@ export const ColorModeSwitchButton: React.FC = React.memo(() => {
         colorMode === lightMode ? 'dark' : 'light'
       }`}
       className={styles.container}
-      onClick={handleColorMode}
-      onKeyPress={handleColorMode}
+      onClick={handleClick}
+      onKeyPress={handleClick}
     >
       <div className={styles.button}>
         <div className='body' />

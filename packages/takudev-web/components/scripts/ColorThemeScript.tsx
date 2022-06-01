@@ -15,16 +15,10 @@ export const ColorThemeScript: React.FC = React.memo(
 
           function setInitialColorModeOnDocumentBody(colorMode) {
             document.documentElement.style.setProperty(
-              '--initial-color-mode',
-              colorMode === '${colorModeMap.darkMode}'
-                ? '${colorModeMap.darkMode}'
-                : '${colorModeMap.lightMode}'
-            );
-            document.documentElement.style.setProperty(
               '--color-mode-switch-button-translate',
               colorMode === '${colorModeMap.darkMode}'
-                ? 'translate(-88%, -50%)'
-                : 'translate(-12%, -50%)',
+                ? 'translate(-12%, -50%)'
+                : 'translate(-88%, -50%)',
             );
             ${getCustomColorPropertiesSetttingText()}
           }
