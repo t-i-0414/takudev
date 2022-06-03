@@ -2,7 +2,6 @@ import React from 'react';
 import isEqual from 'react-fast-compare';
 
 import { colorModeMap, colorModeLocalstorageKey } from '~/consts';
-
 import { getCustomColorPropertiesSetttingText } from '~/utils';
 
 export const ColorThemeScript: React.FC = React.memo(
@@ -16,18 +15,12 @@ export const ColorThemeScript: React.FC = React.memo(
 
           function setInitialColorModeOnDocumentBody(colorMode) {
             document.documentElement.style.setProperty(
-              '--initial-color-mode',
+              '--color-mode-switch-button-translate',
               colorMode === '${colorModeMap.darkMode}'
-                ? '${colorModeMap.darkMode}'
-                : '${colorModeMap.lightMode}'
+                ? 'translate(-12%, -50%)'
+                : 'translate(-88%, -50%)',
             );
             ${getCustomColorPropertiesSetttingText()}
-            document.documentElement.style.setProperty(
-              '--switch-margin',
-              colorMode === '${colorModeMap.darkMode}'
-                ? 'translate(-88%, -50%)'
-                : 'translate(-12%, -50%)',
-            );
           }
 
           var preferDarkQuery = '(prefers-color-scheme: dark)';

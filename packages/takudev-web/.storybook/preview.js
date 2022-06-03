@@ -2,6 +2,8 @@ import React from 'react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { customViewports } from './customViewports';
 
+import '../styles/_global.scss';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

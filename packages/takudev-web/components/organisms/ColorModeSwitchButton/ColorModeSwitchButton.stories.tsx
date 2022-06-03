@@ -15,7 +15,9 @@ export default {
 } as ComponentMeta<typeof ColorModeSwitchButton>;
 
 const Template: ComponentStory<typeof ColorModeSwitchButton> = () => (
-  <ColorModeSwitchButton />
+  <div style={{ backgroundColor: 'var(--header-color)' }}>
+    <ColorModeSwitchButton />
+  </div>
 );
 
 export const Light: ComponentStory<typeof ColorModeSwitchButton> =

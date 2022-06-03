@@ -12,7 +12,7 @@ type Props = {
   onClickHamburgerButton: () => void;
 };
 
-export const PageHeaderPresentation: React.FC<Props> = React.memo(
+export const PageHeaderView: React.FC<Props> = React.memo(
   ({ hrefToHome, onClickHamburgerButton }) => (
     <header className={styles.header}>
       <nav aria-label='global menu' className={styles['left-content']}>
@@ -33,4 +33,4 @@ export const PageHeaderPresentation: React.FC<Props> = React.memo(
   ),
   isEqual,
 );
-PageHeaderPresentation.displayName = 'PageHeaderPresentation';
+PageHeaderView.displayName = 'PageHeaderView';

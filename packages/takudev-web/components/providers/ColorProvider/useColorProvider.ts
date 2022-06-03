@@ -5,9 +5,9 @@ import {
   colorModeLocalstorageKey,
   lightColorPaletteMap,
   darkColorPaletteMap,
+  colorPaletteMapKeyList,
 } from '~/consts';
 import type { ColorMode } from '~/types';
-
 import { kebabize } from '~/utils';
 
 const { lightMode, darkMode } = colorModeMap;
@@ -16,13 +16,13 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
   const [colorMode, setColorMode] = useState<ColorMode | null>(null);
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(
-      '--initial-color-mode',
-    ) as ColorMode;
+    const rawInitialColorMode = localStorage.getItem(colorModeLocalstorageKey);
 
-    setColorMode(initialColorValue);
-  }, []);
+    const initialColorMode: ColorMode | null =
+      rawInitialColorMode === null ? null : JSON.parse(rawInitialColorMode);
+
+    setColorMode(_colorMode ?? initialColorMode);
+  }, [_colorMode]);
 
   const handleColorMode = useCallback(() => {
     const newColorMode: ColorMode =
@@ -34,7 +34,7 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
       JSON.stringify(newColorMode),
     );
 
-    Object.keys(lightColorPaletteMap).forEach(key => {
+    colorPaletteMapKeyList.forEach(key => {
       document.documentElement.style.setProperty(
         `--${kebabize(key)}`,
         newColorMode === colorModeMap.darkMode
@@ -42,13 +42,6 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
           : lightColorPaletteMap[key as keyof typeof lightColorPaletteMap],
       );
     });
-
-    document.documentElement.style.setProperty(
-      `--switch-margin`,
-      newColorMode === colorModeMap.darkMode
-        ? 'translate(-88%, -50%)'
-        : 'translate(-12%, -50%)',
-    );
   }, [colorMode, setColorMode]);
 
   return {

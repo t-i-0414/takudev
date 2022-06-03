@@ -21,7 +21,11 @@ export default {
   },
 } as ComponentMeta<typeof Logo>;
 
-const Template: ComponentStory<typeof Logo> = args => <Logo {...args} />;
+const Template: ComponentStory<typeof Logo> = args => (
+  <div style={{ backgroundColor: 'var(--header-color)' }}>
+    <Logo {...args} />
+  </div>
+);
 
 export const Light: ComponentStory<typeof Logo> = Template.bind({});
 Light.decorators = [

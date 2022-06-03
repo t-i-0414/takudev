@@ -2,7 +2,7 @@ import { ColorProvider } from '~/components/providers';
 
 import type { AppProps } from 'next/app';
 
-import '~/styles/global.scss';
+import '~/styles/_global.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ColorProvider>

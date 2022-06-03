@@ -31,7 +31,9 @@ export default {
 } as ComponentMeta<typeof HamburgerButton>;
 
 const Template: ComponentStory<typeof HamburgerButton> = args => (
-  <HamburgerButton {...args} />
+  <div style={{ backgroundColor: 'var(--header-color)' }}>
+    <HamburgerButton {...args} />
+  </div>
 );
 
 export const Light: ComponentStory<typeof HamburgerButton> = Template.bind({});
