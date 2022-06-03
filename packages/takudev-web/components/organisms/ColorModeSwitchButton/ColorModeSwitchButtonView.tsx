@@ -13,7 +13,7 @@ type Props = {
 
 const { lightMode } = colorModeMap;
 
-export const ColorModeSwitchButtonPresentation: React.FC<Props> = React.memo(
+export const ColorModeSwitchButtonView: React.FC<Props> = React.memo(
   ({ colorMode, onClick }) => (
     <div
       tabIndex={0}
@@ -63,5 +63,4 @@ export const ColorModeSwitchButtonPresentation: React.FC<Props> = React.memo(
   ),
   isEqual,
 );
-ColorModeSwitchButtonPresentation.displayName =
-  'ColorModeSwitchButtonPresentation';
+ColorModeSwitchButtonView.displayName = 'ColorModeSwitchButtonView';

@@ -4,7 +4,7 @@ import isEqual from 'react-fast-compare';
 import { colorModeMap } from '~/consts';
 import { ColorContext } from '~/contexts';
 
-import { ColorModeSwitchButtonPresentation } from './ColorModeSwitchButtonPresentation';
+import { ColorModeSwitchButtonView } from './ColorModeSwitchButtonView';
 
 export const ColorModeSwitchButton: React.FC = React.memo(() => {
   const { colorMode, handleColorMode } = useContext(ColorContext);
@@ -21,10 +21,7 @@ export const ColorModeSwitchButton: React.FC = React.memo(() => {
   }, [colorMode, handleColorMode]);
 
   return (
-    <ColorModeSwitchButtonPresentation
-      colorMode={colorMode}
-      onClick={handleClick}
-    />
+    <ColorModeSwitchButtonView colorMode={colorMode} onClick={handleClick} />
   );
 }, isEqual);
 ColorModeSwitchButton.displayName = 'ColorModeSwitchButton';

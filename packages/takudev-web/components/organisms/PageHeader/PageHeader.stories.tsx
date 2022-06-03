@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PageHeaderPresentation } from './PageHeaderPresentation';
+import { PageHeaderView } from './PageHeaderView';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
@@ -11,7 +11,7 @@ import {
 
 export default {
   title: 'Organisms/PageHeader',
-  component: PageHeaderPresentation,
+  component: PageHeaderView,
   argTypes: {
     hrefToHome: {
       table: {
@@ -19,14 +19,13 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof PageHeaderPresentation>;
+} as ComponentMeta<typeof PageHeaderView>;
 
-const Template: ComponentStory<typeof PageHeaderPresentation> = args => (
-  <PageHeaderPresentation {...args} />
+const Template: ComponentStory<typeof PageHeaderView> = args => (
+  <PageHeaderView {...args} />
 );
 
-export const Light: ComponentStory<typeof PageHeaderPresentation> =
-  Template.bind({});
+export const Light: ComponentStory<typeof PageHeaderView> = Template.bind({});
 Light.decorators = [
   (Story, context) => (
     <LightThemeTemplate>
@@ -35,8 +34,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof PageHeaderPresentation> =
-  Template.bind({});
+export const Dark: ComponentStory<typeof PageHeaderView> = Template.bind({});
 Dark.decorators = [
   (Story, context) => (
     <DarkThemeTemplate>
