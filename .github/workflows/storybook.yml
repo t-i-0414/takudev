@@ -34,7 +34,7 @@ jobs:
       - name: set upload destination directory name
         run: |
           DEST_DIR=${{ github.event.pull_request.number }}
-          [ -z $DEST_DIR ] && DEST_DIR=main
+          [ -z $DEST_DIR ] && DEST_DIR=develop
           echo "DEST_DIR=${DEST_DIR}" >> $GITHUB_ENV
       - name: upload dist-storybook
         run: |
