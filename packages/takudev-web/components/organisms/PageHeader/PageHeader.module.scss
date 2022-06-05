@@ -1,4 +1,5 @@
 @import "../../../styles/color";
+@import "../../../styles/responsive";
 
 .header {
   position: relative;
@@ -28,7 +29,7 @@
   transform: translateY(-50%);
 }
 
-@media screen and (min-width: 576px) {
+@include responsive(sm) {
   .left-content {
     left: 80px;
   }
