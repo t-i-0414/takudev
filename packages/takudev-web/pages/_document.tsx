@@ -8,7 +8,7 @@ const Document = () => {
   const shouldNoIndex = stage !== 'production';
 
   return (
-    <Html>
+    <Html lang='en'>
       <Head>
         {shouldNoIndex && <meta name='robots' content='noindex' />}
         <link rel='icon' href='/favicon.ico' />
