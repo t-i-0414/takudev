@@ -29,9 +29,6 @@ jobs:
           node-version: '16'
           cache: 'yarn'
       - uses: ./.github/actions/setup
-      - name: workaround for detached HEAD
-        run: |
-          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
       - name: Build Storybook
         run: cd packages/takudev-web && yarn build:storybook
       - name: set upload destination directory name
