@@ -1,4 +1,4 @@
-name: 'CI'
+name: 'light-house'
 
 on:
   push:

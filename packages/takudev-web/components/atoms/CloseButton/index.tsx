@@ -15,7 +15,7 @@ export const CloseButton: React.FC<Props> = React.memo(
       type='button'
       aria-label={ariaLabel}
       onClick={onClick}
-      className={styles.button}
+      className={`${styles.button} close-button`}
       {...rest}
     >
       <svg

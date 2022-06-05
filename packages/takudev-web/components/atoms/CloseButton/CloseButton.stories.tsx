@@ -43,19 +43,41 @@ Template.argTypes = {
 };
 
 export const Light: ComponentStory<typeof CloseButton> = Template.bind({});
-Light.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
+Light.story = {
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <Story {...context.args} />
+      </LightThemeTemplate>
+    ),
+  ],
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'button.close-button',
+        },
+      },
+    },
+  },
+};
 
 export const Dark: ComponentStory<typeof CloseButton> = Template.bind({});
-Dark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
+Dark.story = {
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <Story {...context.args} />
+      </DarkThemeTemplate>
+    ),
+  ],
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'button.close-button',
+        },
+      },
+    },
+  },
+};
