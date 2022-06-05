@@ -13,7 +13,7 @@ export const HamburgerButton: React.FC<Props> = React.memo(
     <button
       type='button'
       aria-label={ariaLabel}
-      className={styles.button}
+      className={`${styles.button} hamburger-button`}
       onClick={onClick}
       {...rest}
     >
