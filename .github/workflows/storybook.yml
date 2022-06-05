@@ -1,0 +1,72 @@
+name: 'storybook'
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+    branches:
+      - 'main'
+      - 'develop'
+      - 'staging'
+      - 'release/**'
+      - 'feature/**'
+      - 'hotfix/**'
+      - '**patch**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event.action != 'closed'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - uses: ./.github/actions/setup
+      - name: Build Storybook
+        run: cd packages/takudev-web && yarn build:storybook
+      - name: set upload destination directory name
+        run: |
+          DEST_DIR=${{ github.event.pull_request.number }}
+          [ -z $DEST_DIR ] && DEST_DIR=main
+          echo "DEST_DIR=${DEST_DIR}" >> $GITHUB_ENV
+      - name: upload dist-storybook
+        run: |
+          aws s3 cp --recursive \
+            ./packages/takudev-web/dist-storybook \
+            s3://takudev-storybook/storybook/${DEST_DIR}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-1
+      - name: post preview url to pull-request
+        if: github.event.action != 'closed'
+        uses: actions/github-script@v3
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'storybook preview created!!\n' +
+                'https://takudev-storybook.s3-ap-northeast-1.amazonaws.com/storybook/${{ github.event.pull_request.number }}/index.html'
+            })
+  clean:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - name: remove dist-storybook
+        run: |
+          DEST_DIR=${{ github.event.pull_request.number }}
+          aws s3 rm --recursive \
+            s3://takudev-storybook/storybook/${DEST_DIR}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-1
