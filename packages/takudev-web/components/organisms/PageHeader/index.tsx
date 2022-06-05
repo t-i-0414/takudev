@@ -1,14 +1,14 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import { PageHeaderPresentation } from './PageHeaderPresentation';
+import { PageHeaderView } from './PageHeaderView';
 
 export const PageHeader = React.memo(() => {
-  const hrefToHome = '#';
+  const hrefToHome = '/';
   const handleClickHamburgerButton = () => {};
 
   return (
-    <PageHeaderPresentation
+    <PageHeaderView
       hrefToHome={hrefToHome}
       onClickHamburgerButton={handleClickHamburgerButton}
     />

@@ -1,0 +1,26 @@
+@import "../../../styles/font-family";
+@import "../../../styles/color";
+
+.logo {
+  display: block;
+  width: fit-content;
+  font-family: futura-pt, $base-font-family;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 700;
+  color: $pale-white;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

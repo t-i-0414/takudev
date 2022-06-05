@@ -1,0 +1,40 @@
+@import "../../../styles/color";
+@import "../../../styles/responsive";
+
+.header {
+  position: relative;
+  justify-content: space-between;
+  height: 56px;
+  background-color: $header-color;
+}
+
+.left-content {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-content {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+@include responsive(sm) {
+  .left-content {
+    left: 80px;
+  }
+
+  .right-content {
+    right: 80px;
+  }
+}

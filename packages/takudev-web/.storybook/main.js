@@ -9,7 +9,6 @@ module.exports = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    '@storybook/addon-postcss',
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react',
@@ -19,6 +18,22 @@ module.exports = {
       '~': path.resolve(__dirname, '../'),
       storybook: path.resolve(__dirname),
     };
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              auto: true,
+            },
+          },
+        },
+        'sass-loader',
+      ],
+      include: path.resolve(__dirname, '../'),
+    });
     return config;
   },
   features: {

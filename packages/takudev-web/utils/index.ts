@@ -1,2 +1,2 @@
-export { rem } from './rem';
-export { vw } from './vw';
+export { getCustomColorPropertiesSetttingText } from './getCustomColorPropertiesSetttingText';
+export { kebabize } from './kebabize';
