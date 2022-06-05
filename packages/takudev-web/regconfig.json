@@ -16,7 +16,7 @@
       "clientId": "$REG_SUIT_GITHUB_APP_CLIENT_ID"
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "taku-dev-reg-suit"
+      "bucketName": "takudev-reg-suit"
     }
   }
 }
