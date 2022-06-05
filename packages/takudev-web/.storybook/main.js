@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
+    'storycap',
   ],
   framework: '@storybook/react',
   webpackFinal: async config => {

@@ -37,19 +37,41 @@ const Template: ComponentStory<typeof HamburgerButton> = args => (
 );
 
 export const Light: ComponentStory<typeof HamburgerButton> = Template.bind({});
-Light.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
+Light.story = {
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <Story {...context.args} />
+      </LightThemeTemplate>
+    ),
+  ],
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'button.hamburger-button',
+        },
+      },
+    },
+  },
+};
 
 export const Dark: ComponentStory<typeof HamburgerButton> = Template.bind({});
-Dark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
+Dark.story = {
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <Story {...context.args} />
+      </DarkThemeTemplate>
+    ),
+  ],
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'button.hamburger-button',
+        },
+      },
+    },
+  },
+};
