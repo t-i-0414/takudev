@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MODAL_MENU_ROOT_ELEMENT_ID } from '~/consts';
 
-import { PageHeader } from '.';
+import { ModalMenu } from '.';
 
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
@@ -12,31 +12,31 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/PageHeader',
-  component: PageHeader,
-} as ComponentMeta<typeof PageHeader>;
+  title: 'Organisms/ModalMenu',
+  component: ModalMenu,
+} as ComponentMeta<typeof ModalMenu>;
 
-const Template: ComponentStory<typeof PageHeader> = () => (
+const Template: ComponentStory<typeof ModalMenu> = () => (
   <>
     <div id={MODAL_MENU_ROOT_ELEMENT_ID} />
-    <PageHeader />
+    <ModalMenu />
   </>
 );
 
-export const Light: ComponentStory<typeof PageHeader> = Template.bind({});
+export const Light: ComponentStory<typeof ModalMenu> = Template.bind({});
 Light.decorators = [
-  (Story, context) => (
+  Story => (
     <LightThemeTemplate>
-      <Story {...context.args} />
+      <Story />
     </LightThemeTemplate>
   ),
 ];
 
-export const Dark: ComponentStory<typeof PageHeader> = Template.bind({});
+export const Dark: ComponentStory<typeof ModalMenu> = Template.bind({});
 Dark.decorators = [
-  (Story, context) => (
+  Story => (
     <DarkThemeTemplate>
-      <Story {...context.args} />
+      <Story />
     </DarkThemeTemplate>
   ),
 ];
