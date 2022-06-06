@@ -5,7 +5,7 @@ import type { Stage } from '~/types';
 
 const Document = () => {
   const stage: Stage = (process.env.STAGE as Stage) ?? 'preview';
-  const shouldNoIndex = stage !== 'production';
+  const shouldNoIndex = stage === 'staging';
 
   return (
     <Html lang='en'>
