@@ -19,6 +19,7 @@ module.exports = {
         'service-worker': 'off',
         'splash-screen': 'off',
         'themed-omnibox': 'off',
+        'categories:performance': ['error', { minScore: 0.9 }],
       },
     },
   },
