@@ -1,1 +1,1 @@
-export const MODAL_MENU_ROOT_ELEMENT_ID = 'modal-menu-root';
+export const MENU_MODAL_ROOT_ELEMENT_ID = 'menu-modal-root';

@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 import { ColorThemeScript } from '~/components/scripts';
-import { MODAL_MENU_ROOT_ELEMENT_ID } from '~/consts';
+import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import type { Stage } from '~/types';
 
 const Document = () => {
@@ -19,7 +19,7 @@ const Document = () => {
       <body>
         <ColorThemeScript />
         <Main />
-        <div id={MODAL_MENU_ROOT_ELEMENT_ID} />
+        <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
         <NextScript />
       </body>
     </Html>

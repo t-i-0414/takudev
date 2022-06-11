@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import { MODAL_MENU_ROOT_ELEMENT_ID } from '~/consts';
+import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 
 const ModalContent: React.FC = () => (
   <div
@@ -18,12 +18,12 @@ const ModalContent: React.FC = () => (
   </div>
 );
 
-export const ModalMenu: React.FC = () => {
+export const MenuModal: React.FC = () => {
   const ref = useRef<Element | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    ref.current = document.querySelector(`#${MODAL_MENU_ROOT_ELEMENT_ID}`);
+    ref.current = document.querySelector(`#${MENU_MODAL_ROOT_ELEMENT_ID}`);
     setMounted(true);
   }, []);
 
