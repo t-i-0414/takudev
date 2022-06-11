@@ -1,7 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import { ModalMenu } from '../ModalMenu';
+// import { ModalMenu } from '../ModalMenu';
 
 import { PageHeaderView } from './PageHeaderView';
 
@@ -15,7 +15,7 @@ export const PageHeader = React.memo(() => {
         hrefToHome={hrefToHome}
         onClickHamburgerButton={handleClickHamburgerButton}
       />
-      <ModalMenu />
+      {/* <ModalMenu /> */}
     </>
   );
 }, isEqual);
