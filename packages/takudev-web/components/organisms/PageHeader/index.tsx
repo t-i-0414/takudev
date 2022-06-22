@@ -24,6 +24,7 @@ export const PageHeader = React.memo(() => {
   return (
     <>
       <PageHeaderView
+        isOpenMenuModal={isOpenMenuModal}
         hrefToHome={hrefMap.home}
         onClickHamburgerButton={handleClickHamburgerButton}
       />

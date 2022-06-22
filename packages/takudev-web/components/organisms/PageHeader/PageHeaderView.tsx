@@ -8,16 +8,19 @@ import { ColorModeSwitchButton } from '../ColorModeSwitchButton';
 import styles from './PageHeader.module.scss';
 
 type Props = {
+  isOpenMenuModal: boolean;
   hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
   onClickHamburgerButton: () => void;
 };
 
 export const PageHeaderView: React.FC<Props> = React.memo(
-  ({ hrefToHome, onClickHamburgerButton }) => (
+  ({ isOpenMenuModal, hrefToHome, onClickHamburgerButton }) => (
     <header className={styles.header}>
       <nav aria-label='global menu' className={styles['left-content']}>
         <HamburgerButton
-          ariaLabel='open global menu'
+          aria-expanded={isOpenMenuModal}
+          aria-label='open global menu'
+          aria-controls='menu-modal'
           onClick={onClickHamburgerButton}
         />
       </nav>
