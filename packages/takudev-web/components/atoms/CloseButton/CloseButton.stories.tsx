@@ -16,11 +16,6 @@ export default {
     size: {
       control: { type: 'number', min: 0, max: 48, step: 1 },
     },
-    ariaLabel: {
-      table: {
-        disable: true,
-      },
-    },
     onClick: {
       action: 'clicked',
       table: {

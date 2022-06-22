@@ -8,8 +8,8 @@ type Props = {
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export const Logo: React.FC<Props> = React.memo(
-  ({ color, href, ...rest }) => (
-    <a href={href} className={`${styles.logo} logo`} {...rest} tabIndex={0}>
+  ({ href, ...rest }) => (
+    <a href={href} className={styles.logo} {...rest}>
       Taku.dev
     </a>
   ),
