@@ -9,7 +9,7 @@ type Props = {
 
 export const Logo: React.FC<Props> = React.memo(
   ({ href, ...rest }) => (
-    <a href={href} className={styles.logo} {...rest}>
+    <a href={href} className={`${styles.logo} logo`} {...rest}>
       Taku.dev
     </a>
   ),
