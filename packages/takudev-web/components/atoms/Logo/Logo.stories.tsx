@@ -13,11 +13,7 @@ export default {
   title: 'Atoms/Logo',
   component: Logo,
   argTypes: {
-    href: {
-      table: {
-        disable: true,
-      },
-    },
+    href: { control: 'text', defaultValue: '#', table: { disable: true } },
   },
 } as ComponentMeta<typeof Logo>;
 

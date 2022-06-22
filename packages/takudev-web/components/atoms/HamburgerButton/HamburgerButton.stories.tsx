@@ -16,11 +16,6 @@ export default {
     color: {
       control: { type: 'color' },
     },
-    ariaLabel: {
-      table: {
-        disable: true,
-      },
-    },
     onClick: {
       action: 'clicked',
       table: {

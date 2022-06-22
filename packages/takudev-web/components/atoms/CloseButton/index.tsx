@@ -5,15 +5,13 @@ import styles from './CloseButton.module.scss';
 
 type Props = {
   size?: number;
-  ariaLabel: React.ButtonHTMLAttributes<HTMLButtonElement>['aria-label'];
   onClick: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
 } & React.ComponentPropsWithoutRef<'button'>;
 
 export const CloseButton: React.FC<Props> = React.memo(
-  ({ size = 18, ariaLabel, onClick, ...rest }) => (
+  ({ size = 18, onClick, ...rest }) => (
     <button
       type='button'
-      aria-label={ariaLabel}
       onClick={onClick}
       className={`${styles.button} close-button`}
       {...rest}
