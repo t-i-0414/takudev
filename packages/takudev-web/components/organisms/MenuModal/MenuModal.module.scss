@@ -1,7 +1,7 @@
 @import "../../../styles/color";
 @import "../../../styles/responsive";
 
-.wrapper-base {
+.wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,32 +10,66 @@
   height: 0;
   visibility: hidden;
   background-color: $base-color;
-}
 
-.wrapper-open {
-  width: calc(100vh + 100vw);
-  height: calc(100vh + 100vw);
-  visibility: visible;
-  animation: show 0.6s linear 0s;
-}
+  &--open {
+    width: calc(100vh + 100vw);
+    height: calc(100vh + 100vw);
+    visibility: visible;
+    animation: show-wrapper 0.4s linear 0s;
+  }
 
-.wrapper-close {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-  animation: hide 0.4s linear 0s;
+  &--close {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    animation: hide-wrapper 0.2s linear 0s;
+  }
 }
 
 .close-button-container {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  transition: all 0.1s linear 0s;
+  transform: translate(-100%, -100%);
+
+  &--open {
+    top: 4px;
+    left: 16px;
+    transform: translate(0, 0);
+
+    @include responsive(min-sm) {
+      left: 80px;
+    }
+  }
+
+  &--close {
+    top: 0;
+    left: 0;
+    transform: translate(-100%, -100%);
+  }
 }
 
 .menu-list-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  transition: all 0.2s linear 0s;
+  transform: translate(-100%, -100%);
+
+  &--open {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--close {
+    top: 0;
+    left: 0;
+    transform: translate(-100%, -100%);
+  }
 
   ul {
     padding: 0;
@@ -66,17 +100,7 @@
   }
 }
 
-@include responsive(sm) {
-  .close-button-container {
-    margin-top: 80px;
-  }
-
-  .menu-list-container {
-    margin-top: 80px;
-  }
-}
-
-@keyframes show {
+@keyframes show-wrapper {
   0% {
     width: 0;
     height: 0;
@@ -95,7 +119,7 @@
   }
 }
 
-@keyframes hide {
+@keyframes hide-wrapper {
   0% {
     width: calc(100vh + 100vw);
     height: calc(100vh + 100vw);
