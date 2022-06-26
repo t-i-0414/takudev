@@ -8,8 +8,8 @@
     "stylelint --ignore-path .stylelintignore"
   ],
   "*": [
-    "prettier --write --ignore-path .prettierignore",
-    "prettier --check --ignore-path .prettierignore"
+    "prettier --cache --write --ignore-path .prettierignore",
+    "prettier --cache --check --ignore-path .prettierignore"
   ],
   "./package.json": ["sort-package-json", "sort-package-json --check"]
 }

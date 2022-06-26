@@ -29,7 +29,7 @@
   transform: translateY(-50%);
 }
 
-@include responsive(sm) {
+@include responsive(min-sm) {
   .left-content {
     left: 80px;
   }

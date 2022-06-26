@@ -1,11 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 import { ColorThemeScript } from '~/components/scripts';
+import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import type { Stage } from '~/types';
 
 const Document = () => {
   const stage: Stage = (process.env.STAGE as Stage) ?? 'preview';
-  const shouldNoIndex = stage !== 'production';
+  const shouldNoIndex = stage === 'staging';
 
   return (
     <Html lang='en'>
@@ -18,6 +19,7 @@ const Document = () => {
       <body>
         <ColorThemeScript />
         <Main />
+        <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
         <NextScript />
       </body>
     </Html>
