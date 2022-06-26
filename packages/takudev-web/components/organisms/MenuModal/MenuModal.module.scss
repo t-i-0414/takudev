@@ -1,11 +1,24 @@
 @import "../../../styles/color";
 @import "../../../styles/responsive";
 
-.wrapper {
+@mixin fixed-top-on-the-left {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+@mixin wrapper-z-index {
   z-index: 10;
+}
+
+@mixin contents-z-index {
+  z-index: 20;
+}
+
+.wrapper {
+  @include fixed-top-on-the-left;
+  @include wrapper-z-index;
+
   width: 0;
   height: 0;
   visibility: hidden;
@@ -27,10 +40,9 @@
 }
 
 .close-button-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11;
+  @include fixed-top-on-the-left;
+  @include contents-z-index;
+
   transition: all 0.1s linear 0s;
   transform: translate(-100%, -100%);
 
@@ -52,10 +64,9 @@
 }
 
 .menu-list-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11;
+  @include fixed-top-on-the-left;
+  @include contents-z-index;
+
   transition: all 0.2s linear 0s;
   transform: translate(-100%, -100%);
 
