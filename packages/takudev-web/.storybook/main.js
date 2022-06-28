@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
+    '@storybook/addon-postcss',
     'storycap',
   ],
   framework: '@storybook/react',
