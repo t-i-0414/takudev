@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import isEqual from 'react-fast-compare';
 import { throttle } from 'throttle-debounce';
 
-import { PageHeader } from '~/components/organisms';
+import { PageHeader, PageFooter } from '~/components/organisms';
 
 import styles from './PageTemplate.module.scss';
 import { usePageTemplate } from './usePageTemplate';
@@ -43,7 +43,7 @@ export const PageTemplate: React.FC<Props> = React.memo(
           </>
         )}
         <main className={styles.main}>{children}</main>
-        {hasFooter && <footer className={styles.footer}>footer</footer>}
+        {hasFooter && <PageFooter />}
       </div>
     );
   },
