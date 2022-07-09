@@ -1,0 +1,31 @@
+import React from 'react';
+
+import { Logo } from '~/components/atoms';
+import { SnsIconList } from '~/components/molecules';
+import { hrefMap } from '~/consts';
+
+import styles from './PageFooter.module.scss';
+
+export const PageFooterView: React.FC = () => (
+  <footer className={styles.footer}>
+    <div className={styles['logo-container']}>
+      <Logo href={hrefMap.home} />
+    </div>
+
+    <ul className={styles['menu-list']}>
+      <li>
+        <a href={hrefMap.contact} aria-label='go to contact page'>
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <div className={styles['sns-icon-list-container']}>
+      <SnsIconList color='white' />
+    </div>
+
+    <small className={styles['copy-right']}>
+      &copy;Takuya Iwashiro All Rights Reserved.
+    </small>
+  </footer>
+);
