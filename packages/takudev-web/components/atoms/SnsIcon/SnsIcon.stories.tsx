@@ -66,7 +66,7 @@ GithubDark.story = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'a.logo',
+          hover: 'a.icon',
         },
       },
     },
@@ -112,7 +112,7 @@ TwitterDark.story = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'a.logo',
+          hover: 'a.icon',
         },
       },
     },
@@ -158,7 +158,7 @@ FacebookDark.story = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'a.logo',
+          hover: 'a.icon',
         },
       },
     },
@@ -204,7 +204,7 @@ LinkedinDark.story = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'a.logo',
+          hover: 'a.icon',
         },
       },
     },
@@ -250,7 +250,7 @@ RssDark.story = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'a.logo',
+          hover: 'a.icon',
         },
       },
     },
