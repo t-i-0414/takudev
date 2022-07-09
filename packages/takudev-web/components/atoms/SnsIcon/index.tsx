@@ -27,12 +27,30 @@ export const SnsIcon: React.FC<Props> = ({ type, color, ...rest }) => {
     return lightColorPaletteMap[color || 'sublabelColor'];
   }, [color, colorMode]);
 
+  const ariaLabel = useMemo(() => {
+    switch (type) {
+      case 'github':
+        return "jump to taku's gitHub page";
+      case 'twitter':
+        return "jump to taku's twitter page";
+      case 'facebook':
+        return "jump to taku's facebook page";
+      case 'linkedin':
+        return "jump to taku's linkedin page";
+      case 'rss':
+        return "jump to taku's rss page";
+      default:
+        return '';
+    }
+  }, [type]);
+
   return (
     <a
       href={hrefMap[type]}
       className={`${styles['sns-icon']} icon`}
       target='_blank'
       rel='noreferrer'
+      aria-label={ariaLabel}
       {...rest}
     >
       <div className={styles['svg-container']}>
