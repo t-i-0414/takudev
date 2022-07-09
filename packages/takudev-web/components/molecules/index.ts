@@ -1,0 +1,1 @@
+export { SnsIconList } from './SnsIconList';
