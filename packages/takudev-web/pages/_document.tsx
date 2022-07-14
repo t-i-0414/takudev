@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-
 import { ColorThemeScript } from '~/components/scripts';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import type { Stage } from '~/types';

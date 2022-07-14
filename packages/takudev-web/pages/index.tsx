@@ -1,8 +1,6 @@
 import Head from 'next/head';
-
 import { PageContentHome } from '~/components/organisms';
 import { PageTemplate } from '~/components/templates';
-
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => (

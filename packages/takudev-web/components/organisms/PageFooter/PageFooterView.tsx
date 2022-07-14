@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { Logo } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
 import { hrefMap } from '~/consts';
-
 import styles from './PageFooter.module.scss';
 
 export const PageFooterView: React.FC = () => (
@@ -21,7 +19,7 @@ export const PageFooterView: React.FC = () => (
     </ul>
 
     <div className={styles['sns-icon-list-container']}>
-      <SnsIconList color='white' />
+      <SnsIconList colorName='white' />
     </div>
 
     <small className={styles['copy-right']}>

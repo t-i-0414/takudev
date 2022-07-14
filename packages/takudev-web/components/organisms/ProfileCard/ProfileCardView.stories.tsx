@@ -1,11 +1,7 @@
 import React from 'react';
-
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
-
 import { ProfileCard } from '.';
-
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -18,7 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = () => <ProfileCard />;
 
-export const Light: ComponentStory<typeof ProfileCard> = Template.bind({});
+export const Light = Template.bind({});
 Light.decorators = [
   (Story, context) => (
     <LightThemeTemplate>
@@ -27,7 +23,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof ProfileCard> = Template.bind({});
+export const Dark = Template.bind({});
 Dark.decorators = [
   (Story, context) => (
     <DarkThemeTemplate>

@@ -1,24 +1,21 @@
 import React, { useContext, useMemo } from 'react';
 import isEqual from 'react-fast-compare';
-
 import {
   hrefMap,
   lightColorPaletteMap,
   darkColorPaletteMap,
   colorPaletteMapKeyList,
 } from '~/consts';
-
 import { ColorContext } from '~/contexts';
-
 import styles from './SnsIcon.module.scss';
 
 type Props = {
   type: 'github' | 'twitter' | 'facebook' | 'linkedin' | 'rss';
-  color?: typeof colorPaletteMapKeyList[number];
+  colorName?: typeof colorPaletteMapKeyList[number];
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export const SnsIcon: React.FC<Props> = React.memo(
-  ({ type, color, ...rest }) => {
+  ({ type, colorName: color, ...rest }) => {
     const { colorMode } = useContext(ColorContext);
 
     const svgFillColor = useMemo(() => {

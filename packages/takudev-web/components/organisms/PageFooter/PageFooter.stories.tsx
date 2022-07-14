@@ -1,7 +1,5 @@
 import { PageFooter } from '.';
-
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -14,7 +12,7 @@ export default {
 
 const Template: ComponentStory<typeof PageFooter> = () => <PageFooter />;
 
-export const Light: ComponentStory<typeof PageFooter> = Template.bind({});
+export const Light = Template.bind({});
 Light.decorators = [
   (Story, context) => (
     <LightThemeTemplate>
@@ -23,7 +21,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof PageFooter> = Template.bind({});
+export const Dark = Template.bind({});
 Dark.decorators = [
   (Story, context) => (
     <DarkThemeTemplate>

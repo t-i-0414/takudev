@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { ProfileIcon } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
-
 import styles from './ProfileCardView.module.scss';
 
 export const ProfileCardView = () => (
@@ -14,7 +12,7 @@ export const ProfileCardView = () => (
         <p className={styles['location-text']}>Web Dev at Tokyo, JAPAN</p>
       </div>
       <div className={styles['sns-icon-list-container']}>
-        <SnsIconList color='borderColor' />
+        <SnsIconList colorName='borderColor' />
       </div>
     </div>
   </div>

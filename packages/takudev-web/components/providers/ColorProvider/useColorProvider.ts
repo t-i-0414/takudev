@@ -1,5 +1,4 @@
 import { useCallback, useState, useEffect } from 'react';
-
 import {
   colorModeMap,
   colorModeLocalstorageKey,

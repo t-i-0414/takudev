@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-
 import { colorModeMap } from '~/consts';
 import type { ColorMode } from '~/types';
 

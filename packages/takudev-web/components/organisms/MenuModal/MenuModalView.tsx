@@ -1,8 +1,6 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-
 import { CloseButton } from '~/components/atoms';
-
 import styles from './MenuModal.module.scss';
 
 type Props = {

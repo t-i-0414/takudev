@@ -4,6 +4,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb/hooks',
     'plugin:@next/next/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {

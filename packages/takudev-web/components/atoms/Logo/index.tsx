@@ -1,6 +1,5 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-
 import styles from './Logo.module.scss';
 
 type Props = {
