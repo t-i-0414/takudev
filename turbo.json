@@ -1,19 +1,25 @@
 {
+  "$schema": "https://turborepo.org/schema.json",
   "baseBranch": "origin/develop",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["*"]
     },
     "test": {
       "dependsOn": ["build"]
     },
     "format": {
-      "dependsOn": ["^format"]
+      "inputs": ["*"]
     },
     "lint": {
       "dependsOn": ["format"]
     },
-    "type-check": {},
-    "postinstall": {}
+    "type-check": {
+      "inputs": ["./**/*.ts", "./**/*.tsx"]
+    },
+    "postinstall": {
+      "inputs": ["./**/package.json"]
+    }
   }
 }

@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { Logo } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
 import { hrefMap } from '~/consts';
-
 import styles from './PageFooter.module.scss';
 
 export const PageFooterView: React.FC = () => (

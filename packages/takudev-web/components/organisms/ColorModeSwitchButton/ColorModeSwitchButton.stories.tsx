@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { ColorModeSwitchButton } from '.';
-
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import {
   LightThemeTemplate,
   DarkThemeTemplate,

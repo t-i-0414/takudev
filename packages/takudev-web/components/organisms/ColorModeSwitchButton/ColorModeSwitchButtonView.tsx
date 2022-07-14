@@ -1,9 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-
 import { colorModeMap } from '~/consts';
 import { ColorMode } from '~/types';
-
 import styles from './ColorModeSwitchButton.module.scss';
 
 type Props = {

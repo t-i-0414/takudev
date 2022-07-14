@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import isEqual from 'react-fast-compare';
 import { throttle } from 'throttle-debounce';
-
 import { PageHeader, PageFooter } from '~/components/organisms';
-
 import styles from './PageTemplate.module.scss';
 import { usePageTemplate } from './usePageTemplate';
 

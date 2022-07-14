@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-
 import type { Stage } from '~/types';
 
 export const middleware = (req: NextRequest) => {

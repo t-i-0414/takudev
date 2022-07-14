@@ -4,7 +4,6 @@ import {
   lightColorPaletteMap,
   darkColorPaletteMap,
 } from '~/consts';
-
 import { kebabize } from './kebabize';
 
 export const getCustomColorPropertiesSetttingText = () =>

@@ -1,8 +1,6 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-
 import { SnsIcon } from '../../atoms';
-
 import styles from './SnsIconList.module.scss';
 
 type Props = {

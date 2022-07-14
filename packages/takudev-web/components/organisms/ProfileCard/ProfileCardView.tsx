@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { ProfileIcon } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
-
 import styles from './ProfileCardView.module.scss';
 
 export const ProfileCardView = () => (

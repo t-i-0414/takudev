@@ -1,15 +1,12 @@
 import React, { useContext, useMemo } from 'react';
 import isEqual from 'react-fast-compare';
-
 import {
   hrefMap,
   lightColorPaletteMap,
   darkColorPaletteMap,
   colorPaletteMapKeyList,
 } from '~/consts';
-
 import { ColorContext } from '~/contexts';
-
 import styles from './SnsIcon.module.scss';
 
 type Props = {
