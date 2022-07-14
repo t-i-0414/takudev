@@ -12,14 +12,11 @@ import {
 export default {
   title: 'Atoms/Logo',
   component: Logo,
-  argTypes: {
-    href: { control: 'text', defaultValue: '#', table: { disable: true } },
-  },
 } as ComponentMeta<typeof Logo>;
 
-const Template: ComponentStory<typeof Logo> = args => (
+const Template: ComponentStory<typeof Logo> = () => (
   <div style={{ backgroundColor: 'var(--header-color)' }}>
-    <Logo {...args} />
+    <Logo href='#' />
   </div>
 );
 

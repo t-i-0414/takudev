@@ -14,7 +14,9 @@ export default {
   component: SnsIconList,
   argTypes: {
     color: {
-      control: 'color',
+      control: {
+        type: 'color',
+      },
     },
   },
 } as ComponentMeta<typeof SnsIconList>;

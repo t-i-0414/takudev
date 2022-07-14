@@ -19,7 +19,9 @@ export default {
       defaultValue: 'github',
     },
     color: {
-      control: 'color',
+      control: {
+        type: 'color',
+      },
     },
   },
 } as ComponentMeta<typeof SnsIcon>;
