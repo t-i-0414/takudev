@@ -51,7 +51,6 @@ module.exports = {
         alphabetize: {
           order: 'asc',
         },
-        'newlines-between': 'always-and-inside-groups',
       },
     ],
     'import/prefer-default-export': ['off'],
