@@ -1,4 +1,5 @@
 import React from 'react';
+import { colorPaletteMapKeyList } from '~/consts';
 import { SnsIconList } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
@@ -10,11 +11,7 @@ export default {
   title: 'Molecules/SnsIconList',
   component: SnsIconList,
   argTypes: {
-    color: {
-      control: {
-        type: 'color',
-      },
-    },
+    colorName: { control: 'select', options: colorPaletteMapKeyList },
   },
 } as ComponentMeta<typeof SnsIconList>;
 
@@ -24,24 +21,20 @@ const Template: ComponentStory<typeof SnsIconList> = args => (
   </div>
 );
 
-export const Light: ComponentStory<typeof SnsIconList> = Template.bind({});
-Light.story = {
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <Story {...context.args} />
-      </LightThemeTemplate>
-    ),
-  ],
-};
+export const Light = Template.bind({});
+Light.decorators = [
+  (Story, context) => (
+    <LightThemeTemplate>
+      <Story {...context.args} />
+    </LightThemeTemplate>
+  ),
+];
 
-export const Dark: ComponentStory<typeof SnsIconList> = Template.bind({});
-Dark.story = {
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <Story {...context.args} />
-      </DarkThemeTemplate>
-    ),
-  ],
-};
+export const Dark = Template.bind({});
+Dark.decorators = [
+  (Story, context) => (
+    <DarkThemeTemplate>
+      <Story {...context.args} />
+    </DarkThemeTemplate>
+  ),
+];

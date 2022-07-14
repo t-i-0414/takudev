@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof PageContentHome> = () => (
   <PageContentHome />
 );
 
-export const Light: ComponentStory<typeof PageContentHome> = Template.bind({});
+export const Light = Template.bind({});
 Light.decorators = [
   (Story, context) => (
     <LightThemeTemplate>
@@ -25,7 +25,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof PageContentHome> = Template.bind({});
+export const Dark = Template.bind({});
 Dark.decorators = [
   (Story, context) => (
     <DarkThemeTemplate>

@@ -4,17 +4,17 @@ import { SnsIcon } from '../../atoms';
 import styles from './SnsIconList.module.scss';
 
 type Props = {
-  color?: React.ComponentPropsWithoutRef<typeof SnsIcon>['color'];
+  colorName?: React.ComponentPropsWithoutRef<typeof SnsIcon>['colorName'];
 };
 
 export const SnsIconList: React.FC<Props> = React.memo(
-  ({ color }) => (
+  ({ colorName: color }) => (
     <div className={styles.container}>
-      <SnsIcon type='github' color={color} />
-      <SnsIcon type='twitter' color={color} />
-      <SnsIcon type='facebook' color={color} />
-      <SnsIcon type='linkedin' color={color} />
-      <SnsIcon type='rss' color={color} />
+      <SnsIcon type='github' colorName={color} />
+      <SnsIcon type='twitter' colorName={color} />
+      <SnsIcon type='facebook' colorName={color} />
+      <SnsIcon type='linkedin' colorName={color} />
+      <SnsIcon type='rss' colorName={color} />
     </div>
   ),
   isEqual,

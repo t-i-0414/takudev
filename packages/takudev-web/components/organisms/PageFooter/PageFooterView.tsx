@@ -19,7 +19,7 @@ export const PageFooterView: React.FC = () => (
     </ul>
 
     <div className={styles['sns-icon-list-container']}>
-      <SnsIconList color='white' />
+      <SnsIconList colorName='white' />
     </div>
 
     <small className={styles['copy-right']}>

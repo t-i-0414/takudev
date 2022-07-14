@@ -12,7 +12,7 @@ export const ProfileCardView = () => (
         <p className={styles['location-text']}>Web Dev at Tokyo, JAPAN</p>
       </div>
       <div className={styles['sns-icon-list-container']}>
-        <SnsIconList color='borderColor' />
+        <SnsIconList colorName='borderColor' />
       </div>
     </div>
   </div>
