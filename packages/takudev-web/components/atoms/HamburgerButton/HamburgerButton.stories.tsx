@@ -14,7 +14,9 @@ export default {
   component: HamburgerButton,
   argTypes: {
     color: {
-      control: { type: 'color' },
+      control: {
+        type: 'color',
+      },
     },
     onClick: {
       action: 'clicked',

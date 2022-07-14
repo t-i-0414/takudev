@@ -17,10 +17,7 @@ export default {
 } as ComponentMeta<typeof PageContentHome>;
 
 const Template: ComponentStory<typeof PageContentHome> = () => (
-  <>
-    <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
-    <PageContentHome />
-  </>
+  <PageContentHome />
 );
 
 export const Light: ComponentStory<typeof PageContentHome> = Template.bind({});
