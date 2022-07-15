@@ -1,6 +1,6 @@
 import React from 'react';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
-import { PageHeader } from '.';
+import { ProfileCard } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -8,16 +8,11 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/PageHeader',
-  component: PageHeader,
-} as ComponentMeta<typeof PageHeader>;
+  title: 'Organisms/ProfileCard',
+  component: ProfileCard,
+} as ComponentMeta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof PageHeader> = () => (
-  <>
-    <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
-    <PageHeader />
-  </>
-);
+const Template: ComponentStory<typeof ProfileCard> = () => <ProfileCard />;
 
 export const Light = Template.bind({});
 Light.decorators = [

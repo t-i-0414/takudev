@@ -1,9 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import isEqual from 'react-fast-compare';
-
 import { MENU_MODAL_ROOT_ELEMENT_ID, hrefMap } from '~/consts';
-
 import { MenuModalView } from './MenuModalView';
 
 type Props = {

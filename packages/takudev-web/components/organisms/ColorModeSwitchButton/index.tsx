@@ -1,9 +1,7 @@
 import React, { useContext, useCallback } from 'react';
 import isEqual from 'react-fast-compare';
-
 import { colorModeMap } from '~/consts';
 import { ColorContext } from '~/contexts';
-
 import { ColorModeSwitchButtonView } from './ColorModeSwitchButtonView';
 
 export const ColorModeSwitchButton: React.FC = React.memo(() => {

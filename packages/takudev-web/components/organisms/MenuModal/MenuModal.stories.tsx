@@ -1,11 +1,7 @@
 import React from 'react';
-
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
-
 import { MenuModal } from '.';
-
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -15,14 +11,18 @@ export default {
   title: 'Organisms/MenuModal',
   component: MenuModal,
   argTypes: {
-    isOpen: { control: 'boolean', defaultValue: true },
-    isClose: { control: 'boolean', defaultValue: false },
+    isOpen: { control: 'boolean' },
+    isClose: { control: 'boolean' },
     onClickCloseButton: {
       action: 'onClickCloseButton',
       table: {
         disable: true,
       },
     },
+  },
+  args: {
+    isOpen: true,
+    isClose: false,
   },
 } as ComponentMeta<typeof MenuModal>;
 
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof MenuModal> = args => (
   </>
 );
 
-export const Light: ComponentStory<typeof MenuModal> = Template.bind({});
+export const Light = Template.bind({});
 Light.decorators = [
   (Story, context) => (
     <LightThemeTemplate>
@@ -46,7 +46,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof MenuModal> = Template.bind({});
+export const Dark = Template.bind({});
 Dark.decorators = [
   (Story, context) => (
     <DarkThemeTemplate>

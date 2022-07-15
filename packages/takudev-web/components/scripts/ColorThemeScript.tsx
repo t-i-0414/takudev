@@ -1,6 +1,5 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-
 import { colorModeMap, colorModeLocalstorageKey } from '~/consts';
 import { getCustomColorPropertiesSetttingText } from '~/utils';
 

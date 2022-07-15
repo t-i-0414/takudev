@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { ColorModeSwitchButton } from '.';
-
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -20,8 +17,7 @@ const Template: ComponentStory<typeof ColorModeSwitchButton> = () => (
   </div>
 );
 
-export const Light: ComponentStory<typeof ColorModeSwitchButton> =
-  Template.bind({});
+export const Light = Template.bind({});
 Light.decorators = [
   Story => (
     <LightThemeTemplate>
@@ -30,9 +26,7 @@ Light.decorators = [
   ),
 ];
 
-export const Dark: ComponentStory<typeof ColorModeSwitchButton> = Template.bind(
-  {},
-);
+export const Dark = Template.bind({});
 Dark.decorators = [
   Story => (
     <DarkThemeTemplate>

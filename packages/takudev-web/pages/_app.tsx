@@ -1,5 +1,4 @@
 import { ColorProvider } from '~/components/providers';
-
 import type { AppProps } from 'next/app';
 
 import '~/styles/_global.scss';

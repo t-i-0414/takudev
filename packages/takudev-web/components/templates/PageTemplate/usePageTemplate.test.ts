@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 import { renderHook } from '@testing-library/react-hooks';
-
 import { usePageTemplate } from './usePageTemplate';
 
 describe('usePageTemplate', () => {
