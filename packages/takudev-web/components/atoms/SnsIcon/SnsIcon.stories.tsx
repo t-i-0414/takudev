@@ -19,6 +19,7 @@ export default {
   },
   args: {
     type: 'github',
+    colorName: 'sublabelColor',
   },
 } as ComponentMeta<typeof SnsIcon>;
 

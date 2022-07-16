@@ -13,6 +13,9 @@ export default {
   argTypes: {
     colorName: { control: 'select', options: colorPaletteMapKeyList },
   },
+  args: {
+    colorName: 'sublabelColor',
+  },
 } as ComponentMeta<typeof SnsIconList>;
 
 const Template: ComponentStory<typeof SnsIconList> = args => (
