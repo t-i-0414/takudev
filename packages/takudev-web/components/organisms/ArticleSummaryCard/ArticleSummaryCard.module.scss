@@ -7,16 +7,20 @@
   border-radius: 16px;
   box-shadow: 0 3px 6px $shadow-color;
 
+  a {
+    text-decoration: none;
+  }
+
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   &:focus-visible {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   &:active {
-    opacity: 0.6;
+    opacity: 0.4;
   }
 
   @include responsive(min-md) {
