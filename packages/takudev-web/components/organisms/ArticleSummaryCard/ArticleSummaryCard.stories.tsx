@@ -77,7 +77,7 @@ Dark.parameters = {
   screenshot: {
     variants: {
       hovered: {
-        hover: 'a.icon',
+        hover: 'div.container',
       },
     },
   },
