@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileCard } from '.';
+import { TextTag } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -7,11 +7,23 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/ProfileCard',
-  component: ProfileCard,
-} as ComponentMeta<typeof ProfileCard>;
+  title: 'Atoms/TextTag',
+  component: TextTag,
+  argTypes: {
+    text: {
+      control: 'text',
+    },
+  },
+  args: {
+    text: 'TextTag',
+  },
+} as ComponentMeta<typeof TextTag>;
 
-const Template: ComponentStory<typeof ProfileCard> = () => <ProfileCard />;
+const Template: ComponentStory<typeof TextTag> = args => (
+  <div style={{ display: 'flex', padding: '16px' }}>
+    <TextTag {...args} />
+  </div>
+);
 
 export const Light = Template.bind({});
 Light.decorators = [

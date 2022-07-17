@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileCard } from '.';
+import { TextTagList } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -7,11 +7,24 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/ProfileCard',
-  component: ProfileCard,
-} as ComponentMeta<typeof ProfileCard>;
+  title: 'Molecules/TextTagList',
+  component: TextTagList,
+  argTypes: {
+    tagList: {
+      control: 'object',
+      options: ['one', 'two', 'three', 'four', 'five'],
+    },
+  },
+  args: {
+    tagList: ['one', 'two', 'three', 'four', 'five'],
+  },
+} as ComponentMeta<typeof TextTagList>;
 
-const Template: ComponentStory<typeof ProfileCard> = () => <ProfileCard />;
+const Template: ComponentStory<typeof TextTagList> = args => (
+  <div style={{ display: 'flex', padding: '16px' }}>
+    <TextTagList {...args} />
+  </div>
+);
 
 export const Light = Template.bind({});
 Light.decorators = [

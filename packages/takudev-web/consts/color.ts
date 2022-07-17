@@ -18,6 +18,7 @@ export const lightColorPaletteMap: ColorPaletteMap = {
   white: '#fff',
   paleWhite: '#fcfcfc',
   gray: '#ddd',
+  darkGray: '#4f4f4f',
   black: '#0d0d0d',
   baseColor: '#fafafa',
   textColor: '#0d0d0d',
