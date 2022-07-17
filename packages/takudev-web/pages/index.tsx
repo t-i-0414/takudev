@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { PageContentHome } from '~/components/organisms';
-import { PageTemplate } from '~/components/templates';
+import { HomePage } from '~/components';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => (
@@ -10,9 +9,7 @@ const Home: NextPage = () => (
       <meta name='description' content="This is Takuya Iwashiro's Dev Blog" />
     </Head>
 
-    <PageTemplate>
-      <PageContentHome />
-    </PageTemplate>
+    <HomePage />
   </>
 );
 
