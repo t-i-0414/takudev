@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextTag } from '.';
+import { TextTagList } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -7,21 +7,22 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Atoms/TextTag',
-  component: TextTag,
+  title: 'Molecules/TextTagList',
+  component: TextTagList,
   argTypes: {
-    text: {
-      control: 'text',
+    tagList: {
+      control: 'object',
+      options: ['one', 'two', 'three', 'four', 'five'],
     },
   },
   args: {
-    text: 'TextTag',
+    tagList: ['one', 'two', 'three', 'four', 'five'],
   },
-} as ComponentMeta<typeof TextTag>;
+} as ComponentMeta<typeof TextTagList>;
 
-const Template: ComponentStory<typeof TextTag> = args => (
+const Template: ComponentStory<typeof TextTagList> = args => (
   <div style={{ display: 'flex', padding: '16px' }}>
-    <TextTag {...args} />
+    <TextTagList {...args} />
   </div>
 );
 
