@@ -1,6 +1,5 @@
 import React from 'react';
-import { colorPaletteMapKeyList } from '~/consts';
-import { SnsIconList } from '.';
+import { TextTag } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -8,19 +7,21 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Molecules/SnsIconList',
-  component: SnsIconList,
+  title: 'Atoms/TextTag',
+  component: TextTag,
   argTypes: {
-    colorName: { control: 'select', options: colorPaletteMapKeyList },
+    text: {
+      control: 'text',
+    },
   },
   args: {
-    colorName: 'sublabelColor',
+    text: 'TextTag',
   },
-} as ComponentMeta<typeof SnsIconList>;
+} as ComponentMeta<typeof TextTag>;
 
-const Template: ComponentStory<typeof SnsIconList> = args => (
-  <div style={{ padding: '20px', width: '300px' }}>
-    <SnsIconList {...args} />
+const Template: ComponentStory<typeof TextTag> = args => (
+  <div style={{ display: 'flex', padding: '16px' }}>
+    <TextTag {...args} />
   </div>
 );
 

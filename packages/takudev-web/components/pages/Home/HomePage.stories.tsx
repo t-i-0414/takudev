@@ -1,6 +1,6 @@
 import React from 'react';
-import { colorPaletteMapKeyList } from '~/consts';
-import { SnsIconList } from '.';
+import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
+import { HomePage } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -8,20 +8,15 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Molecules/SnsIconList',
-  component: SnsIconList,
-  argTypes: {
-    colorName: { control: 'select', options: colorPaletteMapKeyList },
-  },
-  args: {
-    colorName: 'sublabelColor',
-  },
-} as ComponentMeta<typeof SnsIconList>;
+  title: 'Pages/HomePage',
+  component: HomePage,
+} as ComponentMeta<typeof HomePage>;
 
-const Template: ComponentStory<typeof SnsIconList> = args => (
-  <div style={{ padding: '20px', width: '300px' }}>
-    <SnsIconList {...args} />
-  </div>
+const Template: ComponentStory<typeof HomePage> = () => (
+  <>
+    <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
+    <HomePage />
+  </>
 );
 
 export const Light = Template.bind({});

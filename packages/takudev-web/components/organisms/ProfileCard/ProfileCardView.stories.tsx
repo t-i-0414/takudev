@@ -1,5 +1,4 @@
 import React from 'react';
-import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import { ProfileCard } from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
