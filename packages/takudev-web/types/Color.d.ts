@@ -11,6 +11,7 @@ export type ColorPaletteMapKey =
   | 'white'
   | 'paleWhite'
   | 'gray'
+  | 'darkGray'
   | 'black'
   | 'baseColor'
   | 'textColor'

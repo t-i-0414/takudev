@@ -1,0 +1,19 @@
+@import "../../../styles/color";
+
+.container {
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px;
+  background-color: $dark-gray;
+  border-radius: 8px;
+}
+
+.text {
+  margin: 0;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-color;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
