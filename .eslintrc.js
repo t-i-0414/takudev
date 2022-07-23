@@ -56,7 +56,7 @@ module.exports = {
     ],
     'import/prefer-default-export': ['off'],
     'no-extra-semi': 'error',
-    'no-duplicate-imports': 'error',
+    'no-duplicate-imports': 'off',
     'no-unused-vars': [
       'error',
       {

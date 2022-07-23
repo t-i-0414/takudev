@@ -1,16 +1,7 @@
 name: 'CI'
 
 on:
-  push:
-    branches:
-      - 'main'
-      - 'develop'
-      - 'staging'
-      - 'release/**'
-      - 'feature/**'
-      - 'feat/**'
-      - 'hotfix/**'
-      - '**patch**'
+- push
 
 jobs:
   lighthouse:
