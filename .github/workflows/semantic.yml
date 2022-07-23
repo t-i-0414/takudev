@@ -3,14 +3,6 @@ name: 'CI'
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
-    branches:
-      - 'main'
-      - 'develop'
-      - 'staging'
-      - 'release/**'
-      - 'feature/**'
-      - 'hotfix/**'
-      - '**patch**'
 
 jobs:
   semantic-pr-title:
