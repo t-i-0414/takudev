@@ -1,15 +1,7 @@
 name: 'CI'
 
 on:
-  pull_request:
-    branches:
-      - 'main'
-      - 'develop'
-      - 'staging'
-      - 'release/**'
-      - 'feature/**'
-      - 'hotfix/**'
-      - '**patch**'
+  - pull_request
 
 jobs:
   build:

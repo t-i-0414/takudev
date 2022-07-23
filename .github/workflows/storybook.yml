@@ -6,14 +6,6 @@ on:
       - develop
   pull_request:
     types: [opened, reopened, synchronize, closed]
-    branches:
-      - 'main'
-      - 'develop'
-      - 'staging'
-      - 'release/**'
-      - 'feature/**'
-      - 'hotfix/**'
-      - '**patch**'
 
 jobs:
   deploy:
