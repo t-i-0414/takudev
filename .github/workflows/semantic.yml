@@ -1,4 +1,4 @@
-name: 'CI'
+name: 'Run CI'
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   semantic-pr-title:
+    name: 'Semantic PR Title'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
