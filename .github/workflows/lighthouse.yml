@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/install-dependencies
+      - run: yarn build
       - run: |
           yarn global add @lhci/cli@0.8.x
           lhci autorun
