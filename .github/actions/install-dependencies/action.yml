@@ -5,7 +5,9 @@ runs:
   steps:
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version-file: '.node-version'
+      env:
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
 
     - uses: actions/cache@v3
       id: yarn_cache
