@@ -1,8 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-import { ArticleSummaryCard } from '../ArticleSummaryCard';
-import { ProfileCard } from '../ProfileCard';
-import styles from './PageContentHome.module.scss';
+import { ArticleSummaryCard, ProfileCard } from '~/components/organisms';
+import styles from './HomePageContent.module.scss';
 
 type ArticleSummary = React.ComponentPropsWithoutRef<typeof ArticleSummaryCard>;
 
@@ -75,7 +74,7 @@ const articleSummaryListMock: ArticleSummary[] = [
   },
 ];
 
-export const PageContentHome: React.FC = React.memo(
+export const HomePageContent: React.FC = React.memo(
   () => (
     <div className={styles.container}>
       <ProfileCard />
@@ -95,4 +94,4 @@ export const PageContentHome: React.FC = React.memo(
   ),
   isEqual,
 );
-PageContentHome.displayName = 'PageContentHome';
+HomePageContent.displayName = 'HomePageContent';

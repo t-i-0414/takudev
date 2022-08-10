@@ -1,2 +1,2 @@
-export { SnsIconList } from './SnsIconList';
-export { TextTagList } from './TextTagList';
+export * from './SnsIconList';
+export * from './TextTagList';

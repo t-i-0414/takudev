@@ -1,6 +1,6 @@
 import React from 'react';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
-import { PageContentHome } from '.';
+import HomePage from '.';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
@@ -8,12 +8,15 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/PageContentHome',
-  component: PageContentHome,
-} as ComponentMeta<typeof PageContentHome>;
+  title: 'Pages/HomePage',
+  component: HomePage,
+} as ComponentMeta<typeof HomePage>;
 
-const Template: ComponentStory<typeof PageContentHome> = () => (
-  <PageContentHome />
+const Template: ComponentStory<typeof HomePage> = () => (
+  <>
+    <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
+    <HomePage />
+  </>
 );
 
 export const Light = Template.bind({});
