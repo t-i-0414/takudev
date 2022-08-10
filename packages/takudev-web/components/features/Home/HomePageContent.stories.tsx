@@ -8,7 +8,7 @@ import {
 } from '~/.storybook/ColorThemeTemplates';
 
 export default {
-  title: 'Organisms/HomePageContent',
+  title: 'Features/Home/HomePageContent',
   component: HomePageContent,
 } as ComponentMeta<typeof HomePageContent>;
 
