@@ -1,8 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:3000/'],
-      startServerCommand: 'cd ./packages/takudev-web && yarn start',
+      url: ['http://localhost:8080/'],
+      startServerCommand: 'cd ./packages/takudev-web && yarn start -p 8080',
     },
     upload: {
       target: 'temporary-public-storage',
