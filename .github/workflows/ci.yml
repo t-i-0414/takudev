@@ -1,7 +1,11 @@
 name: 'Run CI'
 
 on:
-  - pull_request
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
 
 jobs:
   install-dependencies:
