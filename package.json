@@ -34,6 +34,7 @@
     "prepare": "husky install",
     "storybook": "cd packages/takudev-components && yarn storybook",
     "test": "turbo run test",
+    "test:vscode-jest": "jest",
     "type-check": "turbo run type-check"
   },
   "config": {
