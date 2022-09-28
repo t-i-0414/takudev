@@ -41,7 +41,7 @@
     "throttle-debounce": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
+    "@babel/core": "^7.19.3",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -74,10 +74,9 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "storycap": "^3.1.8",
-    "stylelint": "^14.12.1",
+    "stylelint": "^14.13.0",
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-scss": "^4.2.0"
-  },
-  "packageManager": "yarn@1.22.18"
+  }
 }
