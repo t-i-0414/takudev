@@ -182,3 +182,5 @@ dist
 
 # cms's docker volumes
 .cms
+
+.vscode/settings.json
