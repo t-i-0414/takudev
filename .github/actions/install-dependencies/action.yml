@@ -1,5 +1,10 @@
 name: 'Setup dependencies'
 description: 'Install or restore dependencies'
+inputs:
+  nodeLinker:
+    description: 'nodeLinker for yarn v3'
+    required: false
+    default: 'node-modules'
 runs:
   using: 'composite'
   steps:
@@ -16,6 +21,9 @@ runs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
+
+    - run: yarn config set nodeLinker ${{ inputs.nodeLinker }}
+      shell: bash
 
     - if: ${{ steps.yarn_cache.outputs.cache-hit != 'true' }}
       run: yarn install
