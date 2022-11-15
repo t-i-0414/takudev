@@ -13,7 +13,7 @@ jobs:
       - uses: ./.github/actions/install-dependencies
       - run: yarn build
       - run: |
-          yarn global add @lhci/cli@0.9.x
+          yarn dlx @lhci/cli@0.9.x
           lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
