@@ -2,14 +2,14 @@
  * @jest-environment jsdom
  */
 import { renderHook } from '@testing-library/react-hooks';
-import { colorModeLocalstorageKey } from '~/consts';
+import { colorModeLocalStorageKey } from '~/consts';
 import type { ColorMode } from '~/types';
 import { useColorProvider } from './useColorProvider';
 
 describe('useColorProvider', () => {
   describe('_colorMode arg exists', () => {
     afterEach(() => {
-      localStorage.removeItem(colorModeLocalstorageKey);
+      localStorage.removeItem(colorModeLocalStorageKey);
     });
 
     it.each([
@@ -27,7 +27,7 @@ describe('useColorProvider', () => {
         expect.hasAssertions();
 
         localStorage.setItem(
-          colorModeLocalstorageKey,
+          colorModeLocalStorageKey,
           JSON.stringify(unexpected),
         );
 
@@ -57,7 +57,7 @@ describe('useColorProvider', () => {
 
   describe('preservedColorMode from localStorage', () => {
     afterEach(() => {
-      localStorage.removeItem(colorModeLocalstorageKey);
+      localStorage.removeItem(colorModeLocalStorageKey);
     });
 
     it.each([
@@ -69,7 +69,7 @@ describe('useColorProvider', () => {
         expect.hasAssertions();
 
         localStorage.setItem(
-          colorModeLocalstorageKey,
+          colorModeLocalStorageKey,
           JSON.stringify(preserved),
         );
 

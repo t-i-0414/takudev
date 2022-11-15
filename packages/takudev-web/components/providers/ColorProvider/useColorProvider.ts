@@ -1,13 +1,13 @@
 import { useCallback, useState, useEffect } from 'react';
 import {
   colorModeMap,
-  colorModeLocalstorageKey,
+  colorModeLocalStorageKey,
   lightColorPaletteMap,
   darkColorPaletteMap,
   colorPaletteMapKeyList,
 } from '~/consts';
 import type { ColorMode } from '~/types';
-import { kebabize } from '~/utils';
+import { kebabize, isColorMode } from '~/utils';
 
 const { lightMode, darkMode } = colorModeMap;
 
@@ -15,12 +15,16 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
   const [colorMode, setColorMode] = useState<ColorMode | null>(null);
 
   useEffect(() => {
-    const rawInitialColorMode = localStorage.getItem(colorModeLocalstorageKey);
+    const storedColorMode = localStorage.getItem(colorModeLocalStorageKey);
+    const parsedColorMode = JSON.parse(storedColorMode ?? 'null');
 
-    const initialColorMode: ColorMode | null =
-      rawInitialColorMode === null ? null : JSON.parse(rawInitialColorMode);
+    const initialColorMode: ColorMode | null = isColorMode(parsedColorMode)
+      ? parsedColorMode
+      : null;
 
-    setColorMode(_colorMode ?? initialColorMode);
+    if (_colorMode || initialColorMode) {
+      setColorMode(_colorMode ?? initialColorMode);
+    }
   }, [_colorMode]);
 
   const handleColorMode = useCallback(() => {
@@ -29,7 +33,7 @@ export const useColorProvider = (_colorMode?: ColorMode) => {
 
     setColorMode(newColorMode);
     localStorage.setItem(
-      colorModeLocalstorageKey,
+      colorModeLocalStorageKey,
       JSON.stringify(newColorMode),
     );
 
