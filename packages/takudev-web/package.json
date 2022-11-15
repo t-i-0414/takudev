@@ -23,7 +23,7 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'npx http-server dist-storybook --port 6006'",
+    "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'start-storybook -p 6006' --serverTimeout 60000",
     "test": "jest",
     "test:storybook": "test-storybook",
     "type-check": "tsc --noEmit"
