@@ -16,7 +16,7 @@ export type ColorPaletteMapKey =
   | 'baseColor'
   | 'textColor'
   | 'borderColor'
-  | 'sublabelColor'
+  | 'subLabelColor'
   | 'shadowColor'
   | 'headerColor'
   | 'footerColor';

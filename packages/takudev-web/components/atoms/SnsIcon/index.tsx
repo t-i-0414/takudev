@@ -20,10 +20,10 @@ export const SnsIcon: React.FC<Props> = React.memo(
 
     const svgFillColor = useMemo(() => {
       if (colorMode === 'darkMode') {
-        return darkColorPaletteMap[color || 'sublabelColor'];
+        return darkColorPaletteMap[color || 'subLabelColor'];
       }
 
-      return lightColorPaletteMap[color || 'sublabelColor'];
+      return lightColorPaletteMap[color || 'subLabelColor'];
     }, [color, colorMode]);
 
     const ariaLabel = useMemo(() => {

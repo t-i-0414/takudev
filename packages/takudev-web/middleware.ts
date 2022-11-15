@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server';
-import type { Stage } from '~/types';
 // eslint-disable-next-line import/newline-after-import
 import type { NextRequest } from 'next/server';
 const { Buffer } = require('buffer/');
 
 export const middleware = (req: NextRequest) => {
-  const stage: Stage = (process.env.STAGE as Stage) ?? 'preview';
-  const shouldAuthenticate = stage === 'staging';
+  const shouldAuthenticate = process.env.STAGE === 'staging';
 
   if (shouldAuthenticate) {
     const authorizationHeader = req.headers.get('authorization');
