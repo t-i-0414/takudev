@@ -14,7 +14,7 @@ export default {
     colorName: { control: 'select', options: colorPaletteMapKeyList },
   },
   args: {
-    colorName: 'sublabelColor',
+    colorName: 'subLabelColor',
   },
 } as ComponentMeta<typeof SnsIconList>;
 

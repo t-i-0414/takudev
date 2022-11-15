@@ -6,7 +6,7 @@ import {
 } from '~/consts';
 import { kebabize } from './kebabize';
 
-export const getCustomColorPropertiesSetttingText = () =>
+export const getCustomColorPropertySettingText = () =>
   colorPaletteMapKeyList
     .map(
       key => `document.documentElement.style.setProperty(

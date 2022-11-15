@@ -1,1 +1,1 @@
-export type Stage = 'preview' | 'staging' | 'production';
+export type Stage = 'development' | 'preview' | 'staging' | 'production';
