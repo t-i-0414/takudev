@@ -8,3 +8,4 @@ takudev.code-workspace
 .gitignore
 .tool-versions
 .DS_Store
+.yarnrc.yml
