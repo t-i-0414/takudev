@@ -1,11 +1,13 @@
 import React from 'react';
 import { colorPaletteMapKeyList } from '~/consts';
 import { SnsIcon } from '.';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
+
+type StoryType = ComponentStoryObj<typeof SnsIcon>;
 
 export default {
   title: 'Atoms/SnsIcon',
@@ -23,218 +25,242 @@ export default {
   },
 } as ComponentMeta<typeof SnsIcon>;
 
-const Template: ComponentStory<typeof SnsIcon> = args => (
-  <div style={{ display: 'flex', padding: '20px' }}>
-    <SnsIcon {...args} />
-  </div>
-);
-
-export const GithubLight = Template.bind({});
-GithubLight.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-GithubLight.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const GithubLight: StoryType = {
+  args: {
+    type: 'github',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-GithubLight.args = {
-  type: 'github',
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
 };
 
-export const GithubDark = Template.bind({});
-GithubDark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
-GithubDark.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const GithubDark: StoryType = {
+  args: {
+    type: 'github',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-GithubDark.args = {
-  type: 'github',
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
 };
 
-export const TwitterLight = Template.bind({});
-TwitterLight.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-TwitterLight.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const TwitterLight: StoryType = {
+  args: {
+    type: 'twitter',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-TwitterLight.args = {
-  type: 'twitter',
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
 };
 
-export const TwitterDark = Template.bind({});
-TwitterDark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
-TwitterDark.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const TwitterDark: StoryType = {
+  args: {
+    type: 'twitter',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-TwitterDark.args = {
-  type: 'twitter',
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
 };
 
-export const FacebookLight = Template.bind({});
-FacebookLight.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-FacebookLight.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const FacebookLight: StoryType = {
+  args: {
+    type: 'facebook',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-FacebookLight.args = {
-  type: 'facebook',
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
 };
 
-export const FacebookDark = Template.bind({});
-FacebookDark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
-FacebookDark.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const FacebookDark: StoryType = {
+  args: {
+    type: 'facebook',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-FacebookDark.args = {
-  type: 'facebook',
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
 };
 
-export const LinkedinLight = Template.bind({});
-LinkedinLight.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-LinkedinLight.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const LinkedinLight: StoryType = {
+  args: {
+    type: 'linkedin',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-LinkedinLight.args = {
-  type: 'linkedin',
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
 };
 
-export const LinkedinDark = Template.bind({});
-LinkedinDark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
-LinkedinDark.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const LinkedinDark: StoryType = {
+  args: {
+    type: 'linkedin',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-LinkedinDark.args = {
-  type: 'linkedin',
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
 };
 
-export const RssLight = Template.bind({});
-RssLight.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-RssLight.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const RssLight: StoryType = {
+  args: {
+    type: 'rss',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-RssLight.args = {
-  type: 'rss',
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
 };
 
-export const RssDark = Template.bind({});
-RssDark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
-RssDark.parameters = {
-  screenshot: {
-    variants: {
-      hovered: {
-        hover: 'a.icon',
+export const RssDark: StoryType = {
+  args: {
+    type: 'rss',
+  },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.icon',
+        },
       },
     },
   },
-};
-RssDark.args = {
-  type: 'rss',
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '20px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
 };
