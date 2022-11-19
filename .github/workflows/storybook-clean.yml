@@ -1,4 +1,4 @@
-name: 'Run CI'
+name: 'Remove Closed PRs Storybook'
 
 on:
   pull_request:
