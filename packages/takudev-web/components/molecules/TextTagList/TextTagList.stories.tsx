@@ -1,10 +1,12 @@
 import React from 'react';
 import { TextTagList } from '.';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
+
+type StoryType = ComponentStoryObj<typeof TextTagList>;
 
 export default {
   title: 'Molecules/TextTagList',
@@ -20,26 +22,26 @@ export default {
   },
 } as ComponentMeta<typeof TextTagList>;
 
-const Template: ComponentStory<typeof TextTagList> = args => (
-  <div style={{ display: 'flex', padding: '16px' }}>
-    <TextTagList {...args} />
-  </div>
-);
+export const Light: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div style={{ display: 'flex', padding: '16px' }}>
+          <Story {...context.args} />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
+};
 
-export const Light = Template.bind({});
-Light.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
-
-export const Dark = Template.bind({});
-Dark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
+export const Dark: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div style={{ display: 'flex', padding: '16px' }}>
+          <Story {...context.args} />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
+};
