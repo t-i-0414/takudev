@@ -1,36 +1,38 @@
 import React from 'react';
 import { ColorModeSwitchButton } from '.';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
+
+type StoryType = ComponentStoryObj<typeof ColorModeSwitchButton>;
 
 export default {
   title: 'Organisms/ColorModeSwitchButton',
   component: ColorModeSwitchButton,
 } as ComponentMeta<typeof ColorModeSwitchButton>;
 
-const Template: ComponentStory<typeof ColorModeSwitchButton> = () => (
-  <div style={{ backgroundColor: 'var(--header-color)' }}>
-    <ColorModeSwitchButton />
-  </div>
-);
+export const Light: StoryType = {
+  decorators: [
+    Story => (
+      <LightThemeTemplate>
+        <div style={{ backgroundColor: 'var(--header-color)' }}>
+          <Story />
+        </div>
+      </LightThemeTemplate>
+    ),
+  ],
+};
 
-export const Light = Template.bind({});
-Light.decorators = [
-  Story => (
-    <LightThemeTemplate>
-      <Story />
-    </LightThemeTemplate>
-  ),
-];
-
-export const Dark = Template.bind({});
-Dark.decorators = [
-  Story => (
-    <DarkThemeTemplate>
-      <Story />
-    </DarkThemeTemplate>
-  ),
-];
+export const Dark: StoryType = {
+  decorators: [
+    Story => (
+      <DarkThemeTemplate>
+        <div style={{ backgroundColor: 'var(--header-color)' }}>
+          <Story />
+        </div>
+      </DarkThemeTemplate>
+    ),
+  ],
+};
