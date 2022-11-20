@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProfileIcon } from '.';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -11,22 +11,24 @@ export default {
   component: ProfileIcon,
 } as ComponentMeta<typeof ProfileIcon>;
 
-const Template: ComponentStory<typeof ProfileIcon> = () => <ProfileIcon />;
+type StoryType = ComponentStoryObj<typeof ProfileIcon>;
 
-export const Light = Template.bind({});
-Light.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
+export const Light: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <Story {...context.args} />
+      </LightThemeTemplate>
+    ),
+  ],
+};
 
-export const Dark = Template.bind({});
-Dark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
+export const Dark: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <Story {...context.args} />
+      </DarkThemeTemplate>
+    ),
+  ],
+};
