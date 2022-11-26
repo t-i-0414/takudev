@@ -7,11 +7,12 @@ import { MenuModalView } from './MenuModalView';
 type Props = {
   isOpen: boolean;
   isClose: boolean;
+  ariaLabelledBy: string;
   onClickCloseButton: () => void;
 };
 
 export const MenuModal: React.FC<Props> = React.memo(
-  ({ isOpen, isClose, onClickCloseButton }) => {
+  ({ isOpen, isClose, ariaLabelledBy, onClickCloseButton }) => {
     const menuModalRef = useRef<Element | null>(null);
 
     const [mounted, setMounted] = useState(false);
@@ -28,6 +29,7 @@ export const MenuModal: React.FC<Props> = React.memo(
           <MenuModalView
             isOpen={isOpen}
             isClose={isClose}
+            ariaLabelledBy={ariaLabelledBy}
             hrefToContact={hrefMap.contact}
             onClickCloseButton={onClickCloseButton}
           />,

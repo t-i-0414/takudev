@@ -15,6 +15,7 @@ export default {
   argTypes: {
     isOpen: { control: 'boolean' },
     isClose: { control: 'boolean' },
+    ariaLabelledBy: { control: 'text' },
     onClickCloseButton: {
       action: 'onClickCloseButton',
       table: {
@@ -25,6 +26,7 @@ export default {
   args: {
     isOpen: true,
     isClose: false,
+    ariaLabelledBy: 'hamburger-button',
   },
 } as ComponentMeta<typeof MenuModal>;
 

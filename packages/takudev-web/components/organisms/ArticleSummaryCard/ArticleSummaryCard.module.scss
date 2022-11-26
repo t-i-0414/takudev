@@ -4,12 +4,9 @@
 .container {
   width: 100%;
   padding: 20px 10px;
+  text-decoration: none;
   border-radius: 16px;
   box-shadow: 0 3px 6px $shadow-color;
-
-  a {
-    text-decoration: none;
-  }
 
   &:hover {
     opacity: 0.6;

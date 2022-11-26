@@ -32,20 +32,18 @@ export const ArticleSummaryCard: React.FC<Props> = ({
   const hasTagList = useMemo(() => tagList.length > 0, [tagList]);
 
   return (
-    <div className={`${styles.container} container`}>
-      <a aria-label='aria-label' href={href} className={`${styles.logo} logo`}>
-        <div className={styles['title-container']}>
-          <p className={styles.title}>{title}</p>
+    <a aria-label='article' href={href} className={`${styles.container} logo`}>
+      <div className={styles['title-container']}>
+        <p className={styles.title}>{title}</p>
+      </div>
+
+      <p className={styles['date-label']}>{formattedDate}</p>
+
+      {hasTagList && (
+        <div className={styles['tag-container']}>
+          <TextTagList tagList={tagList} />
         </div>
-
-        <p className={styles['date-label']}>{formattedDate}</p>
-
-        {hasTagList && (
-          <div className={styles['tag-container']}>
-            <TextTagList tagList={tagList} />
-          </div>
-        )}
-      </a>
-    </div>
+      )}
+    </a>
   );
 };

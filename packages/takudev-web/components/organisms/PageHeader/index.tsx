@@ -5,6 +5,8 @@ import { MenuModal } from '../MenuModal';
 import { PageHeaderView } from './PageHeaderView';
 
 export const PageHeader = React.memo(() => {
+  const ariaLabel = 'Open Menu Modal';
+  const menuModalLabelledBy = 'hamburger-button';
   const [isOpenMenuModal, setIsOpenMenuModal] = useState(false);
   const [isCloseMenuModal, setIsCloseMenuModal] = useState(false);
 
@@ -21,13 +23,15 @@ export const PageHeader = React.memo(() => {
   return (
     <>
       <PageHeaderView
-        isOpenMenuModal={isOpenMenuModal}
+        ariaLabel={ariaLabel}
+        hamburgerButtonId={menuModalLabelledBy}
         hrefToHome={hrefMap.home}
         onClickHamburgerButton={handleClickHamburgerButton}
       />
       <MenuModal
         isOpen={isOpenMenuModal}
         isClose={isCloseMenuModal}
+        ariaLabelledBy={menuModalLabelledBy}
         onClickCloseButton={handleClickCloseButton}
       />
     </>
