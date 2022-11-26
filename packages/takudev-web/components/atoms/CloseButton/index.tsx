@@ -16,6 +16,7 @@ export const CloseButton: React.FC<Props> = React.memo(
       {...rest}
     >
       <svg
+        aria-hidden
         width={size}
         height={size}
         viewBox='0 0 17.556 17.556'

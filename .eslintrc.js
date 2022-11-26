@@ -90,7 +90,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
+    },
+    {
+      files: ['**/__tests__/**/*.[jt]sx?', '**/?(*.)+(spec|test).[jt]sx?'],
       extends: ['plugin:jest/all'],
     },
     {

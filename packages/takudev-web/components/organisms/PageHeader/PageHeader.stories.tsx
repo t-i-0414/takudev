@@ -1,38 +1,39 @@
 import React from 'react';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import { PageHeader } from '.';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
+
+type StoryType = ComponentStoryObj<typeof PageHeader>;
 
 export default {
   title: 'Organisms/PageHeader',
   component: PageHeader,
 } as ComponentMeta<typeof PageHeader>;
 
-const Template: ComponentStory<typeof PageHeader> = () => (
-  <>
-    <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
-    <PageHeader />
-  </>
-);
+export const Light: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <LightThemeTemplate>
+        <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
 
-export const Light = Template.bind({});
-Light.decorators = [
-  (Story, context) => (
-    <LightThemeTemplate>
-      <Story {...context.args} />
-    </LightThemeTemplate>
-  ),
-];
+        <Story {...context.args} />
+      </LightThemeTemplate>
+    ),
+  ],
+};
 
-export const Dark = Template.bind({});
-Dark.decorators = [
-  (Story, context) => (
-    <DarkThemeTemplate>
-      <Story {...context.args} />
-    </DarkThemeTemplate>
-  ),
-];
+export const Dark: StoryType = {
+  decorators: [
+    (Story, context) => (
+      <DarkThemeTemplate>
+        <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
+
+        <Story {...context.args} />
+      </DarkThemeTemplate>
+    ),
+  ],
+};

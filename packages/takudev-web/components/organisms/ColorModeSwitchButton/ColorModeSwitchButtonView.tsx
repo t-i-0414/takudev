@@ -29,6 +29,7 @@ export const ColorModeSwitchButtonView: React.FC<Props> = React.memo(
 
       <div className={styles.moon}>
         <svg
+          aria-hidden
           xmlns='http://www.w3.org/2000/svg'
           width='11.618'
           height='13'
@@ -45,6 +46,7 @@ export const ColorModeSwitchButtonView: React.FC<Props> = React.memo(
 
       <div className={styles.sun}>
         <svg
+          aria-hidden
           xmlns='http://www.w3.org/2000/svg'
           width='12.999'
           height='13'

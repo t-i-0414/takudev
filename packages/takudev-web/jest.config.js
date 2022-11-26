@@ -1,9 +1,12 @@
 module.exports = {
   preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      tsconfig: './tsconfig.jest.json',
-    },
+  transform: {
+    '^.+\\.[tj]?sx?$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.jest.json',
+      },
+    ],
   },
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/$1',

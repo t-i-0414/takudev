@@ -12,7 +12,12 @@ export const PageFooterView: React.FC = () => (
 
     <ul className={styles['menu-list']}>
       <li>
-        <a href={hrefMap.contact} aria-label='go to contact page'>
+        <a
+          href={hrefMap.contact}
+          aria-label='go to contact page'
+          target='_blank'
+          rel='noreferrer'
+        >
           Contact
         </a>
       </li>

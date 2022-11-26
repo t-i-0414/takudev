@@ -6,8 +6,6 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version-file: '.tool-versions'
-      # env:
-      #   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
 
     - uses: actions/cache@v3
       id: yarn_cache

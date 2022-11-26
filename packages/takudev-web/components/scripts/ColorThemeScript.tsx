@@ -1,7 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
-import { colorModeMap, colorModeLocalstorageKey } from '~/consts';
-import { getCustomColorPropertiesSetttingText } from '~/utils';
+import { colorModeMap, colorModeLocalStorageKey } from '~/consts';
+import { getCustomColorPropertySettingText } from '~/utils';
 
 export const ColorThemeScript: React.FC = React.memo(
   () => (
@@ -10,7 +10,7 @@ export const ColorThemeScript: React.FC = React.memo(
       dangerouslySetInnerHTML={{
         __html: `
         (function() {
-          var storageKey = '${colorModeLocalstorageKey}';
+          var storageKey = '${colorModeLocalStorageKey}';
 
           function setInitialColorModeOnDocumentBody(colorMode) {
             document.documentElement.style.setProperty(
@@ -19,7 +19,7 @@ export const ColorThemeScript: React.FC = React.memo(
                 ? 'translate(-12%, -50%)'
                 : 'translate(-88%, -50%)',
             );
-            ${getCustomColorPropertiesSetttingText()}
+            ${getCustomColorPropertySettingText()}
           }
 
           var preferDarkQuery = '(prefers-color-scheme: dark)';

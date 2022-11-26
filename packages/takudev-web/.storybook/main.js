@@ -1,7 +1,3 @@
-const { register } = require('esbuild-register/dist/node');
-register({
-  target: 'node16',
-});
 const path = require('path');
 
 module.exports = {
@@ -14,6 +10,9 @@ module.exports = {
     'storycap',
   ],
   framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
+  },
   webpackFinal: async config => {
     config.resolve.alias = {
       ...config.resolve.alias,
