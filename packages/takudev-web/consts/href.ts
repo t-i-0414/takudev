@@ -1,6 +1,6 @@
 export const hrefMap = {
   home: '/',
-  contact: '/contact',
+  contact: 'https://forms.gle/BsTcQz7RaoszbnHVA',
   github: 'https://github.com/t-i-0414',
   twitter: 'https://twitter.com/t_i_0414',
   facebook: 'https://m.facebook.com/takuya.iwashiro.7',
