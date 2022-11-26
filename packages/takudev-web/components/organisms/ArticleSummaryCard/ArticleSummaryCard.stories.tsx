@@ -69,7 +69,7 @@ export const Dark: StoryType = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'div.container',
+          hover: 'a.container',
         },
       },
     },
