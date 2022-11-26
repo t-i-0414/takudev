@@ -48,7 +48,7 @@ export const Light: StoryType = {
     screenshot: {
       variants: {
         hovered: {
-          hover: 'div.container',
+          hover: 'a.container',
         },
       },
     },
