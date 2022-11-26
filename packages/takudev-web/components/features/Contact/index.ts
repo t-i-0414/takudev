@@ -1,0 +1,1 @@
+export { ContactPageContent } from './ContactPageContent';
