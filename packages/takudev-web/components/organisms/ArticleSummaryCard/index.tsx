@@ -32,7 +32,11 @@ export const ArticleSummaryCard: React.FC<Props> = ({
   const hasTagList = useMemo(() => tagList.length > 0, [tagList]);
 
   return (
-    <a aria-label='article' href={href} className={`${styles.container} logo`}>
+    <a
+      aria-label='article'
+      href={href}
+      className={`${styles.container} container`}
+    >
       <div className={styles['title-container']}>
         <p className={styles.title}>{title}</p>
       </div>
