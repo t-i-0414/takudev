@@ -1,26 +1,18 @@
-version: '3'
-services:
-  strapi:
-    image: strapi/strapi
-    environment:
-      DATABASE_CLIENT: postgres
-      DATABASE_NAME: strapi
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: strapi
-    volumes:
-      - ../../.cms/app:/srv/app
-    ports:
-      - '1337:1337'
-    depends_on:
-      - postgres
+version: '3.1'
 
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_DB: strapi
-      POSTGRES_USER: strapi
-      POSTGRES_PASSWORD: strapi
+services:
+  db:
+    image: postgres:14
+    container_name: postgres
+    ports:
+      - '5432:5432'
     volumes:
-      - ../../.cms/data:/var/lib/postgresql/data
+      - db-store:/var/lib/postgresql/data
+      - ./script:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=takudev
+
+volumes:
+  db-store:

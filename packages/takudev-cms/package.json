@@ -5,5 +5,22 @@
   "description": "This is a package of t-i-0414's blog related cms.",
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
   "license": "UNLICENSED",
-  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)"
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.5.3",
+    "@strapi/plugin-users-permissions": "4.5.3",
+    "@strapi/strapi": "4.5.3",
+    "better-sqlite3": "7.4.6",
+    "pg": "^8.8.0",
+    "react-select": "^5.6.1"
+  },
+  "strapi": {
+    "uuid": "715c0270-293b-45e1-81f4-9e2c99640036"
+  }
 }
