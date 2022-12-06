@@ -9,5 +9,8 @@ export default ({ env }) => ({
       password: env('DATABASE_PASSWORD', 'postgres'),
       ssl: env.bool('DATABASE_SSL', false),
     },
+    pool: {
+      min: env.int('DATABASE_POOL_MIN', 0),
+    },
   },
 });
