@@ -12,3 +12,4 @@ public
 .node-version
 .DS_Store
 .next
+**/graphql/**/__generated__
