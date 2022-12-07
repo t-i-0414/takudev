@@ -58,6 +58,7 @@ module.exports = {
         'no-use-before-define': ['off'],
         'no-unused-vars': ['off'],
         'no-shadow': ['off'],
+        'import/order': ['off'],
       },
     },
   ],

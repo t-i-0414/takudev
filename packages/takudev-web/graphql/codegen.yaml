@@ -2,8 +2,14 @@ overwrite: true
 schema: ./graphql/schema.graphql
 documents: ./graphql/documents/**/*.graphql
 generates:
-  ./graphql/__generated__/index.ts:
+  ./graphql/__generated__/index.d.ts:
     plugins:
       - typescript
       - typescript-operations
-      - typed-document-node
+  ./graphql/__generated__/index.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./index.d
+    plugins:
+      - typescript-operations
+      - typescript-graphql-request
