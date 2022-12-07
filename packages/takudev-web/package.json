@@ -9,6 +9,7 @@
   "scripts": {
     "build": "next build",
     "build:storybook": "build-storybook --output-dir ./dist-storybook",
+    "codegen:graphql": "graphql-codegen --config graphql/codegen.yaml",
     "dev": "next dev",
     "format": "yarn run -T run-p \"format:*\"",
     "format:eslint": "yarn run -T eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
@@ -31,9 +32,11 @@
     "defaults"
   ],
   "dependencies": {
+    "@apollo/client": "^3.7.2",
     "body-scroll-lock": "^4.0.0-beta.0",
     "buffer": "^6.0.3",
     "focus-trap": "^7.1.0",
+    "graphql": "^16.6.0",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -42,6 +45,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@graphql-codegen/cli": "^2.15.0",
+    "@graphql-codegen/typed-document-node": "^2.3.8",
+    "@graphql-codegen/typescript": "^2.8.3",
+    "@graphql-codegen/typescript-operations": "^2.5.8",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",

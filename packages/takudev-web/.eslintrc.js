@@ -51,5 +51,14 @@ module.exports = {
         'react/jsx-props-no-spreading': ['off'],
       },
     },
+    {
+      files: ['**/graphql/**/__generated__/**/*.[jt]s?(x)'],
+      rules: {
+        'import/newline-after-import': ['off'],
+        'no-use-before-define': ['off'],
+        'no-unused-vars': ['off'],
+        'no-shadow': ['off'],
+      },
+    },
   ],
 };

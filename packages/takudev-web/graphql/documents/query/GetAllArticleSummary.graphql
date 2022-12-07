@@ -1,0 +1,18 @@
+query GetAllArticleSummary {
+  articles {
+    data {
+      id
+      attributes {
+        title
+        published
+        tags {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
