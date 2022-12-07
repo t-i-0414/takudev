@@ -57,6 +57,7 @@ module.exports = {
         'import/newline-after-import': ['off'],
         'no-use-before-define': ['off'],
         'no-unused-vars': ['off'],
+        'no-shadow': ['off'],
       },
     },
   ],
