@@ -1,4 +1,4 @@
-@import "./breakpoints";
+@import './breakpoints';
 
 @mixin responsive($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -6,6 +6,6 @@
       @content;
     }
   } @else {
-    @error "the breakpoint is not defined." + "the following that can be specified -> #{map-keys($breakpoints)}";
+    @error 'the breakpoint is not defined.' + 'the following that can be specified -> #{map-keys($breakpoints)}';
   }
 }

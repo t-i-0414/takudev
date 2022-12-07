@@ -25,13 +25,6 @@
       "relation": "oneToMany",
       "target": "api::tag.tag"
     },
-    "published": {
-      "type": "date",
-      "required": true
-    },
-    "updated": {
-      "type": "date"
-    },
     "description": {
       "type": "string",
       "required": true

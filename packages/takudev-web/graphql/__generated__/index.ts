@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 export type GetAllArticleSummaryQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetAllArticleSummaryQuery = { __typename?: 'Query', articles?: { __typename?: 'ArticleEntityResponseCollection', data: Array<{ __typename?: 'ArticleEntity', id?: string | null, attributes?: { __typename?: 'Article', title: string, published: any, tags?: { __typename?: 'TagRelationResponseCollection', data: Array<{ __typename?: 'TagEntity', attributes?: { __typename?: 'Tag', name: string } | null }> } | null } | null }> } | null };
+export type GetAllArticleSummaryQuery = { __typename?: 'Query', articles?: { __typename?: 'ArticleEntityResponseCollection', data: Array<{ __typename?: 'ArticleEntity', id?: string | null, attributes?: { __typename?: 'Article', slug: string, title: string, publishedAt?: any | null, tags?: { __typename?: 'TagRelationResponseCollection', data: Array<{ __typename?: 'TagEntity', attributes?: { __typename?: 'Tag', name: string } | null }> } | null } | null }> } | null };
 
 
 export const GetAllArticleSummaryDocument = gql`
@@ -15,8 +15,9 @@ export const GetAllArticleSummaryDocument = gql`
     data {
       id
       attributes {
+        slug
         title
-        published
+        publishedAt
         tags {
           data {
             attributes {

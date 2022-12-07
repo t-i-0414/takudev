@@ -1,10 +1,10 @@
-@import "./strip-unit";
+@import './strip-unit';
 
 @function rem($px, $base: 16px) {
   $value: $px;
 
-  @if unit($px) != "px" {
-    @warn "rem() cannot calculate if a value other than px is specified as an argument";
+  @if unit($px) != 'px' {
+    @warn 'rem() cannot calculate if a value other than px is specified as an argument';
     @return $value;
   }
 
