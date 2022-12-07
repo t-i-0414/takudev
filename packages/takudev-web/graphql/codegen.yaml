@@ -2,7 +2,8 @@ overwrite: true
 schema: ./graphql/schema.graphql
 documents: ./graphql/documents/**/*.graphql
 generates:
-  ./graphql/__generated__/index.d.ts:
+  ./graphql/__generated__/index.ts:
     plugins:
       - typescript
       - typescript-operations
+      - typed-document-node

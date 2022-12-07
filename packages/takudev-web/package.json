@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "@apollo/client": "^3.7.2",
+    "@graphql-codegen/typed-document-node": "^2.3.8",
     "@graphql-codegen/typescript-graphql-request": "^4.5.8",
     "@graphql-codegen/typescript-operations": "^2.5.8",
     "body-scroll-lock": "^4.0.0-beta.0",

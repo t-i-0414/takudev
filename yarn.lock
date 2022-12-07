@@ -2792,6 +2792,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/typed-document-node@npm:^2.3.8":
+  version: 2.3.8
+  resolution: "@graphql-codegen/typed-document-node@npm:2.3.8"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^2.7.2
+    "@graphql-codegen/visitor-plugin-common": 2.13.3
+    auto-bind: ~4.0.0
+    change-case-all: 1.0.14
+    tslib: ~2.4.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 04bc7ed43b492ac106f121c317fc14f7b915b677d7b6fa89fc2deff8fac8eb9126ac029756815e1a980e3183e2d65320398ace224f324cb69dd740bc9656d8e4
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/typescript-graphql-request@npm:^4.5.8":
   version: 4.5.8
   resolution: "@graphql-codegen/typescript-graphql-request@npm:4.5.8"
@@ -6625,6 +6640,7 @@ __metadata:
     "@apollo/client": ^3.7.2
     "@babel/core": ^7.20.2
     "@graphql-codegen/cli": ^2.15.0
+    "@graphql-codegen/typed-document-node": ^2.3.8
     "@graphql-codegen/typescript": ^2.8.3
     "@graphql-codegen/typescript-graphql-request": ^4.5.8
     "@graphql-codegen/typescript-operations": ^2.5.8
