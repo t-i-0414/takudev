@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import React, { useMemo } from 'react';
 import { TextTagList } from '~/components/molecules';
-import { isInvalidDate } from '~/utils';
+import { isInvalidDate } from '~/lib';
 import styles from './ArticleSummaryCard.module.scss';
 
 type Props = {
