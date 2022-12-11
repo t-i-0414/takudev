@@ -6441,6 +6441,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@strapi/provider-upload-aws-s3@npm:^4.5.3":
+  version: 4.5.3
+  resolution: "@strapi/provider-upload-aws-s3@npm:4.5.3"
+  dependencies:
+    aws-sdk: 2.1260.0
+    lodash: 4.17.21
+  checksum: c2f99dbd4d82c31a30c6000a66dfb6e11056bc3dff5543450d568013bf86fdf5246a5af8ddd624fa6489b81bdcf29072d3a442242a3a0e2e65d0f999feeda3f1
+  languageName: node
+  linkType: hard
+
 "@strapi/provider-upload-local@npm:4.5.3":
   version: 4.5.3
   resolution: "@strapi/provider-upload-local@npm:4.5.3"
@@ -6578,6 +6588,7 @@ __metadata:
     "@strapi/plugin-graphql": ^4.5.3
     "@strapi/plugin-i18n": 4.5.3
     "@strapi/plugin-users-permissions": 4.5.3
+    "@strapi/provider-upload-aws-s3": ^4.5.3
     "@strapi/strapi": 4.5.3
     better-sqlite3: 7.4.6
     pg: ^8.8.0
@@ -9459,6 +9470,24 @@ __metadata:
     camel-case: ^4.1.2
     fast-glob: ^3.2.11
   checksum: 2f4251753a60a19a46c4af2fcbba3ea3e062506aea529375e76cd11a29c9231bffd8b352794e8ed7a3710d6a9975fa09889e18dce32f25461cf769cce21197b6
+  languageName: node
+  linkType: hard
+
+"aws-sdk@npm:2.1260.0":
+  version: 2.1260.0
+  resolution: "aws-sdk@npm:2.1260.0"
+  dependencies:
+    buffer: 4.9.2
+    events: 1.1.1
+    ieee754: 1.1.13
+    jmespath: 0.16.0
+    querystring: 0.2.0
+    sax: 1.2.1
+    url: 0.10.3
+    util: ^0.12.4
+    uuid: 8.0.0
+    xml2js: 0.4.19
+  checksum: 103ffd23a14668094c947a7b07f7e42269efd01f9d12cf20a901b6e18c3daa8b9c9b064979e824d601d9d6dc8f879f7814b68bfe573fd3f64ceecab763cee054
   languageName: node
   linkType: hard
 
