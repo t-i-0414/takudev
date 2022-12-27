@@ -13,11 +13,11 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.5.3",
-    "@strapi/plugin-i18n": "4.5.3",
-    "@strapi/plugin-users-permissions": "4.5.3",
-    "@strapi/provider-upload-aws-s3": "^4.5.3",
-    "@strapi/strapi": "4.5.3",
+    "@strapi/plugin-graphql": "^4.5.4",
+    "@strapi/plugin-i18n": "4.5.4",
+    "@strapi/plugin-users-permissions": "4.5.4",
+    "@strapi/provider-upload-aws-s3": "^4.5.4",
+    "@strapi/strapi": "4.5.4",
     "better-sqlite3": "7.4.6",
     "pg": "^8.8.0",
     "react-select": "^5.6.1"
