@@ -56,6 +56,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/install-dependencies
       - run: yarn test
+        env:
+          HOST: ${{ secrets.HOST }}
+          STRAPI_JWT_TOKEN: ${{ secrets.STRAPI_JWT_TOKEN }}
 
   storybook-deploy:
     name: Storybook Deploy
