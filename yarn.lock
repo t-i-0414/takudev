@@ -6639,7 +6639,7 @@ __metadata:
     postcss-jsx: ^0.36.4
     postcss-scss: ^4.0.5
     postcss-syntax: ^0.36.2
-    puppeteer: ^19.4.1
+    puppeteer: ^19.2.2
     react: 18.2.0
     react-dom: 18.2.0
     react-fast-compare: ^3.2.0
@@ -9498,7 +9498,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:2.1260.0":
+"aws-sdk@npm:2.1260.0, aws-sdk@npm:^2.755.0":
   version: 2.1260.0
   resolution: "aws-sdk@npm:2.1260.0"
   dependencies:
@@ -9513,24 +9513,6 @@ __metadata:
     uuid: 8.0.0
     xml2js: 0.4.19
   checksum: 103ffd23a14668094c947a7b07f7e42269efd01f9d12cf20a901b6e18c3daa8b9c9b064979e824d601d9d6dc8f879f7814b68bfe573fd3f64ceecab763cee054
-  languageName: node
-  linkType: hard
-
-"aws-sdk@npm:^2.755.0":
-  version: 2.1254.0
-  resolution: "aws-sdk@npm:2.1254.0"
-  dependencies:
-    buffer: 4.9.2
-    events: 1.1.1
-    ieee754: 1.1.13
-    jmespath: 0.16.0
-    querystring: 0.2.0
-    sax: 1.2.1
-    url: 0.10.3
-    util: ^0.12.4
-    uuid: 8.0.0
-    xml2js: 0.4.19
-  checksum: 4ac135e3d2edc10903f0bb8af183966cc7302cb9e44d1ba82a168227d6c3926170ad36ac477cd90d1853f9b2d8725c3c9ea6339ce8bb8c8924e92f10e395c639
   languageName: node
   linkType: hard
 
@@ -12027,18 +12009,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:8.0.0":
-  version: 8.0.0
-  resolution: "cosmiconfig@npm:8.0.0"
-  dependencies:
-    import-fresh: ^3.2.1
-    js-yaml: ^4.1.0
-    parse-json: ^5.0.0
-    path-type: ^4.0.0
-  checksum: ff4cdf89ac1ae52e7520816622c21a9e04380d04b82d653f5139ec581aa4f7f29e096d46770bc76c4a63c225367e88a1dfa233ea791669a35101f5f9b972c7d1
-  languageName: node
-  linkType: hard
-
 "cosmiconfig@npm:^6.0.0":
   version: 6.0.0
   resolution: "cosmiconfig@npm:6.0.0"
@@ -12933,13 +12903,6 @@ __metadata:
   version: 0.0.1056733
   resolution: "devtools-protocol@npm:0.0.1056733"
   checksum: d81b474d656d5cdfa0ec6afb8725e8707ba8b38ad7fc68abe05e5accdef1967a6bc1a1545744c8b69cb22ec5d3b3e5225d4bc0313b6a017c94a32a43f3d2c3d3
-  languageName: node
-  linkType: hard
-
-"devtools-protocol@npm:0.0.1068969":
-  version: 0.0.1068969
-  resolution: "devtools-protocol@npm:0.0.1068969"
-  checksum: 53b9c8d661e4148eaf8e990f03902fb3a2cceb06044f661013b6c92dd48ece397ef49fd18401775823c9a33069b4b535502f2559d4f99c74a6bdcb71582b6c8a
   languageName: node
   linkType: hard
 
@@ -24293,24 +24256,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer-core@npm:19.4.1":
-  version: 19.4.1
-  resolution: "puppeteer-core@npm:19.4.1"
-  dependencies:
-    cross-fetch: 3.1.5
-    debug: 4.3.4
-    devtools-protocol: 0.0.1068969
-    extract-zip: 2.0.1
-    https-proxy-agent: 5.0.1
-    proxy-from-env: 1.1.0
-    rimraf: 3.0.2
-    tar-fs: 2.1.1
-    unbzip2-stream: 1.4.3
-    ws: 8.11.0
-  checksum: f4db1aa1d1e642356744bed2dc49ff7960a8b530d147ace1fe067937433ae40234ea973260b9b264d53a2f2297f53df796d008d4756f735b3f0a64a69724eaba
-  languageName: node
-  linkType: hard
-
 "puppeteer-core@npm:^9.0.0":
   version: 9.1.1
   resolution: "puppeteer-core@npm:9.1.1"
@@ -24342,19 +24287,6 @@ __metadata:
     proxy-from-env: 1.1.0
     puppeteer-core: 19.2.2
   checksum: 8b66180ee62e624bd494c5fdcb36e023caca4058a151c30a99e938346c74a33951132c17149b72c90a87cb04ad1a5e220b554d69fd0bcd206345c9983d71edbe
-  languageName: node
-  linkType: hard
-
-"puppeteer@npm:^19.4.1":
-  version: 19.4.1
-  resolution: "puppeteer@npm:19.4.1"
-  dependencies:
-    cosmiconfig: 8.0.0
-    https-proxy-agent: 5.0.1
-    progress: 2.0.3
-    proxy-from-env: 1.1.0
-    puppeteer-core: 19.4.1
-  checksum: 14b6bd8d5f73f389e5bf424df6a89c346b7a8a8d0326b6aa3670e447a98b638b9091f46b6980515d56152b916a4e7be49c21f25fe7bb5c66828e02466a891f57
   languageName: node
   linkType: hard
 

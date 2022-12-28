@@ -17,9 +17,6 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
-      - name: Install Puppeteer
-        run: npm install -g puppeteer
-
       - name: Run Storycap
         run: cd packages/takudev-web && yarn storycap
 
