@@ -17,9 +17,8 @@ jobs:
       - run: chrome --version
       - run: |
           git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
-      - run: npm install -g puppeteer
       - run: cd packages/takudev-web && yarn build-storybook
-      - run: cd packages/takudev-web && yarn storycap
+      - run: cd packages/takudev-web && npm install -g puppeteer && yarn storycap
       - run: cd packages/takudev-web && yarn reg-suit run
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
