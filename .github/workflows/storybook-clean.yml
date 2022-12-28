@@ -11,8 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - run: |
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Remove Storybook
+        run: |
           DEST_DIR=${{ github.event.pull_request.number }}
           aws s3 rm --recursive \
             s3://takudev-storybook/storybook/${DEST_DIR}

@@ -1,10 +1,11 @@
-query GetAllArticleSummary {
+query getAllArticleSummary {
   articles {
     data {
       id
       attributes {
+        slug
         title
-        published
+        publishedAt
         tags {
           data {
             attributes {

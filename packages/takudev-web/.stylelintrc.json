@@ -13,7 +13,8 @@
       {
         "ignorePseudoClasses": ["global"]
       }
-    ]
+    ],
+    "string-quotes": "single"
   },
   "overrides": [
     {

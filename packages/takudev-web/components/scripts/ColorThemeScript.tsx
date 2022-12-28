@@ -1,7 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import { colorModeMap, colorModeLocalStorageKey } from '~/consts';
-import { getCustomColorPropertySettingText } from '~/utils';
+import { getCustomColorPropertySettingText } from '~/lib';
 
 export const ColorThemeScript: React.FC = React.memo(
   () => (

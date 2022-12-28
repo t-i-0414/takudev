@@ -6,8 +6,8 @@ import {
   darkColorPaletteMap,
   colorPaletteMapKeyList,
 } from '~/consts';
+import { kebabize, isColorMode } from '~/lib';
 import type { ColorMode } from '~/types';
-import { kebabize, isColorMode } from '~/utils';
 
 const { lightMode, darkMode } = colorModeMap;
 

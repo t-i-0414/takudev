@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
 
   lint:
     name: Lint
@@ -22,9 +25,14 @@ jobs:
     needs: [install-dependencies]
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
-      - run: yarn lint
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Lint
+        run: yarn lint
 
   CodeQL-Analyze:
     name: CodeQL Analyze
@@ -43,9 +51,14 @@ jobs:
     needs: [install-dependencies]
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
-      - run: yarn type-check
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Type Check
+        run: yarn type-check
 
   test:
     name: Test
@@ -53,9 +66,17 @@ jobs:
     needs: [install-dependencies]
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
-      - run: yarn test
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test
+        run: yarn test
+        env:
+          HOST: ${{ secrets.HOST }}
+          STRAPI_JWT_TOKEN: ${{ secrets.STRAPI_JWT_TOKEN }}
 
   storybook-deploy:
     name: Storybook Deploy
@@ -63,14 +84,23 @@ jobs:
     needs: [install-dependencies]
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
-      - run: cd packages/takudev-web && yarn build:storybook
-      - run: |
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build Storybook
+        run: cd packages/takudev-web && yarn build:storybook
+
+      - name: Set Environment Variables
+        run: |
           DEST_DIR=${{ github.event.pull_request.number }}
           [ -z $DEST_DIR ] && DEST_DIR=develop
           echo "DEST_DIR=${DEST_DIR}" >> $GITHUB_ENV
-      - run: |
+
+      - name: Deploy Storybook
+        run: |
           aws s3 cp --recursive \
             ./packages/takudev-web/dist-storybook \
             s3://takudev-storybook/storybook/${DEST_DIR}
@@ -78,7 +108,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-1
-      - if: github.event.action == 'opened'
+
+      - name: Create Comment
+        if: github.event.action == 'opened'
         uses: actions/github-script@v3
         with:
           script: |
