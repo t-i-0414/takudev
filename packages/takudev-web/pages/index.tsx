@@ -33,7 +33,7 @@ const HomePage: NextPage<Props> = React.memo(
 HomePage.displayName = 'HomePage';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new GraphQLClient('http://127.0.0.1:1337/graphql', {
+  const client = new GraphQLClient(`${process.env.HOST}/graphql`, {
     headers: {
       Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
     },

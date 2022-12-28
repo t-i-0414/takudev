@@ -187,4 +187,4 @@ dist
 
 .vscode/settings.json
 
-env.local
+.env.local
