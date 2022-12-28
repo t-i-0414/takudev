@@ -186,3 +186,5 @@ dist
 .cms
 
 .vscode/settings.json
+
+.env.local
