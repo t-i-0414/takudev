@@ -13,10 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/install-dependencies
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
       - run: git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
-      - run: sudo apt install chromium-browser -y
       - name: Install Puppeteer Dependencies
         run: |
           sudo apt-get update
