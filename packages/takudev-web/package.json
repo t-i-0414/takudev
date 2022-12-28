@@ -76,7 +76,7 @@
     "postcss-jsx": "^0.36.4",
     "postcss-scss": "^4.0.5",
     "postcss-syntax": "^0.36.2",
-    "puppeteer": "^19.2.2",
+    "puppeteer": "^19.4.1",
     "reg-keygen-git-hash-plugin": "^0.12.1",
     "reg-notify-github-plugin": "^0.12.1",
     "reg-publish-s3-plugin": "^0.12.1",
