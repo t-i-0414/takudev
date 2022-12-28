@@ -23,8 +23,7 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "storybook:serve-dist": "http-server ./storybook-static --port 6006",
-    "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'yarn storybook:serve-dist' --serverTimeout 200000",
+    "storycap": "storycap --serverCmd 'npx http-server ./storybook-static --port 6006' --serverTimeout 200000 --outDir ./__screenshots__/ http://localhost:6006",
     "test": "yarn run -T jest",
     "test:storybook": "test-storybook",
     "type-check": "yarn run -T tsc --noEmit"
@@ -73,7 +72,6 @@
     "babel-plugin-superjson-next": "^0.4.5",
     "eslint-config-next": "13.0.4",
     "eslint-plugin-storybook": "^0.6.7",
-    "http-server": "^14.1.1",
     "postcss": "8.4.19",
     "postcss-jsx": "^0.36.4",
     "postcss-scss": "^4.0.5",
