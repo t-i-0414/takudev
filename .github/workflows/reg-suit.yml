@@ -15,7 +15,6 @@ jobs:
       - uses: ./.github/actions/install-dependencies
       - run: git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
       - run: sudo apt install chromium-browser -y
-      - run: cd packages/takudev-web && yarn build-storybook
       - run: cd packages/takudev-web && yarn storycap
       - run: cd packages/takudev-web && yarn reg-suit run
         env:
