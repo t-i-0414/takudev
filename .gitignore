@@ -185,6 +185,8 @@ dist
 # cms's docker volumes
 .cms
 
+# vscode
 .vscode/settings.json
 
+# nextjs
 .env.local
