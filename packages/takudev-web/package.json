@@ -24,7 +24,7 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "storybook:serve-dist": "http-server ./dist-storybook --port 6006",
-    "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'yarn storybook:serve-dist' --serverTimeout 60000",
+    "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'yarn storybook:serve-dist' --serverTimeout 200000",
     "test": "yarn run -T jest",
     "test:storybook": "test-storybook",
     "type-check": "yarn run -T tsc --noEmit"
