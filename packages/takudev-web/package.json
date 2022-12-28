@@ -23,7 +23,7 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "storycap": "storycap --serverCmd 'npx http-server ./storybook-static --port 6006' --serverTimeout 200000 --outDir ./__screenshots__/ http://localhost:6006",
+    "storycap": "storycap --serverCmd 'start-storybook -p 6006' --serverTimeout 300000 --outDir ./__screenshots__/ http://localhost:6006",
     "test": "yarn run -T jest",
     "test:storybook": "test-storybook",
     "type-check": "yarn run -T tsc --noEmit"
