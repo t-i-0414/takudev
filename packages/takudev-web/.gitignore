@@ -34,5 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 .reg
-dist-storybook
+storybook-static
 __screenshots__

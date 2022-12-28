@@ -8,7 +8,7 @@
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
     "build": "next build",
-    "build:storybook": "build-storybook --output-dir ./dist-storybook",
+    "build:storybook": "build-storybook --output-dir ./storybook-static",
     "codegen:graphql": "graphql-codegen --config graphql/codegen.yaml",
     "dev": "next dev",
     "format": "yarn run -T run-p \"format:*\"",
@@ -23,7 +23,7 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "storybook:serve-dist": "http-server ./dist-storybook --port 6006",
+    "storybook:serve-dist": "http-server ./storybook-static --port 6006",
     "storycap": "storycap http://localhost:6006 --outDir ./__screenshots__/ --serverCmd 'yarn storybook:serve-dist' --serverTimeout 200000",
     "test": "yarn run -T jest",
     "test:storybook": "test-storybook",
