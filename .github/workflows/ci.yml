@@ -75,7 +75,7 @@ jobs:
       - name: Test
         run: yarn test
         env:
-          HOST: ${{ secrets.HOST }}
+          STRAPI_HOST: ${{ secrets.STRAPI_HOST }}
           STRAPI_JWT_TOKEN: ${{ secrets.STRAPI_JWT_TOKEN }}
 
   storybook-deploy:

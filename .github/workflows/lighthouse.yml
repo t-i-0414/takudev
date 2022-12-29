@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          HOST: ${{ secrets.HOST }}
+          STRAPI_HOST: ${{ secrets.STRAPI_HOST }}
           STRAPI_JWT_TOKEN: ${{ secrets.STRAPI_JWT_TOKEN }}
 
       - name: Run Lighthouse

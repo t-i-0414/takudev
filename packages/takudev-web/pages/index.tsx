@@ -5,6 +5,7 @@ import isEqual from 'react-fast-compare';
 import { HomePageContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
 import { getSdk } from '~/graphql';
+import { isNotNullable, filterNotNullableElement } from '~/lib';
 import type { NextPage, GetStaticProps } from 'next';
 
 type ArticleSummaryList = React.ComponentPropsWithoutRef<
@@ -33,15 +34,24 @@ const HomePage: NextPage<Props> = React.memo(
 HomePage.displayName = 'HomePage';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new GraphQLClient(`${process.env.HOST}/graphql`, {
-    headers: {
-      Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
-    },
-  });
+  const shouldAuthenticate = process.env.STAGE !== 'development';
+
+  const client = new GraphQLClient(
+    `${process.env.STRAPI_HOST}/graphql`,
+    shouldAuthenticate
+      ? {
+          headers: {
+            Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
+          },
+        }
+      : {},
+  );
+
   const sdk = getSdk(client);
+
   const { articles } = await sdk.getAllArticleSummary();
 
-  if (!articles) {
+  if (!isNotNullable(articles)) {
     return {
       props: {
         articleSummaryList: [],
@@ -49,41 +59,36 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     };
   }
 
-  const articleSummaryList = articles.data.map(({ attributes }) => {
-    if (!attributes) {
-      return null;
-    }
+  const articleSummaryList = filterNotNullableElement(
+    articles.data.map(({ attributes }) => {
+      if (!isNotNullable(attributes)) {
+        return null;
+      }
 
-    const tagList = attributes.tags
-      ? attributes.tags.data.map(tag => {
-          if (!tag.attributes) {
-            return null;
-          }
+      const tagList = isNotNullable(attributes.tags)
+        ? filterNotNullableElement(
+            attributes.tags.data.map(tag => {
+              if (!isNotNullable(tag) || !isNotNullable(tag.attributes)) {
+                return null;
+              }
 
-          return tag.attributes.name;
-        })
-      : [];
+              return tag.attributes.name;
+            }),
+          )
+        : [];
 
-    const filteredTagList = tagList.filter(
-      (tag): tag is string => tag !== null,
-    );
-
-    return {
-      slug: attributes.slug,
-      title: attributes.title,
-      publishedAt: new Date(attributes.publishedAt),
-      tagList: filteredTagList,
-    };
-  });
-
-  const filteredArticleSummaryList = articleSummaryList.filter(
-    (articleSummary): articleSummary is ArticleSummaryList[number] =>
-      articleSummary !== null,
+      return {
+        slug: attributes.slug,
+        title: attributes.title,
+        publishedAt: new Date(attributes.publishedAt),
+        tagList,
+      };
+    }),
   );
 
   return {
     props: {
-      articleSummaryList: filteredArticleSummaryList,
+      articleSummaryList,
     },
   };
 };
