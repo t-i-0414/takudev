@@ -96,7 +96,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/__tests__/**/*.[jt]sx?', '**/?(*.)+(spec|test).[jt]sx?'],
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
       extends: ['plugin:jest/all'],
     },
     {

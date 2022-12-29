@@ -6,7 +6,7 @@ import {
   lightColorPaletteMap,
   darkColorPaletteMap,
 } from '~/consts';
-import { kebabize } from '~/utils';
+import { kebabize } from '~/lib';
 
 const { lightMode, darkMode } = colorModeMap;
 

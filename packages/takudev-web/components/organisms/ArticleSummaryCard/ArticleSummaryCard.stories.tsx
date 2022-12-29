@@ -12,33 +12,24 @@ export default {
   title: 'Organisms/ArticleSummaryCard',
   component: ArticleSummaryCard,
   argTypes: {
+    slug: {
+      control: 'text',
+    },
     title: {
       control: 'text',
     },
-    dateString: {
-      control: 'select',
-      options: [
-        '2022-07-17',
-        '2022-07-18',
-        '2022-07-19',
-        '2022-07-20',
-        '2022-07-21',
-        '2022-07-22',
-        '2022-07-23',
-      ],
+    publishedAt: {
+      control: 'date',
     },
     tagList: {
       control: 'object',
       options: ['one', 'two', 'three', 'four', 'five'],
     },
-    href: {
-      control: 'text',
-      table: { disable: true },
-    },
   },
   args: {
+    slug: 'slug',
     title: 'title',
-    dateString: '2022-07-17',
+    publishedAt: new Date('2022-07-17'),
     tagList: ['one', 'two', 'three', 'four', 'five'],
   },
 } as ComponentMeta<typeof ArticleSummaryCard>;

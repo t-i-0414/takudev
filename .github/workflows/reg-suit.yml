@@ -9,15 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/install-dependencies
-      - run: |
-          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
-      - run: npm install -g puppeteer
-      - run: cd packages/takudev-web && yarn storycap
-      - run: cd packages/takudev-web && yarn reg-suit run
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Install Puppeteer
+        run: cd packages/takudev-web && yarn add puppeteer
+
+      - name: Run Storycap
+        run: cd packages/takudev-web && yarn storycap
+
+      - name: Run Reg Suit
+        run: cd packages/takudev-web && yarn reg-suit run
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

@@ -6,5 +6,23 @@
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
   "license": "UNLICENSED",
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "devDependencies": {}
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-graphql": "^4.5.5",
+    "@strapi/plugin-i18n": "4.5.5",
+    "@strapi/plugin-users-permissions": "4.5.5",
+    "@strapi/provider-upload-aws-s3": "^4.5.5",
+    "@strapi/strapi": "4.5.5",
+    "better-sqlite3": "7.6.2",
+    "pg": "^8.8.0",
+    "react-select": "^5.7.0"
+  },
+  "strapi": {
+    "uuid": "715c0270-293b-45e1-81f4-9e2c99640036"
+  }
 }

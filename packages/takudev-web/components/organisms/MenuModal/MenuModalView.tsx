@@ -68,7 +68,12 @@ export const MenuModalView: React.FC<Props> = React.memo(
         >
           <ul>
             <li>
-              <a href={hrefToContact} aria-label='go to contact page'>
+              <a
+                href={hrefToContact}
+                aria-label='go to contact page'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Contact
               </a>
             </li>

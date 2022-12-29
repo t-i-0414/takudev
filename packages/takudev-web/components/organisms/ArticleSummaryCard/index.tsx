@@ -1,53 +1,45 @@
 import { format } from 'date-fns';
 import React, { useMemo } from 'react';
+import isEqual from 'react-fast-compare';
 import { TextTagList } from '~/components/molecules';
-import { isInvalidDate } from '~/utils';
 import styles from './ArticleSummaryCard.module.scss';
 
 type Props = {
+  slug: string;
   title: string;
-  dateString: string;
+  publishedAt: Date;
   tagList: string[];
-  href: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
 };
 
-export const ArticleSummaryCard: React.FC<Props> = ({
-  title,
-  dateString,
-  tagList,
-  href,
-}) => {
-  const date = useMemo(() => {
-    const candidate = new Date(dateString);
+export const ArticleSummaryCard: React.FC<Props> = React.memo(
+  ({ slug, title, publishedAt, tagList }) => {
+    const formattedDate = useMemo(
+      () => format(publishedAt, 'MMM dd, yyyy'),
+      [publishedAt],
+    );
 
-    if (isInvalidDate(candidate)) {
-      return new Date();
-    }
+    const hasTagList = useMemo(() => tagList.length > 0, [tagList]);
 
-    return candidate;
-  }, [dateString]);
-
-  const formattedDate = useMemo(() => format(date, 'MMM dd, yyyy'), [date]);
-
-  const hasTagList = useMemo(() => tagList.length > 0, [tagList]);
-
-  return (
-    <a
-      aria-label='article'
-      href={href}
-      className={`${styles.container} container`}
-    >
-      <div className={styles['title-container']}>
-        <p className={styles.title}>{title}</p>
-      </div>
-
-      <p className={styles['date-label']}>{formattedDate}</p>
-
-      {hasTagList && (
-        <div className={styles['tag-container']}>
-          <TextTagList tagList={tagList} />
+    return (
+      <a
+        aria-label='article'
+        href={`/articles/${slug}`}
+        className={`${styles.container} container`}
+      >
+        <div className={styles['title-container']}>
+          <p className={styles.title}>{title}</p>
         </div>
-      )}
-    </a>
-  );
-};
+
+        <p className={styles['date-label']}>{formattedDate}</p>
+
+        {hasTagList && (
+          <div className={styles['tag-container']}>
+            <TextTagList tagList={tagList} />
+          </div>
+        )}
+      </a>
+    );
+  },
+  isEqual,
+);
+ArticleSummaryCard.displayName = 'ArticleSummaryCard';

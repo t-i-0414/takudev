@@ -1,5 +1,5 @@
-@import "../../../styles/color";
-@import "../../../styles/responsive";
+@import '../../../styles/color';
+@import '../../../styles/responsive';
 
 .container {
   display: flex;
@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   max-width: 1040px;
