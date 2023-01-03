@@ -60,8 +60,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 
   const articleSummaryList = filterNotNullableElement(
-    articles.data.map(({ attributes }) => {
-      if (!isNotNullable(attributes)) {
+    articles.data.map(({ id, attributes }) => {
+      if (!isNotNullable(id) || !isNotNullable(attributes)) {
         return null;
       }
 
@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         : [];
 
       return {
-        slug: attributes.slug,
+        slug: `${id}_${attributes.slug}`,
         title: attributes.title,
         publishedAt: new Date(attributes.publishedAt),
         tagList,
