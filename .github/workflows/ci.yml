@@ -119,5 +119,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'storybook preview created!!\n' +
-                '${{secrets.STORYBOOK_URL}}/${{ github.event.pull_request.number }}/index.html'
+                'https://storybook.takudev.net/${{ github.event.pull_request.number }}/'
             })

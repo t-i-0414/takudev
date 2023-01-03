@@ -16,7 +16,9 @@
       "setCommitStatus": false
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "takudev-reg-suit"
+      "bucketName": "takudev-reg-suit",
+      "acl": "private",
+      "customDomain": "reg-suit.takudev.net"
     }
   }
 }
