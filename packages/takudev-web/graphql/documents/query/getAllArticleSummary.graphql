@@ -3,8 +3,10 @@ query getAllArticleSummary {
     data {
       id
       attributes {
-        slug
         title
+        slug
+        description
+        content
         publishedAt
         tags {
           data {

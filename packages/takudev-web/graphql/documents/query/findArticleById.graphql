@@ -1,7 +1,12 @@
 query findArticleById($id: ID) {
   article(id: $id) {
     data {
+      id
       attributes {
+        title
+        slug
+        description
+        content
         publishedAt
         tags {
           data {
@@ -10,8 +15,6 @@ query findArticleById($id: ID) {
             }
           }
         }
-        title
-        content
       }
     }
   }
