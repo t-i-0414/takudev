@@ -1,10 +1,9 @@
-import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import { HomePageContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
-import { getSdk } from '~/graphql';
+import { getGraphqlSdk } from '~/graphql';
 import {
   isNotNullable,
   filterNotNullableElement,
@@ -12,12 +11,10 @@ import {
 } from '~/lib';
 import type { NextPage, GetStaticProps } from 'next';
 
-type ArticleSummaryList = React.ComponentPropsWithoutRef<
-  typeof HomePageContent
->['articleSummaryList'];
-
 type Props = {
-  articleSummaryList: ArticleSummaryList;
+  articleSummaryList: React.ComponentPropsWithoutRef<
+    typeof HomePageContent
+  >['articleSummaryList'];
 };
 
 const HomePage: NextPage<Props> = React.memo(
@@ -41,22 +38,8 @@ const HomePage: NextPage<Props> = React.memo(
 HomePage.displayName = 'HomePage';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const shouldAuthenticate = process.env.STAGE !== 'development';
-
-  const client = new GraphQLClient(
-    `${process.env.STRAPI_HOST}/graphql`,
-    shouldAuthenticate
-      ? {
-          headers: {
-            Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
-          },
-        }
-      : {},
-  );
-
-  const sdk = getSdk(client);
-
-  const { articles } = await sdk.getAllArticleSummary();
+  const graphqlSdk = getGraphqlSdk();
+  const { articles } = await graphqlSdk.getAllArticleSummary();
 
   if (!isNotNullable(articles)) {
     return {

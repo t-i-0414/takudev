@@ -1,10 +1,9 @@
 import { ParsedUrlQuery } from 'node:querystring';
-import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import { PageTemplate } from '~/components/templates';
-import { getSdk } from '~/graphql';
+import { getGraphqlSdk } from '~/graphql';
 import {
   isNotNullable,
   filterNotNullableElement,
@@ -43,22 +42,8 @@ interface Params extends ParsedUrlQuery {
 export const getStaticPaths: GetStaticPaths<{
   slug: string;
 }> = async () => {
-  const shouldAuthenticate = process.env.STAGE !== 'development';
-
-  const client = new GraphQLClient(
-    `${process.env.STRAPI_HOST}/graphql`,
-    shouldAuthenticate
-      ? {
-          headers: {
-            Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
-          },
-        }
-      : {},
-  );
-
-  const sdk = getSdk(client);
-
-  const { articles } = await sdk.getAllArticleSummary();
+  const graphqlSdk = getGraphqlSdk();
+  const { articles } = await graphqlSdk.getAllArticleSummary();
 
   if (!isNotNullable(articles)) {
     return {
@@ -68,14 +53,16 @@ export const getStaticPaths: GetStaticPaths<{
   }
 
   const paths = filterNotNullableElement(
-    articles.data.map(({ id, attributes }) => {
-      if (!isNotNullable(id) || !isNotNullable(attributes)) {
+    articles.data.map(data => {
+      const normalizedArticle = normalizeArticle({ data });
+
+      if (!isNotNullable(normalizedArticle)) {
         return null;
       }
 
       return {
         params: {
-          slug: `${id}_${attributes.slug}`,
+          slug: `${normalizedArticle.id}_${normalizedArticle.slug}`,
         },
       };
     }),
@@ -98,22 +85,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     };
   }
 
-  const shouldAuthenticate = process.env.STAGE !== 'development';
-
-  const client = new GraphQLClient(
-    `${process.env.STRAPI_HOST}/graphql`,
-    shouldAuthenticate
-      ? {
-          headers: {
-            Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
-          },
-        }
-      : {},
-  );
-
-  const sdk = getSdk(client);
-
-  const { article } = await sdk.findArticleById({
+  const graphqlSdk = getGraphqlSdk();
+  const { article } = await graphqlSdk.findArticleById({
     id: params.slug.split('_')[0],
   });
 
