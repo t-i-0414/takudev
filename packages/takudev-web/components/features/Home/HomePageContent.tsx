@@ -15,15 +15,17 @@ export const HomePageContent: React.FC<Props> = React.memo(
       <ProfileCard />
 
       <div className={styles['article-summary-card-container']}>
-        {articleSummaryList.map(({ slug, title, publishedAt, tagList }) => (
-          <ArticleSummaryCard
-            key={slug}
-            slug={slug}
-            title={title}
-            publishedAt={publishedAt}
-            tagList={tagList}
-          />
-        ))}
+        {articleSummaryList
+          .sort((a, b) => (a.publishedAt > b.publishedAt ? 1 : -1))
+          .map(({ slug, title, publishedAt, tagList }) => (
+            <ArticleSummaryCard
+              key={slug}
+              slug={slug}
+              title={title}
+              publishedAt={publishedAt}
+              tagList={tagList}
+            />
+          ))}
       </div>
     </div>
   ),
