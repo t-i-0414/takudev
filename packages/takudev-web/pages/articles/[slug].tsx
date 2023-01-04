@@ -2,6 +2,7 @@ import { ParsedUrlQuery } from 'node:querystring';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
+import { ArticleContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
 import { getGraphqlSdk } from '~/graphql';
 import {
@@ -28,7 +29,12 @@ const ArticlePage: NextPage<Props> = React.memo(({ article }) => {
       </Head>
 
       <PageTemplate>
-        <p>{article.title}</p>
+        <ArticleContent
+          title={article.title}
+          slug={article.slug}
+          publishedAt={article.publishedAt}
+          content={article.content}
+        />
       </PageTemplate>
     </>
   );
