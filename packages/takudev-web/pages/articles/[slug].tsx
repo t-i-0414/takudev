@@ -5,28 +5,35 @@ import React from 'react';
 import isEqual from 'react-fast-compare';
 import { PageTemplate } from '~/components/templates';
 import { getSdk } from '~/graphql';
-import { isNotNullable, filterNotNullableElement } from '~/lib';
+import {
+  isNotNullable,
+  filterNotNullableElement,
+  normalizeArticle,
+} from '~/lib';
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
 type Props = {
-  article: any;
+  article: ReturnType<typeof normalizeArticle>;
 };
 
-const ArticlePage: NextPage<Props> = React.memo(
-  ({ article }) => (
+const ArticlePage: NextPage<Props> = React.memo(({ article }) => {
+  if (!isNotNullable(article)) {
+    return null;
+  }
+
+  return (
     <>
       <Head>
-        <title>{`Taku.dev | ${article.data.attributes.title}`}</title>
-        <meta name='description' content="This is Takuya Iwashiro's Dev Blog" />
+        <title>{`Taku.dev | ${article.title}`}</title>
+        <meta name='description' content={article.description} />
       </Head>
 
       <PageTemplate>
-        <p>{article.data.attributes.title}</p>
+        <p>{article.title}</p>
       </PageTemplate>
     </>
-  ),
-  isEqual,
-);
+  );
+}, isEqual);
 ArticlePage.displayName = 'HomePage';
 
 interface Params extends ParsedUrlQuery {
@@ -110,17 +117,11 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     id: params.slug.split('_')[0],
   });
 
-  if (!isNotNullable(article) || !isNotNullable(article.data)) {
-    return {
-      props: {
-        article: null,
-      },
-    };
-  }
+  const normalizedArticle = normalizeArticle(article);
 
   return {
     props: {
-      article,
+      article: normalizedArticle,
     },
   };
 };

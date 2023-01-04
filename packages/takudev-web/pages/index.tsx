@@ -5,7 +5,11 @@ import isEqual from 'react-fast-compare';
 import { HomePageContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
 import { getSdk } from '~/graphql';
-import { isNotNullable, filterNotNullableElement } from '~/lib';
+import {
+  isNotNullable,
+  filterNotNullableElement,
+  normalizeArticle,
+} from '~/lib';
 import type { NextPage, GetStaticProps } from 'next';
 
 type ArticleSummaryList = React.ComponentPropsWithoutRef<
@@ -21,7 +25,10 @@ const HomePage: NextPage<Props> = React.memo(
     <>
       <Head>
         <title>Taku.dev</title>
-        <meta name='description' content="This is Takuya Iwashiro's Dev Blog" />
+        <meta
+          name='description'
+          content="This is Takuya Iwashiro's Web Dev Blog"
+        />
       </Head>
 
       <PageTemplate>
@@ -60,28 +67,18 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 
   const articleSummaryList = filterNotNullableElement(
-    articles.data.map(({ id, attributes }) => {
-      if (!isNotNullable(id) || !isNotNullable(attributes)) {
+    articles.data.map(data => {
+      const normalizedArticle = normalizeArticle({ data });
+
+      if (!isNotNullable(normalizedArticle)) {
         return null;
       }
 
-      const tagList = isNotNullable(attributes.tags)
-        ? filterNotNullableElement(
-            attributes.tags.data.map(tag => {
-              if (!isNotNullable(tag) || !isNotNullable(tag.attributes)) {
-                return null;
-              }
-
-              return tag.attributes.name;
-            }),
-          )
-        : [];
-
       return {
-        slug: `${id}_${attributes.slug}`,
-        title: attributes.title,
-        publishedAt: new Date(attributes.publishedAt),
-        tagList,
+        title: normalizedArticle.title,
+        slug: `${normalizedArticle.id}_${normalizedArticle.slug}`,
+        tagList: normalizedArticle.tagList,
+        publishedAt: new Date(normalizedArticle.publishedAt),
       };
     }),
   );
