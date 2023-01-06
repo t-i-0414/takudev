@@ -31,7 +31,7 @@ const ArticlePage: NextPage<Props> = React.memo(({ article }) => {
       <PageTemplate>
         <ArticleContent
           title={article.title}
-          slug={article.slug}
+          tagList={article.tagList}
           publishedAt={article.publishedAt}
           content={article.content}
         />
