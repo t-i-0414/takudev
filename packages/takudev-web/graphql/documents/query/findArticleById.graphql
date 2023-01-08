@@ -1,5 +1,5 @@
-query getAllArticleSummary {
-  articles {
+query findArticleById($id: ID) {
+  article(id: $id) {
     data {
       id
       attributes {
