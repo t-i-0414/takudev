@@ -36,7 +36,7 @@ export const ArticleContent: React.FC<Props> = React.memo(
           </div>
 
           <div className={styles['tag-list-container']}>
-            <TextTagList tagList={[...tagList, ...tagList]} />
+            <TextTagList tagList={tagList} />
           </div>
 
           <div className={styles['markdown-container']}>
@@ -49,3 +49,5 @@ export const ArticleContent: React.FC<Props> = React.memo(
   isEqual,
 );
 ArticleContent.displayName = 'ArticleContent';
+
+export default ArticleContent;

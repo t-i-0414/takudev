@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
@@ -10,6 +11,10 @@ import {
   normalizeArticle,
 } from '~/lib';
 import type { NextPage, GetStaticProps } from 'next';
+
+const DynamicHomePageContent = dynamic(
+  () => import('../components/features/Home/HomePageContent'),
+);
 
 type Props = {
   articleSummaryList: React.ComponentPropsWithoutRef<
@@ -29,7 +34,7 @@ const HomePage: NextPage<Props> = React.memo(
       </Head>
 
       <PageTemplate>
-        <HomePageContent articleSummaryList={articleSummaryList} />
+        <DynamicHomePageContent articleSummaryList={articleSummaryList} />
       </PageTemplate>
     </>
   ),

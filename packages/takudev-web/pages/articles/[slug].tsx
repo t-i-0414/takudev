@@ -1,8 +1,8 @@
 import { ParsedUrlQuery } from 'node:querystring';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
-import { ArticleContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
 import { getGraphqlSdk } from '~/graphql';
 import {
@@ -11,6 +11,10 @@ import {
   normalizeArticle,
 } from '~/lib';
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
+
+const DynamicArticleContent = dynamic(
+  () => import('../../components/features/Article/ArticleContent'),
+);
 
 type Props = {
   article: ReturnType<typeof normalizeArticle>;
@@ -29,7 +33,7 @@ const ArticlePage: NextPage<Props> = React.memo(({ article }) => {
       </Head>
 
       <PageTemplate>
-        <ArticleContent
+        <DynamicArticleContent
           title={article.title}
           tagList={article.tagList}
           publishedAt={article.publishedAt}

@@ -32,3 +32,5 @@ export const HomePageContent: React.FC<Props> = React.memo(
   isEqual,
 );
 HomePageContent.displayName = 'HomePageContent';
+
+export default HomePageContent;
