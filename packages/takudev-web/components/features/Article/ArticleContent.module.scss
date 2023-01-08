@@ -1,0 +1,43 @@
+@import '../../../styles/color';
+@import '../../../styles/responsive';
+@import '../../../styles/rem';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(32px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: rem(736px);
+}
+
+.profile-card-container {
+  margin-bottom: rem(32px);
+}
+
+.date-container {
+  .date {
+    margin: 0 0 rem(10px);
+    color: $text-color;
+  }
+}
+
+.heading-container {
+  margin-bottom: rem(20px);
+
+  .heading {
+    margin: 0;
+    font-size: rem(32px);
+    line-height: 1.2;
+    color: $text-color;
+  }
+}
+
+.tag-list-container {
+  margin-bottom: rem(20px);
+}

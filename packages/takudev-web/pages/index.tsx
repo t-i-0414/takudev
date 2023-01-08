@@ -1,19 +1,25 @@
-import { GraphQLClient } from 'graphql-request';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import { HomePageContent } from '~/components/features';
 import { PageTemplate } from '~/components/templates';
-import { getSdk } from '~/graphql';
-import { isNotNullable, filterNotNullableElement } from '~/lib';
+import { getGraphqlSdk } from '~/graphql';
+import {
+  isNotNullable,
+  filterNotNullableElement,
+  normalizeArticle,
+} from '~/lib';
 import type { NextPage, GetStaticProps } from 'next';
 
-type ArticleSummaryList = React.ComponentPropsWithoutRef<
-  typeof HomePageContent
->['articleSummaryList'];
+const DynamicHomePageContent = dynamic(
+  () => import('../components/features/Home/HomePageContent'),
+);
 
 type Props = {
-  articleSummaryList: ArticleSummaryList;
+  articleSummaryList: React.ComponentPropsWithoutRef<
+    typeof HomePageContent
+  >['articleSummaryList'];
 };
 
 const HomePage: NextPage<Props> = React.memo(
@@ -21,11 +27,14 @@ const HomePage: NextPage<Props> = React.memo(
     <>
       <Head>
         <title>Taku.dev</title>
-        <meta name='description' content="This is Takuya Iwashiro's Dev Blog" />
+        <meta
+          name='description'
+          content="This is Takuya Iwashiro's Web Dev Blog"
+        />
       </Head>
 
       <PageTemplate>
-        <HomePageContent articleSummaryList={articleSummaryList} />
+        <DynamicHomePageContent articleSummaryList={articleSummaryList} />
       </PageTemplate>
     </>
   ),
@@ -34,22 +43,8 @@ const HomePage: NextPage<Props> = React.memo(
 HomePage.displayName = 'HomePage';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const shouldAuthenticate = process.env.STAGE !== 'development';
-
-  const client = new GraphQLClient(
-    `${process.env.STRAPI_HOST}/graphql`,
-    shouldAuthenticate
-      ? {
-          headers: {
-            Authorization: `Bearer ${process.env.STRAPI_JWT_TOKEN}`,
-          },
-        }
-      : {},
-  );
-
-  const sdk = getSdk(client);
-
-  const { articles } = await sdk.getAllArticleSummary();
+  const graphqlSdk = getGraphqlSdk();
+  const { articles } = await graphqlSdk.getAllArticleSummary();
 
   if (!isNotNullable(articles)) {
     return {
@@ -60,28 +55,18 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 
   const articleSummaryList = filterNotNullableElement(
-    articles.data.map(({ attributes }) => {
-      if (!isNotNullable(attributes)) {
+    articles.data.map(data => {
+      const normalizedArticle = normalizeArticle({ data });
+
+      if (!isNotNullable(normalizedArticle)) {
         return null;
       }
 
-      const tagList = isNotNullable(attributes.tags)
-        ? filterNotNullableElement(
-            attributes.tags.data.map(tag => {
-              if (!isNotNullable(tag) || !isNotNullable(tag.attributes)) {
-                return null;
-              }
-
-              return tag.attributes.name;
-            }),
-          )
-        : [];
-
       return {
-        slug: attributes.slug,
-        title: attributes.title,
-        publishedAt: new Date(attributes.publishedAt),
-        tagList,
+        title: normalizedArticle.title,
+        slug: `${normalizedArticle.id}_${normalizedArticle.slug}`,
+        tagList: normalizedArticle.tagList,
+        publishedAt: new Date(normalizedArticle.publishedAt),
       };
     }),
   );

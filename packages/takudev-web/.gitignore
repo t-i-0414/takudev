@@ -36,3 +36,9 @@ yarn-error.log*
 .reg
 dist-storybook
 __screenshots__
+
+# pwa
+sw.js
+sw.js.map
+workbox-*.js
+workbox-*.js.map

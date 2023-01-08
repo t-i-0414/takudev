@@ -190,3 +190,6 @@ dist
 
 # nextjs
 .env.local
+
+# lighthouseci
+.lighthouseci/
