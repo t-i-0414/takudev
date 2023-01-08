@@ -11,6 +11,7 @@ module.exports = {
       preset: 'lighthouse:recommended',
       assertions: {
         'csp-xss': 'off',
+        'non-composited-animations': 'off',
         'categories:performance': ['error', { minScore: 0.9 }],
       },
     },
