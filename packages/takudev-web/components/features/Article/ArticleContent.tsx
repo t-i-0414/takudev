@@ -2,9 +2,12 @@ import { format } from 'date-fns';
 import React, { useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { TextTagList } from '~/components/molecules';
 import { ProfileCard } from '~/components/organisms';
 import styles from './ArticleContent.module.scss';
+import { CodeBlock } from './CodeBlock';
+import { ImageBlock } from './ImageBlock';
 
 type Props = {
   title: string;
@@ -40,7 +43,15 @@ export const ArticleContent: React.FC<Props> = React.memo(
           </div>
 
           <div className={styles['markdown-container']}>
-            <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                code: CodeBlock,
+                img: ImageBlock,
+              }}
+              remarkPlugins={[remarkGfm]}
+            >
+              {content}
+            </ReactMarkdown>
           </div>
         </div>
       </div>

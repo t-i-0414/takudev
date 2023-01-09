@@ -31,6 +31,11 @@ export default {
 } as ComponentMeta<typeof MenuModal>;
 
 export const Light: StoryType = {
+  parameters: {
+    screenshot: {
+      delay: 1000,
+    },
+  },
   decorators: [
     (Story, context) => (
       <LightThemeTemplate>
@@ -47,6 +52,11 @@ export const Light: StoryType = {
 };
 
 export const Dark: StoryType = {
+  parameters: {
+    screenshot: {
+      delay: 1000,
+    },
+  },
   decorators: [
     (Story, context) => (
       <DarkThemeTemplate>
