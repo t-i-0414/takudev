@@ -6,10 +6,14 @@ const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
   skipWaiting: true,
+  disable: process.env.STAGE === 'development',
 });
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['127.0.0.1', 'strapi.takudev.net'],
+  },
   async headers() {
     return [
       {
