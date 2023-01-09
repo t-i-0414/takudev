@@ -24,5 +24,9 @@
   },
   "strapi": {
     "uuid": "715c0270-293b-45e1-81f4-9e2c99640036"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.2",
+    "@types/pg": "^8.6.6"
   }
 }
