@@ -36,11 +36,7 @@ const Document = () => {
           href='https://unpkg.com/sanitize.css@13.0.0/sanitize.css'
           rel='stylesheet'
         />
-        <link
-          rel='preload'
-          as='font'
-          href='https://use.typekit.net/rba3ian.css'
-        />
+        <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
       </Head>
       <body>
         <ColorThemeScript />
