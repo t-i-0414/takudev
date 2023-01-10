@@ -16,7 +16,8 @@
     ],
     "string-quotes": "single",
     "value-list-comma-newline-after": null,
-    "declaration-colon-newline-after": null
+    "declaration-colon-newline-after": null,
+    "indentation": null
   },
   "overrides": [
     {

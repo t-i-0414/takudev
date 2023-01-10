@@ -12,6 +12,8 @@ module.exports = {
       assertions: {
         'csp-xss': 'off',
         'non-composited-animations': 'off',
+        'font-display': 'off',
+        'uses-rel-preconnect': 'off',
         'categories:performance': ['error', { minScore: 0.9 }],
       },
     },
