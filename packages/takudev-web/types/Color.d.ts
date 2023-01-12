@@ -19,6 +19,7 @@ export type ColorPaletteMapKey =
   | 'subLabelColor'
   | 'shadowColor'
   | 'headerColor'
-  | 'footerColor';
+  | 'footerColor'
+  | 'linkColor';
 
 export type ColorPaletteMap = Readonly<Record<ColorPaletteMapKey, string>>;
