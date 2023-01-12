@@ -97,6 +97,30 @@
           line-height: 1.7;
         }
       }
+
+      ul {
+        padding: 0 0 0 rem(20px);
+        margin: 0 0 rem(20px);
+        list-style: disc;
+
+        li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.7;
+        }
+      }
+
+      ol {
+        padding: 0 0 0 rem(20px);
+        margin: 0 0 rem(20px);
+        list-style: decimal;
+
+        li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.7;
+        }
+      }
     }
   }
 }
