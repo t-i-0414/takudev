@@ -27,6 +27,7 @@ export const lightColorPaletteMap: ColorPaletteMap = {
   shadowColor: 'rgba(0, 0, 0, 0.16)',
   headerColor: '#0D0D0D',
   footerColor: '#0D0D0D',
+  linkColor: '#0000ee',
 } as const;
 
 export const darkColorPaletteMap: ColorPaletteMap = {
@@ -38,6 +39,7 @@ export const darkColorPaletteMap: ColorPaletteMap = {
   shadowColor: 'rgba(255, 255, 255, 0.8)',
   headerColor: '#666666',
   footerColor: '#666666',
+  linkColor: '#7cefff',
 } as const;
 
 export const colorPaletteMapKeyList = [
