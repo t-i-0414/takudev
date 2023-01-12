@@ -33,6 +33,7 @@
         font-size: rem(32px);
         line-height: 1.2;
         color: $text-color;
+        word-break: break-word;
       }
     }
 
@@ -51,6 +52,7 @@
       h6 {
         margin: 0 0 0.2em;
         font-weight: 700;
+        word-break: break-word;
       }
 
       p {
