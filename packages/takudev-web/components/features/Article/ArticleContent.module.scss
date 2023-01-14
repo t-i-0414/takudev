@@ -7,6 +7,10 @@
   justify-content: center;
   margin: rem(32px) rem(16px);
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -42,6 +46,7 @@
     }
 
     .markdown-container {
+      width: 100%;
       color: $text-color;
       letter-spacing: 0.1em;
 
@@ -53,6 +58,26 @@
         margin: 0 0 0.2em;
         font-weight: 700;
         word-break: break-word;
+      }
+
+      h2 {
+        font-size: rem(24px);
+      }
+
+      h3 {
+        font-size: rem(18px);
+      }
+
+      h4 {
+        font-size: rem(16px);
+      }
+
+      h5 {
+        font-size: rem(14px);
+      }
+
+      h6 {
+        font-size: rem(12px);
       }
 
       p {
@@ -76,11 +101,6 @@
 
       a {
         color: $link-color;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
 
         &:active {
           color: $warning-color;
@@ -121,6 +141,22 @@
           padding: 0;
           margin: 0;
           line-height: 1.7;
+        }
+      }
+
+      table {
+        th {
+          width: fit-content;
+          padding: 10px;
+          color: $pale-white;
+          background-color: $dark-gray;
+          border: solid 1px $border-color;
+        }
+
+        td {
+          width: fit-content;
+          padding: 10px;
+          border: solid 1px $border-color;
         }
       }
     }
