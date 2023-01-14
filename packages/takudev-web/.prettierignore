@@ -13,3 +13,4 @@ public
 .DS_Store
 .next
 **/graphql/**/__generated__
+out
