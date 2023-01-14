@@ -11,7 +11,12 @@ export const CodeBlock: CodeComponent = ({ inline, className, children }) => {
   const lang = match && match[1] ? match[1] : '';
 
   return (
-    <SyntaxHighlighter style={a11yDark} language={lang}>
+    <SyntaxHighlighter
+      lineProps={{ style: { wordBreak: 'break-word', whiteSpace: 'pre-wrap' } }}
+      wrapLines
+      style={a11yDark}
+      language={lang}
+    >
       {String(children).replace(/\n$/, '')}
     </SyntaxHighlighter>
   );

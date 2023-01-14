@@ -16,6 +16,7 @@ export const ImageBlock = (props: any) => (
     100vw'
     style={{
       width: '100%',
+      maxWidth: '640px',
       height: '100%',
     }}
   />
