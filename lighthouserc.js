@@ -14,7 +14,10 @@ module.exports = {
         'non-composited-animations': 'off',
         'font-display': 'off',
         'uses-rel-preconnect': 'off',
-        'unused-javascript': ['error', { maxWastedBytes: 100000 }],
+        'unused-javascript': [
+          'error',
+          { maxWastedBytes: 100000, maxLength: 1 },
+        ],
         'categories:performance': ['error', { minScore: 0.9 }],
       },
     },
