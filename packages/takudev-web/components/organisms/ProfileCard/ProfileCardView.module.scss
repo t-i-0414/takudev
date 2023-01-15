@@ -1,0 +1,41 @@
+@import '../../../styles/color';
+
+.container {
+  display: flex;
+  align-items: 'center';
+  justify-content: flex-start;
+  width: 304px;
+  height: 88px;
+}
+
+.right-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: -6px;
+  margin-left: 14px;
+}
+
+.text-container {
+  text-align: 'left';
+}
+
+.name-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: $text-color;
+}
+
+.location-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $text-color;
+}
+
+.sns-icon-list-container {
+  margin-left: -6px;
+}

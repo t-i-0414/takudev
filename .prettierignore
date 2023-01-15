@@ -1,0 +1,11 @@
+**/node_modules
+yarn.lock
+takudev.code-workspace
+.turbo
+.prettierignore
+.eslintcache
+.eslintignore
+.gitignore
+.tool-versions
+.DS_Store
+.yarnrc.yml

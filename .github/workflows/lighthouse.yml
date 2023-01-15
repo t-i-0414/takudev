@@ -1,0 +1,32 @@
+name: 'Measure Core Web Vitals'
+
+on:
+  - push
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Build
+        run: yarn build
+        env:
+          STRAPI_HOST: ${{ secrets.STRAPI_HOST }}
+          STRAPI_JWT_TOKEN: ${{ secrets.STRAPI_JWT_TOKEN }}
+
+      - name: Run Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.10.x
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

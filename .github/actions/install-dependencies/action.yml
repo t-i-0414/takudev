@@ -1,0 +1,23 @@
+name: 'Setup dependencies'
+description: 'Install or restore dependencies'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: '.tool-versions'
+
+    - name: Cache Node.js Modules
+      uses: actions/cache@v3
+      id: yarn_cache
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: Install Dependencies
+      if: ${{ steps.yarn_cache.outputs.cache-hit != 'true' }}
+      run: yarn install
+      shell: bash

@@ -1,0 +1,1 @@
+export { ColorThemeScript } from './ColorThemeScript';

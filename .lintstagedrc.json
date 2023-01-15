@@ -1,0 +1,11 @@
+{
+  "./*.{js,ts}": [
+    "eslint --fix --ignore-path ./.eslintignore",
+    "eslint --ignore-path ./.eslintignore"
+  ],
+  "./*": [
+    "prettier --cache --write --ignore-unknown --ignore-path ./.prettierignore",
+    "prettier --cache --check --ignore-unknown --ignore-path ./.prettierignore"
+  ],
+  "./package.json": ["sort-package-json", "sort-package-json --check"]
+}

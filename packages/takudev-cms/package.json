@@ -1,12 +1,32 @@
 {
-  "name": "takudev-cms",
+  "name": "@takudev/cms",
   "version": "1.0.0",
-  "description": "This is a package of t-i-0414's blog related cms.",
-  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "license": "UNLICENSED",
   "private": true,
-  "homepage": "https://github.com/t-i-0414/takudev/takudev-cms#readme",
-  "volta": {
-    "extends": "../../package.json"
+  "description": "This is a package of t-i-0414's blog related cms.",
+  "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
+  "license": "UNLICENSED",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-graphql": "^4.5.6",
+    "@strapi/plugin-i18n": "4.5.6",
+    "@strapi/plugin-users-permissions": "4.5.6",
+    "@strapi/provider-upload-aws-s3": "^4.5.6",
+    "@strapi/strapi": "4.5.6",
+    "better-sqlite3": "8.0.1",
+    "pg": "^8.8.0",
+    "react-select": "^5.7.0"
+  },
+  "strapi": {
+    "uuid": "715c0270-293b-45e1-81f4-9e2c99640036"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.3",
+    "@types/pg": "^8.6.6"
   }
 }
