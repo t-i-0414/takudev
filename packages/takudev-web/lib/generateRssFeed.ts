@@ -2,8 +2,15 @@ import { Feed } from 'feed';
 import { marked } from 'marked';
 import { getGraphqlSdk } from '~/graphql';
 import { isNotNullable, normalizeArticle } from '~/lib';
+import type { Awaited } from '~/types';
 
-export const generateRssFeed = async () => {
+const graphqlSdk = getGraphqlSdk();
+
+type Articles = Awaited<
+  ReturnType<typeof graphqlSdk.getAllArticleSummary>
+>['articles'];
+
+export const generateRssFeed = (articles: Articles) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
   const date = new Date();
 
@@ -28,9 +35,6 @@ export const generateRssFeed = async () => {
       link: 'https://github.com/t-i-0414',
     },
   });
-
-  const graphqlSdk = getGraphqlSdk();
-  const { articles } = await graphqlSdk.getAllArticleSummary();
 
   if (isNotNullable(articles)) {
     articles.data.forEach(data => {
