@@ -9,8 +9,11 @@ import {
   isNotNullable,
   filterNotNullableElement,
   normalizeArticle,
+  generateRssFeed,
 } from '~/lib';
+// eslint-disable-next-line import/newline-after-import
 import type { NextPage, GetStaticProps } from 'next';
+const fs = require('fs');
 
 const DynamicHomePageContent = dynamic(
   () => import('../components/features/Home/HomePageContent'),
@@ -45,6 +48,7 @@ HomePage.displayName = 'HomePage';
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const graphqlSdk = getGraphqlSdk();
   const { articles } = await graphqlSdk.getAllArticleSummary();
+  fs.writeFileSync('public/rss.xml', generateRssFeed(articles));
 
   if (!isNotNullable(articles)) {
     return {
