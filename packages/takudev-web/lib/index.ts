@@ -1,3 +1,4 @@
+export { generateRssFeed } from './generateRssFeed';
 export { filterNotNullableElement } from './filterNotNullableElement';
 export { getCustomColorPropertySettingText } from './getCustomColorPropertySettingText';
 export { isColorMode } from './isColorMode';
