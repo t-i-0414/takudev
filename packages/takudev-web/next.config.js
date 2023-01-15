@@ -11,6 +11,7 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: true,
   images: {
     domains: ['127.0.0.1', 'strapi.takudev.net'],
   },

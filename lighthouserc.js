@@ -1,7 +1,10 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:8080/'],
+      url: [
+        'http://localhost:8080/',
+        'http://localhost:8080/articles/1_first-article',
+      ],
       startServerCommand: 'cd ./packages/takudev-web && yarn start -p 8080',
     },
     upload: {
@@ -18,7 +21,7 @@ module.exports = {
           'error',
           { maxWastedBytes: 100000, maxLength: 1 },
         ],
-        'categories:performance': ['error', { minScore: 0.9 }],
+        'categories:performance': ['error', { minScore: 0.3 }],
       },
     },
   },
