@@ -38,9 +38,9 @@ const Document = () => {
           rel='stylesheet'
         />
         <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
-        {GA_TRACKING_ID && <GoogleAnalyticsScript />}
       </Head>
       <body>
+        {GA_TRACKING_ID && <GoogleAnalyticsScript />}
         <ColorThemeScript />
         <Main />
         <div id={MENU_MODAL_ROOT_ELEMENT_ID} />

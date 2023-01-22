@@ -1,0 +1,5 @@
+chore: Production Deploy<%= Time.now.strftime("%Y-%m-%d") %>
+<% sorted_pr = pull_requests.sort_by {|pr| pr.pr.merged_at} -%>
+<% sorted_pr.each do |pr| -%>
+  <%= "- ##{pr.pr.number} #{pr.pr.user.login}" %>
+<% end -%>
