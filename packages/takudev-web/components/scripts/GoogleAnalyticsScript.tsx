@@ -1,16 +1,15 @@
-import Script from 'next/script';
 import React from 'react';
 import { GA_TRACKING_ID } from '~/lib';
 
 export const GoogleAnalyticsScript: React.FC = React.memo(() => (
   <>
-    <Script
-      strategy='afterInteractive'
+    <script
+      defer
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
     />
-    <Script
-      id='gtag-init'
-      strategy='afterInteractive'
+    <script
+      defer
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: `
             window.dataLayer = window.dataLayer || [];

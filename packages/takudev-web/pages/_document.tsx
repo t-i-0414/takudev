@@ -7,6 +7,7 @@ import type { Stage } from '~/types';
 const Document = () => {
   const stage: Stage = (process.env.STAGE as Stage) ?? 'preview';
   const shouldNoIndex = stage === 'staging';
+  console.log(`GA_TRACKING_ID`, GA_TRACKING_ID);
 
   return (
     <Html lang='en'>
@@ -38,9 +39,9 @@ const Document = () => {
           rel='stylesheet'
         />
         <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
-        {GA_TRACKING_ID && <GoogleAnalyticsScript />}
       </Head>
       <body>
+        {GA_TRACKING_ID && <GoogleAnalyticsScript />}
         <ColorThemeScript />
         <Main />
         <div id={MENU_MODAL_ROOT_ELEMENT_ID} />
