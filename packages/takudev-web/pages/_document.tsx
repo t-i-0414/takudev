@@ -1,6 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { ColorThemeScript } from '~/components/scripts';
+import { ColorThemeScript, GoogleAnalyticsScript } from '~/components/scripts';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
+import { GA_TRACKING_ID } from '~/lib';
 import type { Stage } from '~/types';
 
 const Document = () => {
@@ -37,6 +38,7 @@ const Document = () => {
           rel='stylesheet'
         />
         <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
+        {GA_TRACKING_ID && <GoogleAnalyticsScript />}
       </Head>
       <body>
         <ColorThemeScript />
