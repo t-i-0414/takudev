@@ -1,4 +1,4 @@
-## Taku.dev
+# Taku.dev
 
 This is a code repository of Takuya Iwashiro's developer blog.
 
