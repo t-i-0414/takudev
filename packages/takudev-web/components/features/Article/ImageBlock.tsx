@@ -8,7 +8,6 @@ export const ImageBlock = (props: any) => (
     {...props}
     src={props.src}
     alt={props.alt}
-    priority
     width='0'
     height='0'
     sizes='(min-width: 768px) 100vw,

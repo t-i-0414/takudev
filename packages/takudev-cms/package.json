@@ -1,6 +1,6 @@
 {
   "name": "@takudev/cms",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": true,
   "description": "This is a package of t-i-0414's blog related cms.",
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-cms#readme",
@@ -13,13 +13,13 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.5.6",
-    "@strapi/plugin-i18n": "4.5.6",
-    "@strapi/plugin-users-permissions": "4.5.6",
-    "@strapi/provider-upload-aws-s3": "^4.5.6",
-    "@strapi/strapi": "4.5.6",
+    "@strapi/plugin-graphql": "^4.6.0",
+    "@strapi/plugin-i18n": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/provider-upload-aws-s3": "^4.6.0",
+    "@strapi/strapi": "4.6.0",
     "better-sqlite3": "8.0.1",
-    "pg": "^8.8.0",
+    "pg": "^8.9.0",
     "react-select": "^5.7.0"
   },
   "strapi": {
