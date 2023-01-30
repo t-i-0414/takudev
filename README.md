@@ -65,6 +65,7 @@ asdf install
 
 ```bash
 yarn install
+npm install -g commitizen
 ```
 
 ### 4. Setup environment variables
