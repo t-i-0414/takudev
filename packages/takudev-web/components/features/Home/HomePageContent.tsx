@@ -16,7 +16,7 @@ export const HomePageContent: React.FC<Props> = React.memo(
 
       <div className={styles['article-summary-card-container']}>
         {articleSummaryList
-          .sort((a, b) => (a.publishedAt > b.publishedAt ? 1 : -1))
+          .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
           .map(({ slug, title, publishedAt, tagList }) => (
             <ArticleSummaryCard
               key={slug}
