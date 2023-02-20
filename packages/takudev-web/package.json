@@ -36,7 +36,7 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "buffer": "^6.0.3",
     "feed": "^4.2.2",
-    "focus-trap": "^7.2.0",
+    "focus-trap": "^7.3.1",
     "graphql": "^16.6.0",
     "marked": "^4.2.12",
     "next": "13.1.6",
@@ -75,8 +75,8 @@
     "@types/body-scroll-lock": "^3.1.0",
     "@types/gtag.js": "^0.0.12",
     "@types/marked": "^4.0.8",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
     "@types/react-syntax-highlighter": "^15.5.6",
     "@types/throttle-debounce": "^5.0.0",
     "babel-loader": "^9.1.2",
@@ -92,12 +92,12 @@
     "reg-notify-github-plugin": "^0.12.1",
     "reg-publish-s3-plugin": "^0.12.1",
     "reg-suit": "^0.12.1",
-    "sass": "^1.58.0",
+    "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "storycap": "^4.0.0",
-    "stylelint": "^15.0.0",
-    "stylelint-config-recess-order": "^3.1.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-scss": "^4.3.0"
+    "stylelint": "^15.2.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-scss": "^4.4.0"
   }
 }
