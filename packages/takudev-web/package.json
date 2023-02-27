@@ -41,7 +41,7 @@
     "marked": "^4.2.12",
     "next": "13.2.1",
     "next-pwa": "^5.6.0",
-    "next-sitemap": "^3.1.52",
+    "next-sitemap": "^3.1.54",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fast-compare": "^3.2.0",
