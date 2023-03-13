@@ -22,7 +22,8 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "incremental": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true
   },
   "exclude": ["node_modules"]
 }
