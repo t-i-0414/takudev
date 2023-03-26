@@ -20,7 +20,7 @@
     "@strapi/strapi": "4.8.2",
     "better-sqlite3": "8.2.0",
     "pg": "^8.10.0",
-    "react-select": "^5.7.0"
+    "react-select": "^5.7.2"
   },
   "strapi": {
     "uuid": "715c0270-293b-45e1-81f4-9e2c99640036"
