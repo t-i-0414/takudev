@@ -1,6 +1,6 @@
 {
   "name": "@takudev/web",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "description": "This is a package of t-i-0414's blog related web.",
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/takudev-web#readme",
@@ -52,7 +52,7 @@
     "throttle-debounce": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.21.4",
     "@graphql-codegen/cli": "^3.2.2",
     "@graphql-codegen/import-types-preset": "^2.2.6",
     "@graphql-codegen/typescript": "^3.0.2",
@@ -75,7 +75,7 @@
     "@types/body-scroll-lock": "^3.1.0",
     "@types/gtag.js": "^0.0.12",
     "@types/marked": "^4.0.8",
-    "@types/react": "18.0.29",
+    "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "@types/react-syntax-highlighter": "^15.5.6",
     "@types/throttle-debounce": "^5.0.0",
@@ -93,9 +93,9 @@
     "reg-publish-s3-plugin": "^0.12.1",
     "reg-suit": "^0.12.1",
     "sass": "^1.60.0",
-    "sass-loader": "^13.2.1",
+    "sass-loader": "^13.2.2",
     "storycap": "^4.0.0",
-    "stylelint": "^15.3.0",
+    "stylelint": "^15.4.0",
     "stylelint-config-recess-order": "^4.0.0",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-scss": "^4.6.0"
