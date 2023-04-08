@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProfileIcon } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
@@ -9,9 +9,9 @@ import {
 export default {
   title: 'Atoms/ProfileIcon',
   component: ProfileIcon,
-} as ComponentMeta<typeof ProfileIcon>;
+} as Meta<typeof ProfileIcon>;
 
-type StoryType = ComponentStoryObj<typeof ProfileIcon>;
+type StoryType = StoryObj<typeof ProfileIcon>;
 
 export const Light: StoryType = {
   decorators: [

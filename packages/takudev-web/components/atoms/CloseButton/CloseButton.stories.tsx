@@ -1,12 +1,12 @@
 import React from 'react';
 import { CloseButton } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof CloseButton>;
+type StoryType = StoryObj<typeof CloseButton>;
 
 export default {
   title: 'Atoms/CloseButton',
@@ -25,7 +25,7 @@ export default {
   args: {
     size: 18,
   },
-} as ComponentMeta<typeof CloseButton>;
+} as Meta<typeof CloseButton>;
 
 export const Light: StoryType = {
   parameters: {

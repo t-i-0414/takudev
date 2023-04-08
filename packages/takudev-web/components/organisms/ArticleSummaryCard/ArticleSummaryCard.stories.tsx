@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArticleSummaryCard } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof ArticleSummaryCard>;
+type StoryType = StoryObj<typeof ArticleSummaryCard>;
 
 export default {
   title: 'Organisms/ArticleSummaryCard',
@@ -32,7 +32,7 @@ export default {
     publishedAt: new Date('2022-07-17'),
     tagList: ['one', 'two', 'three', 'four', 'five'],
   },
-} as ComponentMeta<typeof ArticleSummaryCard>;
+} as Meta<typeof ArticleSummaryCard>;
 
 export const Light: StoryType = {
   parameters: {

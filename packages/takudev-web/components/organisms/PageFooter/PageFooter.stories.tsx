@@ -1,16 +1,16 @@
 import { PageFooter } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof PageFooter>;
+type StoryType = StoryObj<typeof PageFooter>;
 
 export default {
   title: 'Organisms/PageFooter',
   component: PageFooter,
-} as ComponentMeta<typeof PageFooter>;
+} as Meta<typeof PageFooter>;
 
 export const Light: StoryType = {
   decorators: [
