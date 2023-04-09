@@ -8,7 +8,6 @@
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
     "build": "next build && next-sitemap",
-    "build-storybook": "storybook build",
     "build:analyze": "ANALYZE=true yarn build",
     "build:storybook": "storybook build --output-dir ./dist-storybook",
     "codegen:graphql": "graphql-codegen --config graphql_schema/codegen.yaml",
@@ -25,7 +24,8 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
-    "storycap": "storycap --serverCmd 'yarn run -T run-p storybook' --serverTimeout 300000 --outDir ./__screenshots__/ http://localhost:6006",
+    "storybook:ci": "storybook dev -p 6006 --ci --no-open",
+    "storycap": "storycap --serverCmd ' storybook:ci' --serverTimeout 300000 --outDir ./__screenshots__/ http://localhost:6006",
     "test": "yarn run -T jest",
     "test:storybook": "test-storybook",
     "type-check": "yarn run -T tsc --noEmit"
