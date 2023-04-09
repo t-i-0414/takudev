@@ -11,7 +11,7 @@
     "build-storybook": "storybook build",
     "build:analyze": "ANALYZE=true yarn build",
     "build:storybook": "storybook build --output-dir ./dist-storybook",
-    "codegen:graphql": "graphql-codegen --config graphql/codegen.yaml",
+    "codegen:graphql": "graphql-codegen --config graphql_schema/codegen.yaml",
     "dev": "next dev",
     "format": "yarn run -T run-p \"format:*\"",
     "format:eslint": "yarn run -T eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
