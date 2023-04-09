@@ -1,18 +1,18 @@
 import React from 'react';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import { PageHeader } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof PageHeader>;
+type StoryType = StoryObj<typeof PageHeader>;
 
 export default {
   title: 'Organisms/PageHeader',
   component: PageHeader,
-} as ComponentMeta<typeof PageHeader>;
+} as Meta<typeof PageHeader>;
 
 export const Light: StoryType = {
   decorators: [

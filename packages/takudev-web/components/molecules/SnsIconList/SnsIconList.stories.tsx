@@ -1,13 +1,13 @@
 import React from 'react';
 import { colorPaletteMapKeyList } from '~/consts';
 import { SnsIconList } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof SnsIconList>;
+type StoryType = StoryObj<typeof SnsIconList>;
 
 export default {
   title: 'Molecules/SnsIconList',
@@ -18,7 +18,7 @@ export default {
   args: {
     colorName: 'subLabelColor',
   },
-} as ComponentMeta<typeof SnsIconList>;
+} as Meta<typeof SnsIconList>;
 
 export const Light: StoryType = {
   decorators: [

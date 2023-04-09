@@ -1,13 +1,13 @@
 import React from 'react';
 import { colorPaletteMapKeyList } from '~/consts';
 import { SnsIcon } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof SnsIcon>;
+type StoryType = StoryObj<typeof SnsIcon>;
 
 export default {
   title: 'Atoms/SnsIcon',
@@ -23,7 +23,7 @@ export default {
     type: 'github',
     colorName: 'subLabelColor',
   },
-} as ComponentMeta<typeof SnsIcon>;
+} as Meta<typeof SnsIcon>;
 
 export const GithubLight: StoryType = {
   args: {

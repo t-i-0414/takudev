@@ -1,13 +1,13 @@
 import React from 'react';
 import { MENU_MODAL_ROOT_ELEMENT_ID } from '~/consts';
 import { MenuModal } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof MenuModal>;
+type StoryType = StoryObj<typeof MenuModal>;
 
 export default {
   title: 'Organisms/MenuModal',
@@ -28,7 +28,7 @@ export default {
     isClose: false,
     ariaLabelledBy: 'hamburger-button',
   },
-} as ComponentMeta<typeof MenuModal>;
+} as Meta<typeof MenuModal>;
 
 export const Light: StoryType = {
   parameters: {

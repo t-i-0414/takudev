@@ -52,7 +52,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/graphql/**/__generated__/**/*.[jt]s?(x)'],
+      files: ['**/graphql_schema/**/__generated__/**/*.[jt]s?(x)'],
       rules: {
         'import/newline-after-import': ['off'],
         'no-use-before-define': ['off'],
