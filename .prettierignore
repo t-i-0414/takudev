@@ -9,3 +9,4 @@ takudev.code-workspace
 .tool-versions
 .DS_Store
 .yarnrc.yml
+dist-storybook
