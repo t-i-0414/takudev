@@ -7984,9 +7984,11 @@ __metadata:
     "@types/body-scroll-lock": ^3.1.0
     "@types/gtag.js": ^0.0.12
     "@types/marked": ^4.3.0
+    "@types/next-pwa": ^5.6.2
     "@types/react": 18.2.0
     "@types/react-dom": 18.2.1
     "@types/react-syntax-highlighter": ^15.5.6
+    "@types/sass-loader": ^8.0.4
     "@types/throttle-debounce": ^5.0.0
     babel-loader: ^9.1.2
     babel-plugin-react-require: ^3.1.3
@@ -8344,6 +8346,13 @@ __metadata:
   version: 0.0.6
   resolution: "@types/escodegen@npm:0.0.6"
   checksum: 7b25aeedd48dbef68345224082c6bc774845cbfc1d9b2ce91a477130fe7ccabf33da126c1d6d55e5dfd838db429a7c80890628a167e5aa55b6a4620974da38d3
+  languageName: node
+  linkType: hard
+
+"@types/eslint-config-prettier@npm:^6.11.0":
+  version: 6.11.0
+  resolution: "@types/eslint-config-prettier@npm:6.11.0"
+  checksum: b1e7a0e4fc260f48464676676e36c9e7e261ab580f69625c592d32c772348b77b613df79f66d39ebfd4ada86ff3cebb829f5f18d9d1405d3acecc7bc6fc35c86
   languageName: node
   linkType: hard
 
@@ -8751,6 +8760,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lint-staged@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "@types/lint-staged@npm:13.2.0"
+  checksum: 7ad31b1efe0966ed17bf8127328d6d3113d0625b44d9c620f6cbca24e999b8b14755ff4c06814aae00e7d65c56077cf95f14a20d2a074b064cea757e2e42588e
+  languageName: node
+  linkType: hard
+
 "@types/lodash@npm:^4.14.161, @types/lodash@npm:^4.14.165, @types/lodash@npm:^4.14.167, @types/lodash@npm:^4.14.175":
   version: 4.14.190
   resolution: "@types/lodash@npm:4.14.190"
@@ -8832,6 +8848,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/next-pwa@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "@types/next-pwa@npm:5.6.2"
+  dependencies:
+    "@types/react": "*"
+    next: ^12.2.5 || ^13.0.0
+    workbox-build: ^6.5.4
+  checksum: 52a4611d76c3dfae03091936c4cfe444907c1e12b5076c1bdc0f36f088f520f250b65578d29aeb358a5c48ce8eee7ea80e7a11d36c1b93f42ce65b35baa05838
+  languageName: node
+  linkType: hard
+
 "@types/node-fetch@npm:^2.5.7":
   version: 2.6.3
   resolution: "@types/node-fetch@npm:2.6.3"
@@ -8839,6 +8866,15 @@ __metadata:
     "@types/node": "*"
     form-data: ^3.0.0
   checksum: b68cda58e91535a42dd5337932443c37f8e198ca1e8deeb95bd92a64a9a84d92071867b91c5eb84ee8e13f33d45a70549fe2bc11dd070a894dd561909f4d39f5
+  languageName: node
+  linkType: hard
+
+"@types/node-sass@npm:*":
+  version: 4.11.3
+  resolution: "@types/node-sass@npm:4.11.3"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6205b95d6c2a215fefcdfba283f4f237bbe95b088119bd00503171b84762d15f6b9b11fe424407f38ac7b8174b20bb4cd137466550f4a49961f3ac54e6ed4812
   languageName: node
   linkType: hard
 
@@ -9073,6 +9109,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sass-loader@npm:^8.0.4":
+  version: 8.0.4
+  resolution: "@types/sass-loader@npm:8.0.4"
+  dependencies:
+    "@types/node": "*"
+    "@types/node-sass": "*"
+    "@types/webpack": ^4
+    sass: ^1.45.0
+  checksum: 7ff955eef18888fddab4222d8ed087d547e805ec36829a2ef1e059a083ccd3d6e398d14f51ebb8061d0465f75bc0a63c77dfa11a501f5b2edfe1ed412077d580
+  languageName: node
+  linkType: hard
+
 "@types/scheduler@npm:*":
   version: 0.16.2
   resolution: "@types/scheduler@npm:0.16.2"
@@ -9115,6 +9163,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/source-list-map@npm:*":
+  version: 0.1.2
+  resolution: "@types/source-list-map@npm:0.1.2"
+  checksum: fda8f37537aca9d3ed860d559289ab1dddb6897e642e6f53e909bbd18a7ac3129a8faa2a7d093847c91346cf09c86ef36e350c715406fba1f2271759b449adf6
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
@@ -9133,6 +9188,13 @@ __metadata:
   version: 0.0.30
   resolution: "@types/strip-json-comments@npm:0.0.30"
   checksum: 829ddd389645073f347c5b1924a8c34b8813af29756576e511c46f40e218193cf93ccbade62661d47fc70f707e98f410331729b8c20edfcb2e807d51df1ad4b7
+  languageName: node
+  linkType: hard
+
+"@types/tapable@npm:^1":
+  version: 1.0.8
+  resolution: "@types/tapable@npm:1.0.8"
+  checksum: b4b754dd0822c407b8f29ef6b766490721c276880f9e976d92ee2b3ef915f11a05a2442ae36c8978bcd872ad6bc833b0a2c4d267f2d611590668a366bad50652
   languageName: node
   linkType: hard
 
@@ -9175,6 +9237,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uglify-js@npm:*":
+  version: 3.17.1
+  resolution: "@types/uglify-js@npm:3.17.1"
+  dependencies:
+    source-map: ^0.6.1
+  checksum: 76b9aa6b5c19690bee1fba29835ca580ec92db2b43cb8e2acd0278086138372a66e55bbd785c90d032bc890069f0cfde9c763f2d2860bb1a747b581a04d0999b
+  languageName: node
+  linkType: hard
+
 "@types/unist@npm:*, @types/unist@npm:^2.0.0":
   version: 2.0.6
   resolution: "@types/unist@npm:2.0.6"
@@ -9195,6 +9266,31 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 2a6e88a107930963ceea016dc733dc259dc52faf864933cd4d6f7fc6db7165254c10f8bfcb3b803237b2869674d988319ea4f958c0b6fd3763c5fcb9e489565a
+  languageName: node
+  linkType: hard
+
+"@types/webpack-sources@npm:*":
+  version: 3.2.0
+  resolution: "@types/webpack-sources@npm:3.2.0"
+  dependencies:
+    "@types/node": "*"
+    "@types/source-list-map": "*"
+    source-map: ^0.7.3
+  checksum: fa23dcfb99f79cc0ba8e6ca41cb8dedb406f8d7772e8e3d3d9b443bfb36557a1a78f4de2b97905554db98beee1a2ef6f930e188977adde6452392a64dd4b7c2a
+  languageName: node
+  linkType: hard
+
+"@types/webpack@npm:^4":
+  version: 4.41.33
+  resolution: "@types/webpack@npm:4.41.33"
+  dependencies:
+    "@types/node": "*"
+    "@types/tapable": ^1
+    "@types/uglify-js": "*"
+    "@types/webpack-sources": "*"
+    anymatch: ^3.0.0
+    source-map: ^0.6.0
+  checksum: 5f64818128c94026be0e43e77d687e2d90f0da526a3a7c308c6a0bb12e93a35c9243be427bbf6865f64fd71dc5b32715af9b9da0cd6ae8335081b6db995bad2b
   languageName: node
   linkType: hard
 
@@ -10187,6 +10283,16 @@ __metadata:
     micromatch: ^2.1.5
     normalize-path: ^2.0.0
   checksum: b197f2adb8217d73da7691be10ca508dae86b20cba34c0fe022fe20caad94cf48be56d600d57554916aaf4f03d0cfadda58fe99676e4450749a9c284c9d4975e
+  languageName: node
+  linkType: hard
+
+"anymatch@npm:^3.0.0":
+  version: 3.1.3
+  resolution: "anymatch@npm:3.1.3"
+  dependencies:
+    normalize-path: ^3.0.0
+    picomatch: ^2.0.4
+  checksum: 3e044fd6d1d26545f235a9fe4d7a534e2029d8e59fa7fd9f2a6eb21230f6b5380ea1eaf55136e60cbf8e613544b3b766e7a6fa2102e2a3a117505466e3025dc2
   languageName: node
   linkType: hard
 
@@ -23380,7 +23486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:13.3.4":
+"next@npm:13.3.4, next@npm:^12.2.5 || ^13.0.0":
   version: 13.3.4
   resolution: "next@npm:13.3.4"
   dependencies:
@@ -27656,7 +27762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.62.1":
+"sass@npm:^1.45.0, sass@npm:^1.62.1":
   version: 1.62.1
   resolution: "sass@npm:1.62.1"
   dependencies:
@@ -29451,7 +29557,9 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.1
     "@testing-library/react-hooks": ^8.0.1
     "@types/eslint": ^8.37.0
+    "@types/eslint-config-prettier": ^6.11.0
     "@types/jest": ^29.5.1
+    "@types/lint-staged": ^13.2.0
     "@types/node": 18.16.3
     "@types/prettier": ^2.7.2
     "@types/react-test-renderer": ^18.0.0
@@ -31861,7 +31969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"workbox-build@npm:6.5.4":
+"workbox-build@npm:6.5.4, workbox-build@npm:^6.5.4":
   version: 6.5.4
   resolution: "workbox-build@npm:6.5.4"
   dependencies:
