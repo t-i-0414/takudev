@@ -1,12 +1,12 @@
 import React from 'react';
 import { TextTag } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof TextTag>;
+type StoryType = StoryObj<typeof TextTag>;
 
 export default {
   title: 'Atoms/TextTag',
@@ -19,7 +19,7 @@ export default {
   args: {
     text: 'TextTag',
   },
-} as ComponentMeta<typeof TextTag>;
+} as Meta<typeof TextTag>;
 
 export const Light: StoryType = {
   decorators: [

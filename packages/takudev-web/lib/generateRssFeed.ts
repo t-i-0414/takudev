@@ -1,6 +1,6 @@
 import { Feed } from 'feed';
 import { marked } from 'marked';
-import { getGraphqlSdk } from '~/graphql';
+import { getGraphqlSdk } from '~/graphql_schema';
 import { isNotNullable, normalizeArticle } from '~/lib';
 import type { Awaited } from '~/types';
 

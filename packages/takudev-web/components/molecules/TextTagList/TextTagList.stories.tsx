@@ -1,12 +1,12 @@
 import React from 'react';
 import { TextTagList } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof TextTagList>;
+type StoryType = StoryObj<typeof TextTagList>;
 
 export default {
   title: 'Molecules/TextTagList',
@@ -20,7 +20,7 @@ export default {
   args: {
     tagList: ['one', 'two', 'three', 'four', 'five'],
   },
-} as ComponentMeta<typeof TextTagList>;
+} as Meta<typeof TextTagList>;
 
 export const Light: StoryType = {
   decorators: [

@@ -1,12 +1,12 @@
 import React, { ComponentProps } from 'react';
 import { HomePageContent } from './HomePageContent';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof HomePageContent>;
+type StoryType = StoryObj<typeof HomePageContent>;
 
 const articleSummaryListMock: ComponentProps<
   typeof HomePageContent
@@ -83,7 +83,7 @@ export default {
   title: 'Features/Home/HomePageContent',
   component: HomePageContent,
   args: { articleSummaryList: articleSummaryListMock },
-} as ComponentMeta<typeof HomePageContent>;
+} as Meta<typeof HomePageContent>;
 
 export const Light: StoryType = {
   decorators: [

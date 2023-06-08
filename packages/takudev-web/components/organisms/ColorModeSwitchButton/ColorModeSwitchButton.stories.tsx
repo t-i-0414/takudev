@@ -1,17 +1,17 @@
 import React from 'react';
 import { ColorModeSwitchButton } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof ColorModeSwitchButton>;
+type StoryType = StoryObj<typeof ColorModeSwitchButton>;
 
 export default {
   title: 'Organisms/ColorModeSwitchButton',
   component: ColorModeSwitchButton,
-} as ComponentMeta<typeof ColorModeSwitchButton>;
+} as Meta<typeof ColorModeSwitchButton>;
 
 export const Light: StoryType = {
   decorators: [
