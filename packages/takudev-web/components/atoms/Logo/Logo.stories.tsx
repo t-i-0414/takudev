@@ -1,12 +1,12 @@
 import React from 'react';
 import { Logo } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof Logo>;
+type StoryType = StoryObj<typeof Logo>;
 
 export default {
   title: 'Atoms/Logo',
@@ -14,7 +14,7 @@ export default {
   args: {
     href: '#',
   },
-} as ComponentMeta<typeof Logo>;
+} as Meta<typeof Logo>;
 
 export const DarkBackground: StoryType = {
   parameters: {

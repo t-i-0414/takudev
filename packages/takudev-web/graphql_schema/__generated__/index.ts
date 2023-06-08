@@ -1,10 +1,10 @@
 import * as Types from './index.d';
 
 import { GraphQLClient } from 'graphql-request';
-import * as Dom from 'graphql-request/dist/types.dom';
+import { GraphQLClientRequestHeaders } from 'graphql-request/build/cjs/types';
 import gql from 'graphql-tag';
 export type FindArticleByIdQueryVariables = Types.Exact<{
-  id?: Types.InputMaybe<Types.Scalars['ID']>;
+  id?: Types.InputMaybe<Types.Scalars['ID']['input']>;
 }>;
 
 
@@ -70,10 +70,10 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    findArticleById(variables?: Types.FindArticleByIdQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<Types.FindArticleByIdQuery> {
+    findArticleById(variables?: Types.FindArticleByIdQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Types.FindArticleByIdQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Types.FindArticleByIdQuery>(FindArticleByIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'findArticleById', 'query');
     },
-    getAllArticleSummary(variables?: Types.GetAllArticleSummaryQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<Types.GetAllArticleSummaryQuery> {
+    getAllArticleSummary(variables?: Types.GetAllArticleSummaryQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<Types.GetAllArticleSummaryQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<Types.GetAllArticleSummaryQuery>(GetAllArticleSummaryDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getAllArticleSummary', 'query');
     }
   };

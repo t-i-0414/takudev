@@ -1,12 +1,12 @@
 import React from 'react';
 import { HamburgerButton } from '.';
-import type { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import {
   LightThemeTemplate,
   DarkThemeTemplate,
 } from '~/.storybook/ColorThemeTemplates';
 
-type StoryType = ComponentStoryObj<typeof HamburgerButton>;
+type StoryType = StoryObj<typeof HamburgerButton>;
 
 export default {
   title: 'Atoms/HamburgerButton',
@@ -19,7 +19,7 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof HamburgerButton>;
+} as Meta<typeof HamburgerButton>;
 
 export const DarkBackground: StoryType = {
   parameters: {
