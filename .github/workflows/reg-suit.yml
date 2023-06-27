@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Dependencies
-        run: yarn install
+        uses: ./.github/actions/install-dependencies
 
       - name: Run Storycap
         run: cd packages/takudev-web && yarn storycap
