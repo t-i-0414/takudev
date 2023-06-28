@@ -3,7 +3,7 @@ module.exports = {
     collect: {
       url: [
         'http://localhost:8080/',
-        'http://localhost:8080/articles/1_first-article',
+        'http://localhost:8080/articles/2_how-to-set-up-new-flutter-project-june-2023',
       ],
       startServerCommand: 'cd ./packages/takudev-web && yarn start -p 8080',
     },
