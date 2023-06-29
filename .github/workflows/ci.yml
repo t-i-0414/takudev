@@ -92,7 +92,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build Storybook
-        run: cd packages/takudev-web && yarn build:storybook
+        run: cd packages/takudev-web-old && yarn build:storybook
 
       - name: Set Environment Variables
         run: |
@@ -103,7 +103,7 @@ jobs:
       - name: Deploy Storybook
         run: |
           aws s3 cp --recursive \
-            ./packages/takudev-web/dist-storybook \
+            ./packages/takudev-web-old/dist-storybook \
             s3://takudev-storybook/storybook/${DEST_DIR}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
