@@ -9985,6 +9985,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:20.3.2":
+  version: 20.3.2
+  resolution: "@types/node@npm:20.3.2"
+  checksum: 5929ce2b9b12b1e2a2304a0921a953c72a81f5753ad39ac43b99ce6312fbb2b4fb5bc6b60d64a2550704e3223cd5de1299467d36085ac69888899db978f2653a
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^10.1.0":
   version: 10.17.60
   resolution: "@types/node@npm:10.17.60"
@@ -31752,6 +31759,22 @@ __metadata:
   checksum: 08249c7046125d9d0a944a6e96cfe9ec66908d6b8a9db125531be6eb05fa0de047fd5542e9d43b4f987057f00a093b276b8d3e19af162a9c40db2681058fd306
   languageName: node
   linkType: hard
+
+"takudev-web@workspace:packages/takudev-web":
+  version: 0.0.0-use.local
+  resolution: "takudev-web@workspace:packages/takudev-web"
+  dependencies:
+    "@types/node": 20.3.2
+    "@types/react": 18.2.14
+    "@types/react-dom": 18.2.6
+    eslint: 8.43.0
+    eslint-config-next: 13.4.7
+    next: 13.4.7
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.1.6
+  languageName: unknown
+  linkType: soft
 
 "takudev@workspace:.":
   version: 0.0.0-use.local
