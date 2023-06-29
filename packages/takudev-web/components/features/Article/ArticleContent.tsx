@@ -8,6 +8,7 @@ import { ProfileCard } from '~/components/organisms';
 import styles from './ArticleContent.module.scss';
 import { CodeBlock } from './CodeBlock';
 import { ImageBlock } from './ImageBlock';
+import { LinkBlock } from './LinkBlock';
 import { TableBlock } from './TableBlock';
 
 type Props = {
@@ -49,6 +50,7 @@ export const ArticleContent: React.FC<Props> = React.memo(
                 code: CodeBlock,
                 img: ImageBlock,
                 table: TableBlock,
+                a: LinkBlock,
               }}
               remarkPlugins={[remarkGfm]}
             >
