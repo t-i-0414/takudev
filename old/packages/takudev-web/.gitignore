@@ -23,6 +23,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
 # local env files
 .env*.local
@@ -32,4 +33,19 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+.reg
+dist-storybook
+__screenshots__
+
+# pwa
+sw.js
+sw.js.map
+workbox-*.js
+workbox-*.js.map
+
+# rss
+public/rss.xml
+
+# sitemap
+sitemap.xml
+sitemap-0.xml

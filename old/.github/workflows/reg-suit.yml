@@ -18,10 +18,10 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Run Storycap
-        run: cd packages/takudev-web-old && yarn storycap
+        run: cd packages/takudev-web && yarn storycap
 
       - name: Run Reg Suit
-        run: cd packages/takudev-web-old && yarn reg-suit run
+        run: cd packages/takudev-web && yarn reg-suit run
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
