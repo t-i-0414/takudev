@@ -101,7 +101,7 @@
     "sass-loader": "^13.3.2",
     "storybook": "^7.0.24",
     "storycap": "^4.1.2",
-    "stylelint": "^15.9.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-recess-order": "^4.2.0",
     "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-scss": "^5.0.1",
