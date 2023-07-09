@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "format": "run-p \"format:*\"",
+    "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
+    "format:sort-package-json": "sort-package-json \"package.json\""
+  },
   "publishConfig": {
     "access": "public"
   }

@@ -13,14 +13,20 @@
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
     "build": "turbo run build",
+    "build:graph": "turbo run build --graph",
     "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "run-p \"format:*\"",
+    "format:eslint": "eslint --fix './*.{js,ts}' --cache --ignore-path ./.eslintignore",
+    "format:prettier": "prettier --cache --write './*' --ignore-unknown --ignore-path ./.prettierignore",
+    "format:sort-package-json": "sort-package-json \"package.json\"",
+    "format:turbo": "turbo run format",
     "lint": "turbo run lint",
     "prepare": "husky install",
     "typesync": "pnpm dlx typesync",
     "upgrade-interactive": "pnpm up --recursive --latest --interactive"
   },
   "dependencies": {
+    "npm-run-all": "^4.1.5",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
@@ -37,5 +43,5 @@
     "sort-package-json": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.6.5"
+  "packageManager": "pnpm@8.6.6"
 }

@@ -5,6 +5,10 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "scripts": {
+    "format": "run-p \"format:*\"",
+    "format:eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
+    "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
+    "format:sort-package-json": "sort-package-json \"package.json\"",
     "generate:component": "turbo gen react-component",
     "lint": "eslint \"**/*.ts*\""
   },
