@@ -1,81 +1,102 @@
-# Turborepo starter
+# Taku.dev
 
-This is an official starter Turborepo.
+This is a code repository of Takuya Iwashiro's developer blog.
 
-## Using this example
+It's composed from Strapi and Next.js.
 
-Run the following command:
+## Architecture Diagram
 
-```sh
-npx create-turbo@latest
+![takudev-architecture-20230129](https://user-images.githubusercontent.com/54778335/215325220-b15c17ca-bb34-466b-853f-ef49312879ac.jpg)
+
+## Structure
+
+### Language
+
+TypeScript
+
+### CMS
+
+Strapi
+
+### Client
+
+Next.js
+
+### package manager
+
+yarn v3
+
+### monorepo
+
+turborepo
+
+### Test
+
+- Jest
+- Storybook
+- reg-suit
+
+### Linter, Formatter
+
+- eslint
+- stylelint
+- styled-jsx-plugin-stylelint
+- commitlint
+- prettier
+
+### CI/CD
+
+Github Actions
+
+## Setup local environment
+
+### 1. Install asdf
+
+[Getting Started - asdf](https://asdf-vm.com/guide/getting-started.html)
+
+### 2. Install Node.js
+
+```bash
+asdf plugin add nodejs
+asdf install
 ```
 
-## What's inside?
+### 3. Install dependencies
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+yarn install
+npm install -g commitizen
 ```
 
-### Develop
+### 4. Setup environment variables
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+echo HOST=0.0.0.0\nPORT=1337\nAPP_KEYS=myApiKey\nAPI_TOKEN_SALT=myApiTokenSalt\nADMIN_JWT_SECRET=myAdminJwtSecret\nDATABASE_USERNAME=postgres\nDATABASE_PASSWORD=postgres >> packages/takudev-cms/.env
+echo STAGE=development\nSTRAPI_HOST=http://127.0.0.1:1337\nNEXT_PUBLIC_BASE_URL=http://localhost:3000 >> packages/takudev-web/.env.local
 ```
 
-### Remote Caching
+### 5. Start PostgreSQL
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```bash
+cd packages/takudev-cms
+docker-compose up -d
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### 6. Start Strapi
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
+```bash
+cd packages/takudev-cms
+yarn build
+yarn develop
 ```
-npx turbo link
+
+[Jump to Strapi admin page](http://localhost:1337/admin)
+
+### 7. Start Next.js
+
+```bash
+cd packages/takudev-web
+yarn dev
 ```
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+[Jump to blog's top page](http://localhost:3000)
