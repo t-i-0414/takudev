@@ -17,22 +17,23 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "prepare": "husky install",
-    "typesync": "pnpm dlx typesync"
+    "typesync": "pnpm dlx typesync",
+    "upgrade-interactive": "pnpm up --recursive --latest --interactive"
   },
   "dependencies": {
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
+    "@turbo/gen": "^1.10.7",
     "@types/eslint": "^8.44.0",
     "@types/lint-staged": "^13.2.0",
     "@types/prettier": "^2.7.3",
-    "eslint": "^7.32.0",
+    "eslint": "^8.44.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "npm-check": "^6.0.1",
-    "prettier": "^2.5.1",
+    "prettier": "^3.0.0",
     "sort-package-json": "^2.5.1",
     "turbo": "latest"
   },
