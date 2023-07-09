@@ -9,7 +9,10 @@
     "format:eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
     "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
     "format:sort-package-json": "sort-package-json \"package.json\"",
-    "lint": "next lint",
+    "lint": "run-p \"lint:*\"",
+    "lint:eslint": "eslint './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
+    "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\"",
     "start": "next start"
   },
   "dependencies": {

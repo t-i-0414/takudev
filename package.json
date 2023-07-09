@@ -20,7 +20,11 @@
     "format:prettier": "prettier --cache --write './*' --ignore-unknown --ignore-path ./.prettierignore",
     "format:sort-package-json": "sort-package-json \"package.json\"",
     "format:turbo": "turbo run format",
-    "lint": "turbo run lint",
+    "lint": "run-p \"lint:*\"",
+    "lint:eslint": "eslint './*.{js,ts}' --cache --ignore-path ./.eslintignore",
+    "lint:prettier": "prettier --cache --check './*' --ignore-unknown --ignore-path ./.prettierignore",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\"",
+    "lint:turbo": "turbo run lint",
     "prepare": "husky install",
     "typesync": "pnpm dlx typesync",
     "upgrade-interactive": "pnpm up --recursive --latest --interactive"

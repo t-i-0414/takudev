@@ -10,7 +10,10 @@
     "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
     "format:sort-package-json": "sort-package-json \"package.json\"",
     "generate:component": "turbo gen react-component",
-    "lint": "eslint \"**/*.ts*\""
+    "lint": "run-p \"lint:*\"",
+    "lint:eslint": "eslint './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
+    "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\""
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

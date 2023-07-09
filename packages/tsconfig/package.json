@@ -6,7 +6,10 @@
   "scripts": {
     "format": "run-p \"format:*\"",
     "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
-    "format:sort-package-json": "sort-package-json \"package.json\""
+    "format:sort-package-json": "sort-package-json \"package.json\"",
+    "lint": "run-p \"lint:*\"",
+    "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
+    "lint:sort-package-json": "sort-package-json --check \"package.json\""
   },
   "publishConfig": {
     "access": "public"
