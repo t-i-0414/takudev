@@ -2,6 +2,10 @@
   "name": "@takudev/web",
   "version": "2.0.0",
   "private": true,
+  "description": "This is a web app of takudev project.",
+  "homepage": "https://github.com/t-i-0414/takudev/tree/main/apps/web",
+  "license": "UNLICENSED",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
     "build": "next build",
     "dev": "next dev",

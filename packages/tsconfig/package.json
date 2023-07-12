@@ -2,7 +2,10 @@
   "name": "@takudev/tsconfig",
   "version": "2.0.0",
   "private": true,
-  "license": "MIT",
+  "description": "This is a tsconfig package of takudev project.",
+  "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/tsconfig",
+  "license": "UNLICENSED",
+  "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
     "format": "run-p \"format:*\"",
     "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
