@@ -17,17 +17,17 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@takudev/react-ui": "workspace:*",
     "next": "^13.4.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ui": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@takudev/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
     "typescript": "^5.1.6"
   }
 }
