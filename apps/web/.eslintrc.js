@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['custom'],
+  extends: ['@takudev/eslint-config-custom'],
 };

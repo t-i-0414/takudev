@@ -15,6 +15,9 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
     devDependencies:
+      '@takudev/eslint-config-custom':
+        specifier: workspace:*
+        version: link:packages/eslint-config-custom
       '@turbo/gen':
         specifier: ^1.10.7
         version: 1.10.7(@types/node@17.0.45)(typescript@5.1.6)
@@ -30,9 +33,6 @@ importers:
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:packages/eslint-config-custom
       husky:
         specifier: ^8.0.0
         version: 8.0.3
@@ -56,7 +56,7 @@ importers:
     dependencies:
       '@takudev/react-ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/react-ui
       next:
         specifier: ^13.4.9
         version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
@@ -67,6 +67,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@takudev/eslint-config-custom':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config-custom
       '@takudev/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -79,9 +82,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.6
         version: 18.2.6
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -101,10 +101,11 @@ importers:
         specifier: 7.32.2
         version: 7.32.2(eslint@8.44.0)
 
-  packages/tsconfig: {}
-
-  packages/ui:
+  packages/react-ui:
     devDependencies:
+      '@takudev/eslint-config-custom':
+        specifier: workspace:*
+        version: link:../eslint-config-custom
       '@takudev/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -117,15 +118,14 @@ importers:
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
       react:
         specifier: ^18.2.0
         version: 18.2.0
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
+
+  packages/tsconfig: {}
 
 packages:
 

@@ -35,12 +35,12 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
+    "@takudev/eslint-config-custom": "workspace:*",
     "@turbo/gen": "^1.10.7",
     "@types/eslint": "^8.44.0",
     "@types/lint-staged": "^13.2.0",
     "@types/prettier": "^2.7.3",
     "eslint": "^8.44.0",
-    "eslint-config-custom": "workspace:*",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "npm-check": "^6.0.1",
@@ -48,5 +48,5 @@
     "sort-package-json": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.6.6"
+  "packageManager": "pnpm@8.6.8"
 }

@@ -27,11 +27,11 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@takudev/eslint-config-custom": "workspace:*",
     "@takudev/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "eslint-config-custom": "workspace:*",
     "typescript": "^5.1.6"
   }
 }
