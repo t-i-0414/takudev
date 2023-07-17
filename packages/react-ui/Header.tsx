@@ -1,3 +1,1 @@
-export const Header = ({ text }: { text: string }) => {
-  return <h1>{text}</h1>;
-};
+export const Header = ({ text }: { text: string }) => <h1>{text}</h1>;
