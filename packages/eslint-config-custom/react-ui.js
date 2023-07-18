@@ -4,6 +4,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb/hooks',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -41,23 +42,9 @@ module.exports = {
       extends: ['plugin:jest/all', 'plugin:testing-library/react'],
     },
     {
-      files: [
-        './pages/_app.tsx',
-        '**/*.stories.[jt]s?(x)',
-        './components/atoms/**/*.[jt]s?(x)',
-      ],
+      files: ['**/*.stories.[jt]s?(x)', './components/atoms/**/*.[jt]s?(x)'],
       rules: {
         'react/jsx-props-no-spreading': ['off'],
-      },
-    },
-    {
-      files: ['**/graphql_schema/**/__generated__/**/*.[jt]s?(x)'],
-      rules: {
-        'import/newline-after-import': ['off'],
-        'no-use-before-define': ['off'],
-        'no-unused-vars': ['off'],
-        'no-shadow': ['off'],
-        'import/order': ['off'],
       },
     },
   ],

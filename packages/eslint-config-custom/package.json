@@ -6,7 +6,6 @@
   "homepage": "https://github.com/t-i-0414/takudev/tree/main/packages/eslint-config-custom",
   "license": "UNLICENSED",
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
-  "main": "index.js",
   "scripts": {
     "format": "run-p \"format:*\"",
     "format:eslint": "eslint --fix './**/*.{js,ts}' --cache --ignore-path ./.eslintignore",
