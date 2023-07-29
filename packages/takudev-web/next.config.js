@@ -13,7 +13,7 @@ const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   images: {
-    domains: ['127.0.0.1', 'strapi.takudev.net'],
+    domains: ['127.0.0.1', 'images.takudev.net'],
   },
   async headers() {
     return [
