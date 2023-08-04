@@ -13,8 +13,5 @@
     "lint": "run-p \"lint:*\"",
     "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
     "lint:sort-package-json": "sort-package-json --check \"package.json\""
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

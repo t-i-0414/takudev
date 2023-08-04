@@ -15,14 +15,5 @@
     "lint:eslint": "eslint './**/*.{js,ts}' --cache --ignore-path ./.eslintignore",
     "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
     "lint:sort-package-json": "sort-package-json --check \"package.json\""
-  },
-  "dependencies": {
-    "eslint-config-next": "^13.4.9",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-turbo": "^1.10.7",
-    "eslint-plugin-react": "7.32.2"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
