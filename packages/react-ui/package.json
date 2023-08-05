@@ -9,6 +9,7 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "scripts": {
+    "build-storybook": "storybook build",
     "format": "run-p \"format:*\"",
     "format:eslint": "eslint --fix './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
     "format:prettier": "prettier . --cache --write --ignore-unknown --ignore-path ./.prettierignore",
@@ -18,6 +19,7 @@
     "lint:eslint": "eslint './**/*.{js,jsx,ts,tsx}' --cache --ignore-path ./.eslintignore",
     "lint:prettier": "prettier . --cache --check --ignore-unknown --ignore-path ./.prettierignore",
     "lint:sort-package-json": "sort-package-json --check \"package.json\"",
+    "storybook": "storybook dev -p 6006",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
