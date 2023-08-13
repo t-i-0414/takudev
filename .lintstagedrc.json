@@ -1,5 +1,5 @@
 {
-  "./*.{js,ts}": [
+  "./**/*.{js,jsx,ts,tsx}": [
     "eslint --fix --ignore-path ./.eslintignore",
     "eslint --ignore-path ./.eslintignore"
   ],
