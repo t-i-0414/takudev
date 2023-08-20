@@ -1,0 +1,15 @@
+overwrite: true
+schema: ./graphql_schema/schema.graphql
+documents: ./graphql_schema/documents/**/*.graphql
+generates:
+  ./graphql_schema/__generated__/index.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+  ./graphql_schema/__generated__/index.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./index.d
+    plugins:
+      - typescript-operations
+      - typescript-graphql-request

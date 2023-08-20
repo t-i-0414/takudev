@@ -1,0 +1,28 @@
+@import "../../../styles/color";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background: $base-color;
+}
+
+.header-container {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.header-gap {
+  height: 56px;
+}
+
+.main {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.footer {
+  color: $text-color;
+}

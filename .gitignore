@@ -40,3 +40,33 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# stylelint
+.stylelintcache
+
+# ci
+.reg
+dist-storybook
+__screenshots__
+
+# pwa
+sw.js
+sw.js.map
+workbox-*.js
+workbox-*.js.map
+
+# rss
+public/rss.xml
+
+# sitemap
+sitemap.xml
+sitemap-0.xml
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
