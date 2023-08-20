@@ -1,29 +1,29 @@
-import type { StorybookConfig } from '@storybook/react-vite';
-import { join, dirname } from 'path';
-
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
-function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, 'package.json')));
-}
+import type { StorybookConfig } from '@storybook/nextjs';
+import { resolve } from 'path';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-essentials'),
-    getAbsolutePath('@storybook/addon-onboarding'),
-    getAbsolutePath('@storybook/addon-interactions'),
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
   ],
   framework: {
-    // @ts-expect-error
-    name: getAbsolutePath('@storybook/react-vite'),
+    name: '@storybook/nextjs',
     options: {},
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async config => {
+    // @ts-expect-error
+    config.resolve.alias = {
+      // @ts-expect-error
+      ...config.resolve.alias,
+      '~': resolve(__dirname, '../'),
+    };
+    return config;
   },
 };
 export default config;

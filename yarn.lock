@@ -5224,7 +5224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/nextjs@npm:^7.2.3":
+"@storybook/nextjs@npm:^7.3.2":
   version: 7.3.2
   resolution: "@storybook/nextjs@npm:7.3.2"
   dependencies:
@@ -21261,7 +21261,7 @@ __metadata:
     "@storybook/blocks": ^7.2.3
     "@storybook/builder-vite": ^7.2.3
     "@storybook/jest": ^0.1.0
-    "@storybook/nextjs": ^7.2.3
+    "@storybook/nextjs": ^7.3.2
     "@storybook/react": ^7.2.3
     "@storybook/react-vite": ^7.2.3
     "@storybook/test-runner": ^0.13.0
