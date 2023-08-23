@@ -31,7 +31,7 @@
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "lint:sort-package-json": "sort-package-json --check \"package.json\"",
     "prepare": "husky install",
-    "type-check": "yarn tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "typesync": "npx typesync",
     "test": "jest"
   },

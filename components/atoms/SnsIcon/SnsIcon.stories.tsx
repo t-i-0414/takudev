@@ -1,6 +1,9 @@
 import React from 'react';
+
 import { SnsIcon } from '.';
+
 import type { StoryObj, Meta } from '@storybook/react';
+
 import {
   LightThemeTemplate,
   DarkThemeTemplate,

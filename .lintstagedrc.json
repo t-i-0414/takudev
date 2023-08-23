@@ -7,5 +7,9 @@
     "prettier --cache --write --ignore-unknown --ignore-path ./.prettierignore",
     "prettier --cache --check --ignore-unknown --ignore-path ./.prettierignore"
   ],
+  "./**/*.{css,scss}": [
+    "stylelint --fix --cache --ignore-path ./.stylelintignore",
+    "stylelint --cache --ignore-path ./.stylelintignore"
+  ],
   "./package.json": ["sort-package-json", "sort-package-json --check"]
 }

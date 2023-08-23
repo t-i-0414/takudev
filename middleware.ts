@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-// eslint-disable-next-line import/newline-after-import
+
 import type { NextRequest } from 'next/server';
+
 const { Buffer } = require('buffer/');
 
 export const middleware = (req: NextRequest) => {

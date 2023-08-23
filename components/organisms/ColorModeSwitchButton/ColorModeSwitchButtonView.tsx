@@ -1,6 +1,8 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
+
 import styles from './ColorModeSwitchButton.module.scss';
+
 import { colorModeMap } from '~/consts';
 import { ColorMode } from '~/types';
 

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styles from './ProfileCardView.module.scss';
+
 import { ProfileIcon } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
 

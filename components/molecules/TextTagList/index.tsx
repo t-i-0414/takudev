@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styles from './TextTagList.module.scss';
+
 import { TextTag } from '~/components/atoms';
 
 type Props = {

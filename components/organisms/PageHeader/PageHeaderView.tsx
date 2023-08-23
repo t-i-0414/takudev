@@ -1,7 +1,10 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
+
 import { ColorModeSwitchButton } from '../ColorModeSwitchButton';
+
 import styles from './PageHeader.module.scss';
+
 import { HamburgerButton, Logo } from '~/components/atoms';
 
 type Props = {

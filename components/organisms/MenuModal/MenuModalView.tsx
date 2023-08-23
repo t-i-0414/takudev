@@ -2,7 +2,9 @@ import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import { createFocusTrap } from 'focus-trap';
 import React, { useRef, useEffect } from 'react';
 import isEqual from 'react-fast-compare';
+
 import styles from './MenuModal.module.scss';
+
 import { CloseButton } from '~/components/atoms';
 
 type Props = {

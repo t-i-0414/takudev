@@ -1,4 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
+
 import { getSdk } from './__generated__';
 
 export const getGraphqlSdk = () => {

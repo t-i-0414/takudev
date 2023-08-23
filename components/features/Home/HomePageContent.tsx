@@ -1,6 +1,8 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
+
 import styles from './HomePageContent.module.scss';
+
 import { ArticleSummaryCard, ProfileCard } from '~/components/organisms';
 
 type ArticleSummary = React.ComponentPropsWithoutRef<typeof ArticleSummaryCard>;

@@ -1,5 +1,7 @@
 import { PageFooter } from '.';
+
 import type { StoryObj, Meta } from '@storybook/react';
+
 import {
   LightThemeTemplate,
   DarkThemeTemplate,

@@ -1,6 +1,8 @@
 import React, { useContext, useCallback } from 'react';
 import isEqual from 'react-fast-compare';
+
 import { ColorModeSwitchButtonView } from './ColorModeSwitchButtonView';
+
 import { colorModeMap } from '~/consts';
 import { ColorContext } from '~/contexts';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { GA_TRACKING_ID } from '~/lib';
 
 export const GoogleAnalyticsScript: React.FC = React.memo(() => (

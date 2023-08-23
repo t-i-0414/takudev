@@ -1,6 +1,9 @@
 import React, { ComponentProps } from 'react';
+
 import { HomePageContent } from './HomePageContent';
+
 import type { StoryObj, Meta } from '@storybook/react';
+
 import {
   LightThemeTemplate,
   DarkThemeTemplate,

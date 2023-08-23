@@ -1,7 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import isEqual from 'react-fast-compare';
+
 import { MenuModal } from '../MenuModal';
+
 import { PageHeaderView } from './PageHeaderView';
+
 import { hrefMap } from '~/consts';
 
 export const PageHeader = React.memo(() => {

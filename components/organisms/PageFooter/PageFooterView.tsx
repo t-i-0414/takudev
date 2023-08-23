@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styles from './PageFooter.module.scss';
+
 import { Logo } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
 import { hrefMap } from '~/consts';

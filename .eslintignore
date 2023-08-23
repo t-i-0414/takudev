@@ -1,2 +1,6 @@
 **/node_modules/
-public
+public/
+dist-storybook/
+.next/
+.yarn/
+graphql_schema/__generated__/

@@ -1,7 +1,9 @@
 import { format } from 'date-fns';
 import React, { useMemo } from 'react';
 import isEqual from 'react-fast-compare';
+
 import styles from './ArticleSummaryCard.module.scss';
+
 import { TextTagList } from '~/components/molecules';
 
 type Props = {

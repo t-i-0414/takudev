@@ -1,5 +1,6 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
+
 import styles from './CloseButton.module.scss';
 
 type Props = {

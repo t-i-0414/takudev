@@ -5,8 +5,8 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:react/recommended',
     'plugin:storybook/recommended',
-    'prettier',
     'next',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -41,7 +41,7 @@ module.exports = {
         alphabetize: {
           order: 'asc',
         },
-        'newlines-between': 'never',
+        'newlines-between': 'always',
       },
     ],
     'import/prefer-default-export': ['off'],
@@ -114,16 +114,6 @@ module.exports = {
       files: ['**/*.stories.[jt]s?(x)', './components/atoms/**/*.[jt]s?(x)'],
       rules: {
         'react/jsx-props-no-spreading': ['off'],
-      },
-    },
-    {
-      files: ['**/graphql_schema/**/__generated__/**/*.[jt]s?(x)'],
-      rules: {
-        'import/newline-after-import': ['off'],
-        'no-use-before-define': ['off'],
-        'no-unused-vars': ['off'],
-        'no-shadow': ['off'],
-        'import/order': ['off'],
       },
     },
   ],

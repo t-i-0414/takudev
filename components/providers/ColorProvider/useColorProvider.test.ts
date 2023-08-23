@@ -2,8 +2,11 @@
  * @jest-environment jsdom
  */
 import { renderHook } from '@testing-library/react-hooks';
+
 import { useColorProvider } from './useColorProvider';
+
 import type { ColorMode } from '~/types';
+
 import { colorModeLocalStorageKey } from '~/consts';
 
 describe('useColorProvider', () => {

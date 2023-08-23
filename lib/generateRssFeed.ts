@@ -1,8 +1,11 @@
 import { Feed } from 'feed';
 import { marked } from 'marked';
+
 import { isNotNullable } from './isNotNullable';
 import { normalizeArticle } from './normalizeArticle';
+
 import type { Awaited } from '~/types';
+
 import { getGraphqlSdk } from '~/graphql_schema';
 
 const graphqlSdk = getGraphqlSdk();

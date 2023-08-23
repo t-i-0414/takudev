@@ -1,7 +1,10 @@
 import React, { useMemo } from 'react';
 import isEqual from 'react-fast-compare';
+
 import { useColorProvider } from './useColorProvider';
+
 import type { ColorMode } from '~/types';
+
 import { ColorContext } from '~/contexts';
 
 type Props = {

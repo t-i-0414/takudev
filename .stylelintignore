@@ -1,4 +1,5 @@
 **/node_modules/
 .next/
 public/
-out
+out/
+dist-storybook/
