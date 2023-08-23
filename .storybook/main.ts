@@ -3,6 +3,9 @@ import { resolve } from 'path';
 
 const config: StorybookConfig = {
   stories: ['../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  core: {
+    disableTelemetry: true,
+  },
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -17,12 +20,12 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   webpackFinal: async config => {
-    // @ts-expect-error
-    config.resolve.alias = {
-      // @ts-expect-error
-      ...config.resolve.alias,
-      '~': resolve(__dirname, '../'),
-    };
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '~': resolve(__dirname, '../'),
+      };
+    }
     return config;
   },
 };

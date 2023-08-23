@@ -1,4 +1,8 @@
 import type { Preview } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { customViewports } from './customViewports';
+
+import '../styles/_global-story-book.scss';
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +13,10 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    viewport: {
+      viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
+    },
+    layout: 'fullscreen',
   },
 };
 
