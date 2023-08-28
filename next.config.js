@@ -64,6 +64,6 @@ const nextConfig = {
 };
 
 module.exports =
-  process.env.STAGE === 'production'
-    ? withPWA(nextConfig)
-    : withBundleAnalyzer(nextConfig);
+  process.env.STAGE === 'development'
+    ? withBundleAnalyzer(nextConfig)
+    : withPWA(nextConfig);
