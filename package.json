@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@graphql-codegen/cli": "^5.0.0",
     "@graphql-codegen/import-types-preset": "^2.2.6",
     "@graphql-codegen/typescript": "^4.0.1",
