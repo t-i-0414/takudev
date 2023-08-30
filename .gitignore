@@ -70,3 +70,7 @@ sitemap-0.xml
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+
+# panda css
+styled-system

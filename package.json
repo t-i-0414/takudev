@@ -30,7 +30,9 @@
     "lint:prettier": "prettier --cache --check './**/*' --ignore-unknown --ignore-path ./.prettierignore",
     "lint:stylelint": "stylelint '**/*.{css,scss}' --cache --ignore-path ./.stylelintignore",
     "lint:sort-package-json": "sort-package-json --check \"package.json\"",
-    "prepare": "husky install",
+    "prepare": "run-p \"prepare:*\"",
+    "prepare:panda": "panda codegen",
+    "prepare:husky": "husky install",
     "type-check": "tsc --noEmit",
     "typesync": "npx typesync",
     "test": "jest"
@@ -67,6 +69,7 @@
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-graphql-request": "^5.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@pandacss/dev": "^0.13.1",
     "@storybook/addon-actions": "^7.3.2",
     "@storybook/addon-essentials": "^7.3.2",
     "@storybook/addon-interactions": "^7.3.2",
