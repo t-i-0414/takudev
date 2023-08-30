@@ -10,3 +10,5 @@ public
 .yarn
 **/*.scss
 **/*.css
+styled-system
+**/graphql_schema/__generated__/

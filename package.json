@@ -16,7 +16,7 @@
     "build": "next build && next-sitemap",
     "build:analyze": "ANALYZE=true yarn build",
     "build:storybook": "storybook build --output-dir ./dist-storybook",
-    "codegen:graphql": "graphql-codegen --config graphql_schema/codegen.yaml",
+    "codegen:graphql": "graphql-codegen --config src/graphql_schema/codegen.yaml",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
     "storybook:ci": "storybook dev -p 6006 --ci --no-open",

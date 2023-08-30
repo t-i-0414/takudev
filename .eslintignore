@@ -3,4 +3,4 @@ public/
 dist-storybook/
 .next/
 .yarn/
-graphql_schema/__generated__/
+**/graphql_schema/__generated__/

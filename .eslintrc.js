@@ -82,6 +82,7 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     'react/require-default-props': 'off',
     'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': ['off'],
     'jest/no-hooks': [
       'error',
       {
@@ -109,12 +110,6 @@ module.exports = {
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
       extends: ['plugin:jest/all', 'plugin:testing-library/react'],
-    },
-    {
-      files: ['**/*.stories.[jt]s?(x)', './components/atoms/**/*.[jt]s?(x)'],
-      rules: {
-        'react/jsx-props-no-spreading': ['off'],
-      },
     },
   ],
 };
