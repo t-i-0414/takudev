@@ -23,7 +23,8 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        '~': resolve(__dirname, '../'),
+        '~': resolve(__dirname, '../src'),
+        storybook: resolve(__dirname, '.'),
       };
     }
     return config;

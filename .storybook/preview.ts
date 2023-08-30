@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { customViewports } from './customViewports';
 
-import '../styles/_global-story-book.scss';
+import '../src/styles/_global-story-book.scss';
 
 const preview: Preview = {
   parameters: {
