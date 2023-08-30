@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "author": "t-i-0414 <gutlo.ol0414@gmail.com> (https://github.com/t-i-0414/)",
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf .next && next dev",
     "build": "next build && next-sitemap",
     "build:analyze": "ANALYZE=true yarn build",
     "build:storybook": "storybook build --output-dir ./dist-storybook",

@@ -3,6 +3,8 @@ import React from 'react';
 import { GoogleAnalyticsScript } from '~/components/scripts';
 import { GA_TRACKING_ID } from '~/lib';
 
+import './global.css';
+
 type Props = {
   children: React.ReactNode;
 };
