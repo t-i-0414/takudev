@@ -1,13 +1,6 @@
-import React from 'react';
-
 import { CloseButton } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
-
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
 
 type StoryType = StoryObj<typeof CloseButton>;
 
@@ -30,7 +23,7 @@ export default {
   },
 } as Meta<typeof CloseButton>;
 
-export const Light: StoryType = {
+export const Default: StoryType = {
   parameters: {
     screenshot: {
       variants: {
@@ -40,30 +33,4 @@ export const Light: StoryType = {
       },
     },
   },
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <Story {...context.args} />
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const Dark: StoryType = {
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'button.close-button',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <Story {...context.args} />
-      </DarkThemeTemplate>
-    ),
-  ],
 };

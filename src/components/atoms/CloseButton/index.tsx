@@ -1,7 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import styles from './CloseButton.module.scss';
+import { css } from 'styled-system/css';
 
 type Props = {
   size?: number;
@@ -13,7 +13,27 @@ export const CloseButton: React.FC<Props> = React.memo(
     <button
       type='button'
       onClick={onClick}
-      className={`${styles.button} close-button`}
+      className={`${css({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '48px',
+        height: '48px',
+        padding: 0,
+        appearance: 'none',
+        cursor: 'pointer',
+        backgroundColor: 'transparent',
+        border: 'none',
+        '&:hover': {
+          opacity: 0.8,
+        },
+        '&:focus-visible': {
+          opacity: 0.8,
+        },
+        '&:active': {
+          opacity: 0.6,
+        },
+      })} close-button`}
       {...rest}
     >
       <svg
@@ -21,7 +41,9 @@ export const CloseButton: React.FC<Props> = React.memo(
         width={size}
         height={size}
         viewBox='0 0 17.556 17.556'
-        className={styles.icon}
+        className={css({
+          fill: '#4f4f4f',
+        })}
       >
         <path
           id='light'
