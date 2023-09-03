@@ -21,7 +21,8 @@
     ],
     "paths": {
       "~/*": ["./src/*"],
-      "storybook/*": ["./.storybook/*"]
+      "storybook/*": ["./.storybook/*"],
+      "styled-system/*": ["./styled-system/*"]
     },
     "incremental": true
   },

@@ -25,6 +25,7 @@ const config: StorybookConfig = {
         ...config.resolve.alias,
         '~': resolve(__dirname, '../src'),
         storybook: resolve(__dirname, '.'),
+        'styled-system': resolve(__dirname, '../styled-system'),
       };
     }
     return config;
