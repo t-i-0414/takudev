@@ -37,9 +37,6 @@
     "typesync": "npx typesync",
     "test": "jest"
   },
-  "browserslist": [
-    "defaults"
-  ],
   "dependencies": {
     "@next/bundle-analyzer": "^13.4.19",
     "body-scroll-lock": "4.0.0-beta.0",
