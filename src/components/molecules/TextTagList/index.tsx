@@ -1,7 +1,6 @@
 import React from 'react';
 
-import styles from './TextTagList.module.scss';
-
+import { css } from 'styled-system/css';
 import { TextTag } from '~/components/atoms';
 
 type Props = {
@@ -9,7 +8,13 @@ type Props = {
 };
 
 export const TextTagList: React.FC<Props> = ({ tagList }) => (
-  <div className={styles.container}>
+  <div
+    className={css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '8px',
+    })}
+  >
     {tagList.map(tag => (
       <TextTag key={tag} text={tag} />
     ))}
