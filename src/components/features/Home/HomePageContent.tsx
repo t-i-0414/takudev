@@ -1,8 +1,7 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import styles from './HomePageContent.module.scss';
-
+import { css } from 'styled-system/css';
 import { ArticleSummaryCard, ProfileCard } from '~/components/organisms';
 
 type ArticleSummary = React.ComponentPropsWithoutRef<typeof ArticleSummaryCard>;
@@ -13,10 +12,28 @@ type Props = {
 
 export const HomePageContent: React.FC<Props> = React.memo(
   ({ articleSummaryList }) => (
-    <div className={styles.container}>
+    <div
+      className={css({
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '32px 16px 80px',
+      })}
+    >
       <ProfileCard />
 
-      <div className={styles['article-summary-card-container']}>
+      <div
+        className={css({
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '16px',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1040px',
+          marginTop: '32px',
+        })}
+      >
         {articleSummaryList
           .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
           .map(({ slug, title, publishedAt, tagList }) => (

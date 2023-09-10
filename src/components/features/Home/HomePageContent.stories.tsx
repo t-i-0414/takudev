@@ -1,13 +1,8 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
 import { HomePageContent } from './HomePageContent';
 
 import type { StoryObj, Meta } from '@storybook/react';
-
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
 
 type StoryType = StoryObj<typeof HomePageContent>;
 
@@ -88,22 +83,4 @@ export default {
   args: { articleSummaryList: articleSummaryListMock },
 } as Meta<typeof HomePageContent>;
 
-export const Light: StoryType = {
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <Story {...context.args} />
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const Dark: StoryType = {
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <Story {...context.args} />
-      </DarkThemeTemplate>
-    ),
-  ],
-};
+export const Default: StoryType = {};
