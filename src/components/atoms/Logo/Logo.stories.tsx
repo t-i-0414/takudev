@@ -4,11 +4,6 @@ import { Logo } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
 
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
-
 type StoryType = StoryObj<typeof Logo>;
 
 export default {
@@ -17,9 +12,16 @@ export default {
   args: {
     href: '#',
   },
+  decorators: [
+    (Story, context) => (
+      <div style={{ backgroundColor: '#000', height: '100vh' }}>
+        <Story {...context.args} />
+      </div>
+    ),
+  ],
 } as Meta<typeof Logo>;
 
-export const DarkBackground: StoryType = {
+export const Default: StoryType = {
   parameters: {
     screenshot: {
       variants: {
@@ -29,38 +31,4 @@ export const DarkBackground: StoryType = {
       },
     },
   },
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <div
-          style={{ backgroundColor: 'var(--header-color)', height: '100vh' }}
-        >
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const LightBackground: StoryType = {
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.logo',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div
-          style={{ backgroundColor: 'var(--header-color)', height: '100vh' }}
-        >
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
 };
