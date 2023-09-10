@@ -1,11 +1,22 @@
 import React from 'react';
 import isEqual from 'react-fast-compare';
 
-import styles from './ProfileIcon.module.scss';
+import { css } from 'styled-system/css';
 
 export const ProfileIcon: React.FC = React.memo(
   () => (
-    <div className={styles.container}>
+    <div
+      className={css({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '88px',
+        height: '88px',
+        backgroundColor: '#fff',
+        borderRadius: '50%',
+        boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16)',
+      })}
+    >
       <svg
         aria-hidden
         xmlns='http://www.w3.org/2000/svg'
