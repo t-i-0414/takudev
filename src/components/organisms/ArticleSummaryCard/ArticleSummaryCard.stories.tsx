@@ -4,11 +4,6 @@ import { ArticleSummaryCard } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
 
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
-
 type StoryType = StoryObj<typeof ArticleSummaryCard>;
 
 export default {
@@ -35,46 +30,22 @@ export default {
     publishedAt: new Date('2022-07-17'),
     tagList: ['one', 'two', 'three', 'four', 'five'],
   },
+  parameters: {
+    screenshot: {
+      variants: {
+        hovered: {
+          hover: 'a.container',
+        },
+      },
+    },
+  },
+  decorators: [
+    (Story, context) => (
+      <div style={{ display: 'flex', padding: '16px', width: '100%' }}>
+        <Story {...context.args} />
+      </div>
+    ),
+  ],
 } as Meta<typeof ArticleSummaryCard>;
 
-export const Light: StoryType = {
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.container',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '16px', width: '100%' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const Dark: StoryType = {
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.container',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '16px', width: '100%' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
+export const Default: StoryType = {};

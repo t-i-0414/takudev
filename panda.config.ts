@@ -20,4 +20,19 @@ export default defineConfig({
 
   // The output directory for your css system
   outdir: 'styled-system',
+
+  globalCss: {
+    '*': {
+      fontFamily:
+        'forma-djr-micro, system-ui, -apple-system, "Segoe UI", robot, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    },
+    _before: {
+      fontFamily:
+        'forma-djr-micro, system-ui, -apple-system, "Segoe UI", robot, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    },
+    _after: {
+      fontFamily:
+        'forma-djr-micro, system-ui, -apple-system, "Segoe UI", robot, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    },
+  },
 });
