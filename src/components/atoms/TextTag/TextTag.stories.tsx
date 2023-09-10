@@ -17,9 +17,6 @@ export default {
   args: {
     text: 'TextTag',
   },
-} as Meta<typeof TextTag>;
-
-export const Default: StoryType = {
   decorators: [
     (Story, context) => (
       <div style={{ display: 'flex', padding: '16px' }}>
@@ -27,4 +24,6 @@ export const Default: StoryType = {
       </div>
     ),
   ],
-};
+} as Meta<typeof TextTag>;
+
+export const Default: StoryType = {};

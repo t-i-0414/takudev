@@ -4,10 +4,6 @@ import { SnsIconList } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
 
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
 import { colorPaletteMapKeyList } from '~/consts';
 
 type StoryType = StoryObj<typeof SnsIconList>;
@@ -21,28 +17,13 @@ export default {
   args: {
     colorName: 'subLabelColor',
   },
+  decorators: [
+    (Story, context) => (
+      <div style={{ padding: '20px', width: '300px' }}>
+        <Story {...context.args} />
+      </div>
+    ),
+  ],
 } as Meta<typeof SnsIconList>;
 
-export const Light: StoryType = {
-  decorators: [
-    (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ padding: '20px', width: '300px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const Dark: StoryType = {
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ padding: '20px', width: '300px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
+export const Default: StoryType = {};

@@ -3,7 +3,7 @@ import isEqual from 'react-fast-compare';
 
 import { SnsIcon } from '../../atoms';
 
-import styles from './SnsIconList.module.scss';
+import { css } from 'styled-system/css';
 
 type Props = {
   colorName?: React.ComponentPropsWithoutRef<typeof SnsIcon>['colorName'];
@@ -11,7 +11,12 @@ type Props = {
 
 export const SnsIconList: React.FC<Props> = React.memo(
   ({ colorName: color }) => (
-    <div className={styles.container}>
+    <div
+      className={css({
+        display: 'flex',
+        justifyContent: 'space-between',
+      })}
+    >
       <SnsIcon type='github' colorName={color} />
       <SnsIcon type='twitter' colorName={color} />
       <SnsIcon type='facebook' colorName={color} />

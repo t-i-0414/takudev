@@ -12,16 +12,6 @@ export default {
   args: {
     href: '#',
   },
-  decorators: [
-    (Story, context) => (
-      <div style={{ backgroundColor: '#000', height: '100vh' }}>
-        <Story {...context.args} />
-      </div>
-    ),
-  ],
-} as Meta<typeof Logo>;
-
-export const Default: StoryType = {
   parameters: {
     screenshot: {
       variants: {
@@ -31,4 +21,13 @@ export const Default: StoryType = {
       },
     },
   },
-};
+  decorators: [
+    (Story, context) => (
+      <div style={{ backgroundColor: '#000', height: '100vh' }}>
+        <Story {...context.args} />
+      </div>
+    ),
+  ],
+} as Meta<typeof Logo>;
+
+export const Default: StoryType = {};
