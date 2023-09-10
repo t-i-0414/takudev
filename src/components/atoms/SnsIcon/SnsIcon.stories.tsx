@@ -4,10 +4,6 @@ import { SnsIcon } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
 
-import {
-  LightThemeTemplate,
-  DarkThemeTemplate,
-} from 'storybook/ColorThemeTemplates';
 import { colorPaletteMapKeyList } from '~/consts';
 
 type StoryType = StoryObj<typeof SnsIcon>;
@@ -28,7 +24,7 @@ export default {
   },
 } as Meta<typeof SnsIcon>;
 
-export const GithubLight: StoryType = {
+export const Github: StoryType = {
   args: {
     type: 'github',
   },
@@ -43,40 +39,14 @@ export const GithubLight: StoryType = {
   },
   decorators: [
     (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
+      <div style={{ display: 'flex', padding: '20px' }}>
+        <Story {...context.args} />
+      </div>
     ),
   ],
 };
 
-export const GithubDark: StoryType = {
-  args: {
-    type: 'github',
-  },
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.icon',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
-
-export const TwitterLight: StoryType = {
+export const Twitter: StoryType = {
   args: {
     type: 'twitter',
   },
@@ -91,40 +61,14 @@ export const TwitterLight: StoryType = {
   },
   decorators: [
     (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
+      <div style={{ display: 'flex', padding: '20px' }}>
+        <Story {...context.args} />
+      </div>
     ),
   ],
 };
 
-export const TwitterDark: StoryType = {
-  args: {
-    type: 'twitter',
-  },
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.icon',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
-
-export const FacebookLight: StoryType = {
+export const Facebook: StoryType = {
   args: {
     type: 'facebook',
   },
@@ -139,40 +83,14 @@ export const FacebookLight: StoryType = {
   },
   decorators: [
     (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
+      <div style={{ display: 'flex', padding: '20px' }}>
+        <Story {...context.args} />
+      </div>
     ),
   ],
 };
 
-export const FacebookDark: StoryType = {
-  args: {
-    type: 'facebook',
-  },
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.icon',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
-
-export const LinkedinLight: StoryType = {
+export const Linkedin: StoryType = {
   args: {
     type: 'linkedin',
   },
@@ -187,40 +105,14 @@ export const LinkedinLight: StoryType = {
   },
   decorators: [
     (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
+      <div style={{ display: 'flex', padding: '20px' }}>
+        <Story {...context.args} />
+      </div>
     ),
   ],
 };
 
-export const LinkedinDark: StoryType = {
-  args: {
-    type: 'linkedin',
-  },
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.icon',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
-    ),
-  ],
-};
-
-export const RssLight: StoryType = {
+export const Rss: StoryType = {
   args: {
     type: 'rss',
   },
@@ -235,35 +127,9 @@ export const RssLight: StoryType = {
   },
   decorators: [
     (Story, context) => (
-      <LightThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </LightThemeTemplate>
-    ),
-  ],
-};
-
-export const RssDark: StoryType = {
-  args: {
-    type: 'rss',
-  },
-  parameters: {
-    screenshot: {
-      variants: {
-        hovered: {
-          hover: 'a.icon',
-        },
-      },
-    },
-  },
-  decorators: [
-    (Story, context) => (
-      <DarkThemeTemplate>
-        <div style={{ display: 'flex', padding: '20px' }}>
-          <Story {...context.args} />
-        </div>
-      </DarkThemeTemplate>
+      <div style={{ display: 'flex', padding: '20px' }}>
+        <Story {...context.args} />
+      </div>
     ),
   ],
 };

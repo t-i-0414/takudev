@@ -1,8 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 
-import styles from './SnsIcon.module.scss';
-
+import { css } from 'styled-system/css';
 import {
   hrefMap,
   lightColorPaletteMap,
@@ -48,13 +47,34 @@ export const SnsIcon: React.FC<Props> = React.memo(
     return (
       <a
         href={hrefMap[type]}
-        className={`${styles['sns-icon']} icon`}
+        className={`${css({
+          display: 'block',
+          padding: '6px',
+          textDecoration: 'none',
+          cursor: 'pointer',
+        })} icon`}
         target='_blank'
         rel='noreferrer'
         aria-label={ariaLabel}
         {...rest}
       >
-        <div className={styles['svg-container']}>
+        <div
+          className={css({
+            transition: 'all 0.3s ease-in-out',
+            _hover: {
+              opacity: '0.8',
+              transform: 'scale(1.2)',
+            },
+            _focusVisible: {
+              opacity: '0.8',
+              transform: 'scale(1.2)',
+            },
+            _active: {
+              opacity: '0.6',
+              transform: 'scale(1.2)',
+            },
+          })}
+        >
           {type === 'github' && (
             <svg
               xmlns='http://www.w3.org/2000/svg'
