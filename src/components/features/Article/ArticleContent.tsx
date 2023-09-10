@@ -4,12 +4,12 @@ import isEqual from 'react-fast-compare';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import styles from './ArticleContent.module.scss';
 import { CodeBlock } from './CodeBlock';
 import { ImageBlock } from './ImageBlock';
 import { LinkBlock } from './LinkBlock';
 import { TableBlock } from './TableBlock';
 
+import { css } from 'styled-system/css';
 import { TextTagList } from '~/components/molecules';
 import { ProfileCard } from '~/components/organisms';
 
@@ -28,25 +28,186 @@ export const ArticleContent: React.FC<Props> = React.memo(
     );
 
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div className={styles['profile-card-container']}>
+      <div
+        className={css({
+          display: 'flex',
+          justifyContent: 'center',
+          margin: '32px 16px',
+          scrollbar: 'hidden',
+        })}
+      >
+        <div
+          className={css({
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            width: '100%',
+            maxWidth: '960px',
+          })}
+        >
+          <div
+            className={css({
+              marginBottom: '32px',
+            })}
+          >
             <ProfileCard />
           </div>
 
-          <div className={styles['date-container']}>
-            <p className={styles.date}>{formattedDate}</p>
+          <div>
+            <p
+              className={css({
+                margin: '0 0 10px',
+                color: '#0d0d0d',
+              })}
+            >
+              {formattedDate}
+            </p>
           </div>
 
-          <div className={styles['heading-container']}>
-            <h1 className={styles.heading}>{title}</h1>
+          <div
+            className={css({
+              marginBottom: '20px',
+            })}
+          >
+            <h1
+              className={css({
+                margin: 0,
+                fontSize: '32px',
+                lineHeight: 1.2,
+                color: '#0d0d0d',
+                wordBreak: 'break-word',
+              })}
+            >
+              {title}
+            </h1>
           </div>
 
-          <div className={styles['tag-list-container']}>
+          <div className={css({ marginBottom: '20px' })}>
             <TextTagList tagList={tagList} />
           </div>
 
-          <div className={styles['markdown-container']}>
+          <div
+            className={css({
+              width: '100%',
+              color: '#0d0d0d',
+              letterSpacing: '0.1em',
+
+              '& h2': {
+                margin: '0 0 0.2em',
+                fontWeight: 700,
+                wordBreak: 'break-word',
+                fontSize: '24px',
+              },
+
+              '& h3': {
+                margin: '0 0 0.2em',
+                fontWeight: 700,
+                wordBreak: 'break-word',
+                fontSize: '18px',
+              },
+
+              '& h4': {
+                margin: '0 0 0.2em',
+                fontWeight: 700,
+                wordBreak: 'break-word',
+                fontSize: '16px',
+              },
+
+              '& h5': {
+                margin: '0 0 0.2em',
+                fontWeight: 700,
+                wordBreak: 'break-word',
+                fontSize: '14px',
+              },
+
+              '& h6': {
+                margin: '0 0 0.2em',
+                fontWeight: 700,
+                wordBreak: 'break-word',
+                fontSize: '12px',
+              },
+
+              '& p': {
+                margin: '0 0 20px',
+                fontSize: '16px',
+                lineHeight: 1.8,
+
+                '& code': {
+                  padding: '0 4px',
+                  color: '#fcfcfc',
+                  backgroundColor: '#4f4f4f',
+                  borderRadius: '4px',
+                },
+              },
+
+              '& hr': {
+                margin: '20px 0',
+                border: 0,
+                borderTop: '1px solid #4f4f4f',
+              },
+
+              '& a': {
+                color: '#0000ee',
+
+                _active: {
+                  color: '#f23535',
+                },
+              },
+
+              '& blockquote': {
+                padding: '8px 16px',
+                margin: '0 0 20px',
+                fontStyle: 'italic',
+                border: '1px solid #4f4f4f',
+
+                '& p': {
+                  padding: 0,
+                  margin: '10px 0',
+                  lineHeight: 1.7,
+                },
+              },
+
+              '& ul': {
+                padding: '0 0 0 20px',
+                margin: '0 0 20px',
+                listStyle: 'disc',
+
+                '& li': {
+                  padding: 0,
+                  margin: 0,
+                  lineHeight: 1.7,
+                },
+              },
+
+              '& ol': {
+                padding: '0 0 0 20px',
+                margin: '0 0 20px',
+                listStyle: 'decimal',
+
+                '& li': {
+                  padding: 0,
+                  margin: 0,
+                  lineHeight: 1.7,
+                },
+              },
+
+              '& table': {
+                '& th': {
+                  width: 'fit-content',
+                  padding: '10px',
+                  color: '#fcfcfc',
+                  backgroundColor: '#4f4f4f',
+                  border: 'solid 1px #4f4f4f',
+                },
+
+                '& td': {
+                  width: 'fit-content',
+                  padding: '10px',
+                  border: 'solid 1px #4f4f4f',
+                },
+              },
+            })}
+          >
             <ReactMarkdown
               components={{
                 code: CodeBlock,
