@@ -1,13 +1,11 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 
 import {
   hrefMap,
   lightColorPaletteMap,
-  darkColorPaletteMap,
   colorPaletteMapKeyList,
 } from '~/consts';
-import { ColorContext } from '~/contexts';
 
 import { css } from 'styled-system/css';
 
@@ -18,15 +16,10 @@ type Props = {
 
 export const SnsIcon: React.FC<Props> = React.memo(
   ({ type, colorName: color, ...rest }) => {
-    const { colorMode } = useContext(ColorContext);
-
-    const svgFillColor = useMemo(() => {
-      if (colorMode === 'darkMode') {
-        return darkColorPaletteMap[color || 'subLabelColor'];
-      }
-
-      return lightColorPaletteMap[color || 'subLabelColor'];
-    }, [color, colorMode]);
+    const svgFillColor = useMemo(
+      () => lightColorPaletteMap[color || 'subLabelColor'],
+      [color],
+    );
 
     const ariaLabel = useMemo(() => {
       switch (type) {

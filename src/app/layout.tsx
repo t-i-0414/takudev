@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { GoogleAnalyticsScript } from '~/components/scripts';
+import { PageTemplate } from '~/components/templates';
 import { GA_TRACKING_ID } from '~/lib';
 
 import './global.css';
@@ -39,7 +40,8 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       <link rel='stylesheet' href='https://use.typekit.net/rba3ian.css' />
     </head>
     <body>
-      {children}
+      <PageTemplate>{children}</PageTemplate>
+      {/* {children} */}
       {GA_TRACKING_ID && <GoogleAnalyticsScript />}
     </body>
   </html>
