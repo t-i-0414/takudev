@@ -42,7 +42,9 @@ export const SnsIcon: React.FC<Props> = React.memo(
       <a
         href={hrefMap[type]}
         className={`${css({
-          display: 'block',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           padding: '6px',
           textDecoration: 'none',
           cursor: 'pointer',
@@ -54,9 +56,6 @@ export const SnsIcon: React.FC<Props> = React.memo(
       >
         <div
           className={css({
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             transition: 'all 0.3s ease-in-out',
             _hover: {
               opacity: '0.8',
