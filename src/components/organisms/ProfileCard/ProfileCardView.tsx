@@ -1,9 +1,10 @@
 import React from 'react';
 
 // import styles from './ProfileCardView.module.scss';
-import { css } from 'styled-system/css';
 import { ProfileIcon } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
+
+import { css } from 'styled-system/css';
 
 export const ProfileCardView = () => (
   <div

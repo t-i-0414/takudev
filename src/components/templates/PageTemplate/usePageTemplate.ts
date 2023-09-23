@@ -1,4 +1,7 @@
-import { useCallback } from 'react';
+'use client';
+
+import { useCallback, useEffect } from 'react';
+import { throttle } from 'throttle-debounce';
 
 export const usePageTemplate = () => {
   const handleCustomVh = useCallback(() => {
@@ -20,6 +23,22 @@ export const usePageTemplate = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    handleCustomVh();
+    handleViewPort();
+
+    const throttledHandleCustomVhVariable = throttle(16, handleCustomVh);
+    const throttledHandleViewPort = throttle(16, handleViewPort);
+
+    window.addEventListener('resize', throttledHandleCustomVhVariable);
+    window.addEventListener('resize', throttledHandleViewPort);
+
+    return () => {
+      window.removeEventListener('resize', throttledHandleCustomVhVariable);
+      window.removeEventListener('resize', throttledHandleViewPort);
+    };
+  }, [handleCustomVh, handleViewPort]);
 
   return { handleCustomVh, handleViewPort };
 };

@@ -3,11 +3,10 @@
  */
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useColorProvider } from './useColorProvider';
-
+import { colorModeLocalStorageKey } from '~/consts';
 import type { ColorMode } from '~/types';
 
-import { colorModeLocalStorageKey } from '~/consts';
+import { useColorProvider } from './useColorProvider';
 
 describe('useColorProvider', () => {
   describe('_colorMode arg exists', () => {

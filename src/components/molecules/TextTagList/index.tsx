@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { css } from 'styled-system/css';
 import { TextTag } from '~/components/atoms';
+
+import { css } from 'styled-system/css';
 
 type Props = {
   tagList: string[];

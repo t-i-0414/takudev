@@ -2,8 +2,9 @@ import React from 'react';
 import isEqual from 'react-fast-compare';
 
 // import styles from './PageHeader.module.scss';
-import { css } from 'styled-system/css';
 import { Logo } from '~/components/atoms/Logo';
+
+import { css } from 'styled-system/css';
 
 type Props = {
   hrefToHome: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];

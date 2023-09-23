@@ -1,11 +1,10 @@
 import React, { useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 
-import { useColorProvider } from './useColorProvider';
-
+import { ColorContext } from '~/contexts';
 import type { ColorMode } from '~/types';
 
-import { ColorContext } from '~/contexts';
+import { useColorProvider } from './useColorProvider';
 
 type Props = {
   children: React.ReactNode;

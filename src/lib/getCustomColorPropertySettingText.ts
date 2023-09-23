@@ -1,11 +1,11 @@
-import { kebabize } from './kebabize';
-
 import {
   colorModeMap,
   colorPaletteMapKeyList,
   lightColorPaletteMap,
   darkColorPaletteMap,
 } from '~/consts';
+
+import { kebabize } from './kebabize';
 
 export const getCustomColorPropertySettingText = () =>
   colorPaletteMapKeyList

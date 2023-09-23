@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import isEqual from 'react-fast-compare';
-import { throttle } from 'throttle-debounce';
-
-import styles from './PageTemplate.module.scss';
-import { usePageTemplate } from './usePageTemplate';
 
 import { PageHeader, PageFooter } from '~/components/organisms';
+
+import { usePageTemplate } from './usePageTemplate';
+
+import { css } from 'styled-system/css';
 
 type Props = {
   children: React.ReactNode;
@@ -14,35 +14,43 @@ type Props = {
 };
 export const PageTemplate: React.FC<Props> = React.memo(
   ({ children, hasHeader = true, hasFooter = true }: Props) => {
-    const { handleCustomVh, handleViewPort } = usePageTemplate();
-
-    useEffect(() => {
-      handleCustomVh();
-      handleViewPort();
-
-      const throttledHandleCustomVhVariable = throttle(16, handleCustomVh);
-      const throttledHandleViewPort = throttle(16, handleViewPort);
-
-      window.addEventListener('resize', throttledHandleCustomVhVariable);
-      window.addEventListener('resize', throttledHandleViewPort);
-
-      return () => {
-        window.removeEventListener('resize', throttledHandleCustomVhVariable);
-        window.removeEventListener('resize', throttledHandleViewPort);
-      };
-    }, [handleCustomVh, handleViewPort]);
+    usePageTemplate();
 
     return (
-      <div className={styles.wrapper}>
+      <div
+        className={css({
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: 'calc(var(--vh, 1vh) * 100)',
+          background: '#fafafa',
+        })}
+      >
         {hasHeader && (
           <>
-            <div className={styles['header-container']}>
+            <div
+              className={css({
+                position: 'fixed',
+                zIndex: 1,
+                width: '100%',
+              })}
+            >
               <PageHeader />
             </div>
-            <div className={styles['header-gap']} />
+            <div
+              className={css({
+                height: '56px',
+              })}
+            />
           </>
         )}
-        <main className={styles.main}>{children}</main>
+        <main
+          className={css({
+            flex: 1,
+            overflowX: 'hidden',
+          })}
+        >
+          {children}
+        </main>
         {hasFooter && <PageFooter />}
       </div>
     );

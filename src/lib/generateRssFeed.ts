@@ -1,12 +1,11 @@
 import { Feed } from 'feed';
 import { marked } from 'marked';
 
-import { isNotNullable } from './isNotNullable';
-import { normalizeArticle } from './normalizeArticle';
-
+import { getGraphqlSdk } from '~/graphql_schema';
 import type { Awaited } from '~/types';
 
-import { getGraphqlSdk } from '~/graphql_schema';
+import { isNotNullable } from './isNotNullable';
+import { normalizeArticle } from './normalizeArticle';
 
 const graphqlSdk = getGraphqlSdk();
 

@@ -1,7 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import isEqual from 'react-fast-compare';
 
-import { css } from 'styled-system/css';
 import {
   hrefMap,
   lightColorPaletteMap,
@@ -9,6 +8,8 @@ import {
   colorPaletteMapKeyList,
 } from '~/consts';
 import { ColorContext } from '~/contexts';
+
+import { css } from 'styled-system/css';
 
 type Props = {
   type: 'github' | 'twitter' | 'facebook' | 'linkedin' | 'rss';

@@ -1,7 +1,5 @@
 import { useCallback, useState, useEffect } from 'react';
 
-import type { ColorMode } from '~/types';
-
 import {
   colorModeMap,
   colorModeLocalStorageKey,
@@ -10,6 +8,7 @@ import {
   colorPaletteMapKeyList,
 } from '~/consts';
 import { kebabize, isColorMode } from '~/lib';
+import type { ColorMode } from '~/types';
 
 const { lightMode, darkMode } = colorModeMap;
 

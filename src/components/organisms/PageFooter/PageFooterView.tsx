@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { css } from 'styled-system/css';
 import { Logo } from '~/components/atoms';
 import { SnsIconList } from '~/components/molecules';
 import { hrefMap } from '~/consts';
+
+import { css } from 'styled-system/css';
 
 export const PageFooterView: React.FC = () => (
   <footer

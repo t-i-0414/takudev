@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { colorPaletteMapKeyList } from '~/consts';
+
 import { SnsIcon } from '.';
 
 import type { StoryObj, Meta } from '@storybook/react';
-
-import { colorPaletteMapKeyList } from '~/consts';
 
 type StoryType = StoryObj<typeof SnsIcon>;
 
