@@ -1,23 +1,29 @@
-import { CodeComponent } from 'react-markdown/lib/ast-to-react';
+import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-export const CodeBlock: CodeComponent = ({ inline, className, children }) => {
-  if (inline) {
-    return <code className={className}>{children}</code>;
-  }
-
+type Props = {
+  children: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  className: string;
+  node: any;
+};
+export const CodeBlock = (props: Props) => {
+  const { children, className, node, ...rest } = props;
   const match = /language-(\w+)/.exec(className || '');
-  const lang = match && match[1] ? match[1] : '';
 
-  return (
+  return match ? (
+    // @ts-expect-error
     <SyntaxHighlighter
-      lineProps={{ style: { wordBreak: 'break-word', whiteSpace: 'pre-wrap' } }}
-      wrapLines
+      {...rest}
       style={a11yDark}
-      language={lang}
+      language={match[1]}
+      PreTag='div'
     >
       {String(children).replace(/\n$/, '')}
     </SyntaxHighlighter>
+  ) : (
+    <code {...rest} className={className}>
+      {children}
+    </code>
   );
 };

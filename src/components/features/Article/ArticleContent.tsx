@@ -211,6 +211,7 @@ export const ArticleContent: React.FC<Props> = React.memo(
           >
             <ReactMarkdown
               components={{
+                // @ts-expect-error
                 code: CodeBlock,
                 img: ImageBlock,
                 table: TableBlock,
