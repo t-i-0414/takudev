@@ -3,7 +3,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { customViewports } from './customViewports';
 import { withScreenshot } from 'storycap';
 
-import '../styles/_global-story-book.scss';
+import '../src/styles/_global-story-book.scss';
 
 export const decorators = [withScreenshot];
 
