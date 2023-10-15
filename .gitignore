@@ -178,18 +178,31 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
-
-# turborepo
-.turbo
-
-# cms's docker volumes
-.cms
-
 # vscode
 .vscode/settings.json
 
 # nextjs
-.env.local
+.env*.local
 
 # lighthouseci
 .lighthouseci/
+
+# vercel
+.vercel
+
+.reg
+dist-storybook
+__screenshots__
+
+# pwa
+sw.js
+sw.js.map
+workbox-*.js
+workbox-*.js.map
+
+# rss
+public/rss.xml
+
+# sitemap
+sitemap.xml
+sitemap-0.xml
