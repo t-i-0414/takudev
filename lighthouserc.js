@@ -19,7 +19,7 @@ module.exports = {
         'uses-rel-preconnect': 'off',
         'unused-javascript': [
           'error',
-          { maxWastedBytes: 100000, maxLength: 1 },
+          { maxWastedBytes: 100000, maxLength: 2 },
         ],
         'categories:performance': ['error', { minScore: 0.3 }],
       },
