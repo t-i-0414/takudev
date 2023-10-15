@@ -41,8 +41,8 @@ export const ColorThemeScript: React.FC = React.memo(
             setInitialColorModeOnDocumentBody(localStorageTheme);
           } else if (supportsColorSchemeQuery) {
             var _colorMode = mql.matches ? '${colorModeMap.darkMode}' : '${
-          colorModeMap.lightMode
-        }';
+              colorModeMap.lightMode
+            }';
 
             setInitialColorModeOnDocumentBody(_colorMode);
             localStorage.setItem(storageKey, JSON.stringify(_colorMode));

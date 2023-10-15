@@ -21,7 +21,10 @@ describe('useColorProvider', () => {
         expected: 'darkMode',
         unexpected: 'lightMode',
       },
-    ] as { expected: Exclude<ColorMode, null>; unexpected: Exclude<ColorMode, null> }[])(
+    ] as {
+      expected: Exclude<ColorMode, null>;
+      unexpected: Exclude<ColorMode, null>;
+    }[])(
       'should return $expected if _colorMode is $expected.',
       ({ expected, unexpected }) => {
         expect.hasAssertions();
@@ -63,7 +66,10 @@ describe('useColorProvider', () => {
     it.each([
       { preserved: 'lightMode', expected: 'lightMode' },
       { preserved: 'darkMode', expected: 'darkMode' },
-    ] as { preserved: Exclude<ColorMode, null>; expected: Exclude<ColorMode, null> }[])(
+    ] as {
+      preserved: Exclude<ColorMode, null>;
+      expected: Exclude<ColorMode, null>;
+    }[])(
       'should return $expected if preservedColorMode is $expected',
       ({ preserved, expected }) => {
         expect.hasAssertions();
