@@ -5,7 +5,7 @@ module.exports = {
         'http://localhost:8080/',
         'http://localhost:8080/articles/2_how-to-set-up-new-flutter-project-june-2023',
       ],
-      startServerCommand: 'cd ./packages/takudev-web && yarn start -p 8080',
+      startServerCommand: 'yarn start -p 8080',
     },
     upload: {
       target: 'temporary-public-storage',
