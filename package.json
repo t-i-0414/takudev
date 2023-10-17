@@ -39,11 +39,6 @@
     "type-check": "yarn tsc --noEmit",
     "typesync": "npx typesync"
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "browserslist": [
     "defaults"
   ],
