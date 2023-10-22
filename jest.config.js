@@ -1,6 +1,14 @@
 module.exports = {
-  projects: [
-    '<rootDir>/packages/takudev-cms',
-    '<rootDir>/packages/takudev-web',
-  ],
+  preset: 'ts-jest',
+  transform: {
+    '^.+\\.[tj]?sx?$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.jest.json',
+      },
+    ],
+  },
+  moduleNameMapper: {
+    '^~/(.*)$': '<rootDir>/src/$1',
+  },
 };
