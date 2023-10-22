@@ -18,7 +18,11 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Run Storycap
-        run: yarn storycap
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 30
+          max_attempts: 5
+          command: yarn storycap
 
       - name: Run Reg Suit
         run: yarn reg-suit run

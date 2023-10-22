@@ -1,5 +1,6 @@
-**/node_modules/
-.next/
-public/
-styles/
-out
+.next
+.yarn
+dist-storybook
+node_modules
+public
+**/graphql_schema/**/__generated__

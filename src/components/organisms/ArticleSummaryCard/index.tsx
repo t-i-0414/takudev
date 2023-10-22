@@ -21,11 +21,7 @@ export const ArticleSummaryCard: React.FC<Props> = React.memo(
     const hasTagList = useMemo(() => tagList.length > 0, [tagList]);
 
     return (
-      <a
-        aria-label='article'
-        href={`/articles/${slug}`}
-        className={`${styles.container} container`}
-      >
+      <a href={`/articles/${slug}`} className={`${styles.container} container`}>
         <div className={styles['title-container']}>
           <p className={styles.title}>{title}</p>
         </div>
