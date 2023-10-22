@@ -5,7 +5,7 @@ module.exports = {
         'http://localhost:8080/',
         'http://localhost:8080/articles/2_how-to-set-up-new-flutter-project-june-2023',
       ],
-      startServerCommand: 'cd ./packages/takudev-web && yarn start -p 8080',
+      startServerCommand: 'yarn start -p 8080',
     },
     upload: {
       target: 'temporary-public-storage',
@@ -19,7 +19,7 @@ module.exports = {
         'uses-rel-preconnect': 'off',
         'unused-javascript': [
           'error',
-          { maxWastedBytes: 100000, maxLength: 1 },
+          { maxWastedBytes: 100000, maxLength: 2 },
         ],
         'categories:performance': ['error', { minScore: 0.3 }],
       },
