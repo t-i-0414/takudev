@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Preview } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { customViewports } from './customViewports';
 import { withScreenshot } from 'storycap';
@@ -7,7 +7,7 @@ import '../src/styles/_global-story-book.scss';
 
 export const decorators = [withScreenshot];
 
-export const parameters = {
+export const parameters: Preview['parameters'] = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
