@@ -72,7 +72,7 @@
     "typesync": "^0.12.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
+    "@babel/core": "^7.23.7",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@graphql-codegen/cli": "^5.0.0",
@@ -105,7 +105,7 @@
     "@types/lint-staged": "^13.3.0",
     "@types/marked": "^6.0.0",
     "@types/next-pwa": "^5.6.9",
-    "@types/node": "20.10.5",
+    "@types/node": "20.10.6",
     "@types/prettier": "^3.0.0",
     "@types/react": "18.2.46",
     "@types/react-dom": "18.2.18",
@@ -147,7 +147,7 @@
     "reg-notify-github-plugin": "^0.12.2",
     "reg-publish-s3-plugin": "^0.12.2",
     "reg-suit": "^0.12.2",
-    "sass": "^1.69.5",
+    "sass": "^1.69.6",
     "sass-loader": "^13.3.3",
     "sort-package-json": "^2.6.0",
     "storybook": "^7.6.6",
