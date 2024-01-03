@@ -48,7 +48,7 @@ HomePage.displayName = 'HomePage';
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const graphqlSdk = getGraphqlSdk();
   const { articles } = await graphqlSdk.getAllArticleSummary();
-  fs.writeFileSync('public/rss.xml', generateRssFeed(articles));
+  fs.writeFileSync('public/rss.xml', await generateRssFeed(articles));
 
   if (!isNotNullable(articles)) {
     return {

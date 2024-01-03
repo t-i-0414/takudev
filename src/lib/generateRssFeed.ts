@@ -10,7 +10,7 @@ type Articles = Awaited<
   ReturnType<typeof graphqlSdk.getAllArticleSummary>
 >['articles'];
 
-export const generateRssFeed = (articles: Articles) => {
+export const generateRssFeed = async (articles: Articles) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
   const date = new Date();
 
@@ -37,26 +37,30 @@ export const generateRssFeed = (articles: Articles) => {
   });
 
   if (isNotNullable(articles)) {
-    articles.data.forEach(data => {
-      const normalizedArticle = normalizeArticle({ data });
+    const addRSSItemToFeed = async () => {
+      articles.data.forEach(async data => {
+        const normalizedArticle = normalizeArticle({ data });
 
-      if (!isNotNullable(normalizedArticle)) {
-        return;
-      }
+        if (!isNotNullable(normalizedArticle)) {
+          return;
+        }
 
-      const { id, slug, title, description, content, publishedAt } =
-        normalizedArticle;
-      const url = `${baseUrl}/articles/${id}_${slug}`;
+        const { id, slug, title, description, content, publishedAt } =
+          normalizedArticle;
+        const url = `${baseUrl}/articles/${id}_${slug}`;
 
-      feed.addItem({
-        title,
-        description,
-        id: url,
-        link: url,
-        content: marked(content),
-        date: new Date(publishedAt),
+        feed.addItem({
+          title,
+          description,
+          id: url,
+          link: url,
+          content: await marked(content),
+          date: new Date(publishedAt),
+        });
       });
-    });
+    };
+
+    await addRSSItemToFeed();
   }
 
   return feed.rss2();
