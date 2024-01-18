@@ -680,7 +680,7 @@ type TagCategoryEntityResponseCollection {
 }
 
 union GenericMorph =
-    UploadFile
+  | UploadFile
   | UploadFolder
   | I18NLocale
   | UsersPermissionsPermission
