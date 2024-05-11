@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import { describe, expect, it } from '@jest/globals';
 import { renderHook } from '@testing-library/react-hooks';
 import { usePageTemplate } from './usePageTemplate';
 

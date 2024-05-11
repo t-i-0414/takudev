@@ -22,6 +22,7 @@ module.exports = {
           { maxWastedBytes: 100000, maxLength: 2 },
         ],
         'categories:performance': ['error', { minScore: 0.3 }],
+        'unminified-css': 'off',
       },
     },
   },

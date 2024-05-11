@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import { afterEach, describe, expect, it, jest } from '@jest/globals';
 import { renderHook } from '@testing-library/react-hooks';
 import { colorModeLocalStorageKey } from '~/consts';
 import type { ColorMode } from '~/types';
